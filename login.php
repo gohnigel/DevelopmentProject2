@@ -4,7 +4,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 if(isset($_SESSION["email"])){
 
-        header("location:index.php");
+        header("location:book.php");
 }
 
 ?>
@@ -59,5 +59,9 @@ if(isset($_SESSION["email"])){
     <script src="js/bootstrap.min.js"></script>
     <!-- Basic AngularJS -->
     <script src="js/angular.min.js"></script>
+    
+     <?php
+		include ('footer.php');
+	?>
 
 </html>

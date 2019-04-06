@@ -1,3 +1,16 @@
+<?php
+
+if(session_id() == '' || !isset($_SESSION)){session_start();}
+
+if(isset($_SESSION["email"])){
+
+        header("location:book.php");
+}
+
+?>
+<?php
+	require 'config.php';
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -54,5 +67,9 @@
 <script src="js/bootstrap.min.js"></script>
 <!-- Basic AngularJS -->
 <script src="js/angular.min.js"></script>
+    
+     <?php
+		include ('footer.php');
+	?>
 
 </html>
