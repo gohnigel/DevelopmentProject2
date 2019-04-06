@@ -1,0 +1,51 @@
+ul.navigation-bar 
+{	
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: #39526b;
+}
+
+ul.navigation-bar li {
+    float: left;
+	border-right: 3px outset white;
+	width: 8%;
+}
+
+ul.navigation-bar li:last-child {
+	float: right;
+    border-left: 3px inset white;
+}
+
+ul.navigation-bar li a {
+	
+    display: block;
+    color: white;
+    text-align: center;
+}
+#active {
+    background-color: #89a4c1;
+}
+/* Change the link color  on hover */
+ul.navigation-bar  a:hover {
+    background-color: #89a4c1;
+}
+
+li a{
+    display: inline-block;
+    color: #59697a;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.button{
+background-color: #39526b;
+  border: none;
+  padding: 15px 65px;
+    margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
