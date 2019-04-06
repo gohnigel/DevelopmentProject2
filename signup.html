@@ -2,39 +2,64 @@
 
 <html lang="en">
     <head>
-    <title>Salon</title>
+      <title>Salon</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" type="text/css" href="css/gui.css" />
+    </head>
 
-    <link rel="stylesheet" type="text/css" href="css/gui.css" />
-</head>
-
-<body>
-    <header>
-        <h1 id="MainHeading">Welcome to Hair Salon Online Booking</h1>
-    </header>
-
-    <nav>
-        <ul class="navigation-bar">
-            <li><a id="active" href="index.html">Home</a></li>
-            <li><a href="login.html">Login/Signup</a></li>
+  <body>
+     <div class="container-fluid">
+     
+      <header class="row">
+          <div class="col-xs-12">
+            <h1 id="MainHeading">Hair Salon Online Booking</h1>
+         </div>
+      </header>
+      
+      <nav>
+        <ul class="navigation-bar row">
+            <li class="col-xs-2"><a href="index.html">Home</a></li>
+            <li class="col-xs-2"><a href="index.html">XXXX</a></li>
+            <li class="col-xs-2"><a href="index.html">XXXX</a></li>
+            <li class="col-xs-2"><a href="index.html">XXXX</a></li>
+            <li class="col-xs-2"><a href="login.html">Login</a></li>
+            <li class="col-xs-2"><a id="active" href="signup.html">Signup</a></li>
         </ul>
-    </nav>
+      </nav>
+     
+     <div class="row content">
+        <div class="col-xs-12">
+         <form action="index.html">
+            <div id="login">
+                <p><label for="strEmail">Enter your Email :</label></p>
+                <p><input type="text" name="strEmail" id="strEmail"/></p>
+                <p><label for="strReEmail">Re-enter your Email :</label></p>
+                <p><input type="text" name="strReEmail" id="strReEmail"/></p>
+                <p><label for="strPassword">Enter your Password :</label></p> 
+                <p><input type="text" name="strPassword" id="strPassword"/></p>
+                <p><label for="strRePassword">Re-enter your Password :</label></p>
+                <p><input type="text" name="strRePassword" id="strRePassword"/></p>
+            </div>
+            <p><input type="submit" class="button" value="Register"/></p>
+          </form>
+         </div>
+       </div>
 
-<a href="login.html" class="button">Login</a>
-<a href="signup.html" class="button">Sign Up</a>
-    <div id="login">
-        <label>
-            <p>Enter your Email :</p> <input type="text" name="strEmail" />
-            <br>
-            <p>Re-enter your Email :</p> <input type="text" name="strReEmail" />
-            <br>
-            <p>Enter your Password :</p> <input type="text" name="strPassword" />
-            <br>
-            <p>Re-enter your Password :</p> <input type="text" name="strRePassword" />
-        </label>
+
+      <footer class="row">
+        <div class="col-xs-12">
+          <p>&copy; All rights reserved.</p>
+          <p>This website is not for commercial use. It is for a university project in Swinburne University Technology of Sarawak</p>
+        </div>
+      </footer>
+      
     </div>
-    <input type="button" class="button" value="Register">
     
-  
-    <footer></footer>
-
-</body></html>
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="js/angular.min.js"></script>
+  </body>
+</html>

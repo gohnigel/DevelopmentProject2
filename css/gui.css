@@ -1,34 +1,36 @@
-ul.navigation-bar 
-{	
+.container-fluid {
+  position: relative;
+  min-height: 100vh;
+}
+
+ul.navigation-bar {	
     list-style-type: none;
     padding: 0;
     overflow: hidden;
     background-color: #39526b;
+    
 }
 
 ul.navigation-bar li {
-    float: left;
 	border-right: 3px outset white;
-	width: 8%;
-}
-
-ul.navigation-bar li:last-child {
-	float: right;
-    border-left: 3px inset white;
 }
 
 ul.navigation-bar li a {
-	
+	width: 100%;
     display: block;
     color: white;
     text-align: center;
 }
+
 #active {
+    width: 100%;
     background-color: #89a4c1;
 }
+
 /* Change the link color  on hover */
 ul.navigation-bar  a:hover {
-    background-color: #89a4c1;
+  width: 100%;
+  background-color: #89a4c1;
 }
 
 li a{
@@ -36,16 +38,35 @@ li a{
     color: #59697a;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+    font-size: 1.5vh;
+    text-decoration: none; 
+}
+
+.content{
+  text-align: center;
 }
 
 .button{
-background-color: #39526b;
+  background-color: #39526b;
+  color: skyblue;
   border: none;
   padding: 15px 65px;
-    margin-top: 10px;
+  margin-top: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+}
+
+.button:hover {
+  color: aliceblue;
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #39526b;
+  color: white;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
