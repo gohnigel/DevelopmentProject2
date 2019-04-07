@@ -2,11 +2,6 @@
 if(session_id() == '' || !isset($_SESSION)){session_start();}
     
 include ('config.php');
-
-if(isset($_SESSION["email"])){
-  $res = $mysqli->query("SELECT * FROM users");
-  $row = mysqli_fetch_array($res);
-}
 ?>
 <?php
 	require 'config.php';
@@ -40,11 +35,11 @@ if(isset($_SESSION["email"])){
             <form method="POST" action="savechanges.php">
                 <div id="login">
                     <p><label for="fullname">Full name :</label></p>
-                    <p><input type="text" name="full_name" id="fullname" value="<?php echo $row['full_name']; ?>"/></p>
+                    <p><input type="text" name="full_name" id="fullname" value="<?php $fullname = $_SESSION['full_name']; echo $fullname; ?>"/></p>
                     <p><label for="Email">Enter your Email :</label></p>
-                    <p><input type="email" name="Email" id="Email" value="<?php echo $row['email']; ?>"/></p>
+                    <p><input type="email" name="Email" id="Email" value="<?php $email = $_SESSION['email']; echo $email; ?>"/></p>
                     <p><label for="Phone">Phone Number :</label></p>
-                    <p><input type="text" name="phone" id="phone" value="<?php echo $row['phone']; ?>"//></p>
+                    <p><input type="text" name="phone" id="phone" value="<?php $phone = $_SESSION['phone']; echo $phone; ?>"//></p>
                 </div>
                 <p><input type="submit" class="btn btn-success" value="Save changes" /></p>                
             </form>

@@ -20,4 +20,9 @@ else
     header ("location:editprofile.php");
 
 }
+
+$_SESSION["full_name"] = $fullname;
+$_SESSION["Email"] = $email;
+$_SESSION["phone"] = $phone;
+
 ?>
