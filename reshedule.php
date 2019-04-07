@@ -1,23 +1,8 @@
 <?php
-
 if(session_id() == '' || !isset($_SESSION)){session_start();}
     
 include ('config.php');
-
-$bookid = uniqid();
-$services = $_POST["services"];
-$date = $_POST["date"];
-$time = $_POST["time"];
-$email = $_SESSION['email'];
-
-if($mysqli->query("INSERT INTO booking (`bookingid`, `date`, `time`, `email`, `status`) VALUES('$bookid', '$date', '$time', '$email', 'pending')")){
-}
-else
-{
-
-
-}
-
+$id = $_GET['bookingid']; 
 
 ?>
 <!DOCTYPE html>
@@ -43,17 +28,22 @@ else
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
-            <h3>Booking Placed</h3>
-            <h4>One of our staff members will confirm your booking shortly.</h4>
-                <div id="booking">
-                    <?php echo '<p>Booking Ref :' .$bookid .'</p>'; ?>
-                    <?php echo '<p>Customer Name :' .$_SESSION['full_name'] .'</p>'; ?>
-                    <?php echo '<p>Date :' .$date .'</p>'; ?>
-                    <?php echo '<p>Time :' .$time .'</p>'; ?>
-                    <?php echo '<p>Service :' .$services .'</p>'; ?>
-                    <p> Status: Pending Confirmation</p>
+            <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
+            <p>Select a new date and time to reshedule</p>
+            <form method="POST" action="newreshedule.php">
+                <div id="reshedule">
+                    <h4>Booking Reference</h4>
+                    <?php echo"<input type='text' name = 'bookref' value=' $id'>" ?>
+
+                    <p><label for="Date">Date :</label></p>
+                    <p><input type="date" name="date"></p>
+                    <p><label for="time">Time :</label></p>
+                    <p><input type="time" name="time"></p>
+
                 </div>
-                <p><a class="btn btn-success" href=viewbook.php>Manage Appointments</a></p>
+                <p><input type="submit" name="submit" class="btn btn-success" value="Make Appointment" />
+                    </p>
+            </form>
 
 
             
@@ -78,5 +68,3 @@ else
 	?>
 
 </html>
-
-?>

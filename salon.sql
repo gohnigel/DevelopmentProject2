@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2019 at 11:01 AM
+-- Generation Time: Apr 07, 2019 at 01:16 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -41,12 +41,8 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`bookingid`, `date`, `time`, `email`, `status`) VALUES
-('1111', '0000-00-00', '12:09', 'admin@salon.com', 'client'),
-('1112', '0000-00-00', '12:09', 'admin@salon.com', 'pending'),
-('12121', '0000-00-00', '12:09:00', 'admin@salon.com', 'client'),
-('121212', '2012-02-19', '12:09', 'admin@salon.com', 'pending'),
-('121512', '2012-02-19', '12:09', 'admin@salon.com', 'pending'),
-('212121', '0000-00-00', '12:09:00', 'admin@salon.com', 'client');
+('5ca9db74bc7a7', '2019-04-15', '14:30', 'isal@salon.com', 'Canceled'),
+('5ca9db90d5ddd', '2019-04-02', '14:06', 'isal@salon.com', 'pending');
 
 -- --------------------------------------------------------
 
@@ -67,8 +63,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`email`, `full_name`, `password`, `phone`, `role`) VALUES
-('admin@salon.com', 'Isal', '1234', 111111, 'admin'),
-('cust@salon.com', 'Steve Jo', '1234', 123456, 'client');
+('isal@salon.com', 'Isal Korale', '1234', 12345678, 'client'),
+('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin');
 
 --
 -- Indexes for dumped tables

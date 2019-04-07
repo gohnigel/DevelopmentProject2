@@ -14,6 +14,7 @@ echo"<li><a href='#'>About Us</a></li>";
 if(isset($_SESSION['email'])){
 				if($_SESSION['role'] == "client"){
                 echo"<li><a href='book.php'>Book Now</a></li>";
+                echo"<li><a href='viewbook.php'>Manage Appointments</a></li>";
 				echo"<li><a href='profile.php'>Customer Profile</a></li>";
                 }
 				else if($_SESSION['role'] == "admin")
