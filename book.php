@@ -27,20 +27,22 @@ include ('config.php');
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
             <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
-            <p>Add Content booking system here guys</p>
-            <form method="POST" action="confirmbook.php">
+            <p>Fill in the below form to make an appointment</p>
+            <form method="POST" action="confirmbooking.php">
                 <div id="booking">
                     <p><label for="service">Choose your Services :</label></p>
-
-                    <input type="checkbox" name="services[]" value="haircutting"> Hair Cutting<br>
-                    <input type="checkbox" name="services[]" value="styling"> Styling<br>
-                    <input type="checkbox" name="services[]" value="body_waxing"> Body Waxing<br>
-                    <input type="checkbox" name="services[]" value="massages"> Massages<br>
-                    <input type="checkbox" name="services[]" value="hair_colouring"> Hair Colouring<br>
-                    <input type="checkbox" name="services[]" value="hair_care_services"> Hair Care Services<br>
+                    <select id="services" name="services" >
+                        <option value="haircutting">Hair Cutting</option>
+                        <option value="styling">Styling</option>
+                        <option value="body_waxing">Body Waxing</option>
+                        <option value="hair_colouring">Hair Colouring</option>
+                        <option value="hair_care_services">HairCare Services</option>
+                    </select>
 
                     <p><label for="Date">Date :</label></p>
                     <p><input type="date" name="date"></p>
+                    <p><label for="time">Time :</label></p>
+                    <p><input type="time" name="time"></p>
 
                 </div>
                 <p><input type="submit" name="submit" class="btn btn-success" value="Make Appointment" />
