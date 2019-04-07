@@ -1,4 +1,3 @@
-
 <?php
 if(session_id() == '' || !isset($_SESSION)){session_start();}
     
@@ -29,13 +28,32 @@ include ('config.php');
             <!--Dont Remove This line(Displays the users name)-->
             <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
             <p>Add Content booking system here guys</p>
-            
+            <form method="POST" action="confirmbook.php">
+                <div id="booking">
+                    <p><label for="service">Choose your Services :</label></p>
 
-        </div>
-        
-        
-       
+                    <input type="checkbox" name="services[]" value="haircutting"> Hair Cutting<br>
+                    <input type="checkbox" name="services[]" value="styling"> Styling<br>
+                    <input type="checkbox" name="services[]" value="body_waxing"> Body Waxing<br>
+                    <input type="checkbox" name="services[]" value="massages"> Massages<br>
+                    <input type="checkbox" name="services[]" value="hair_colouring"> Hair Colouring<br>
+                    <input type="checkbox" name="services[]" value="hair_care_services"> Hair Care Services<br>
+
+                    <p><label for="Date">Date :</label></p>
+                    <p><input type="date" name="date"></p>
+
+                </div>
+                <p><input type="submit" name="submit" class="btn btn-success" value="Make Appointment" />
+                    <input type="reset" class="btn btn-success" value="Clear Form" /></p>
+            </form>
+
+
             
+        </div>
+
+
+
+
     </div>
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
@@ -47,7 +65,8 @@ include ('config.php');
     <script src="js/slideshow.js"></script>
 
 </body>
-    <?php
+<?php
 		include ('footer.php');
 	?>
+
 </html>
