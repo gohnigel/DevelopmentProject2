@@ -11,7 +11,10 @@ echo"</div>";
 echo"<ul class='nav navbar-nav'>";
 echo" <li class='active'><a href='#'>Home</a></li>";
 echo"<li><a href='#'>About Us</a></li>";
-echo"<li><a href='#'>Page 2</a></li>";
+echo"<li><a href='book.php'>Booking</a></li>";
+if(isset($_SESSION['email'])){
+    echo"<li><a href='profile.php'>Customer Profile</a></li>";
+}
 echo"<li><a href='#'>Page 3</a></li>";
 echo"</ul>";
 echo"<ul class='nav navbar-nav navbar-right'>";

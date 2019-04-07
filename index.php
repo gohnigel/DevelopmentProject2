@@ -77,7 +77,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Basic AngularJS -->
     <script src="js/angular.min.js"></script>
-    <script src="js/slideshow.js"></script>
+    <script type="text/javascript" src="js/slideshow.js"></script>
 
 </body>
     <?php

@@ -12,8 +12,8 @@ $flag = 'true';
 $result = $mysqli->query('SELECT email,full_name,password,phone,role from users');
 
 if($result === FALSE){
-  die(mysql_error());
-    echo"SQL ERROR";
+  die(mysqli_error($mysqli));
+  echo"SQL ERROR";
 }
 
 if($result){

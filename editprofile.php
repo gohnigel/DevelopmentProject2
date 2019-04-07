@@ -1,12 +1,12 @@
 <?php
-
 if(session_id() == '' || !isset($_SESSION)){session_start();}
+    
+include ('config.php');
 
 if(isset($_SESSION["email"])){
-
-        header("location:book.php");
+  $res = $mysqli->query("SELECT * FROM users");
+  $row = mysqli_fetch_array($res);
 }
-
 ?>
 <?php
 	require 'config.php';
@@ -32,27 +32,21 @@ if(isset($_SESSION["email"])){
 		include ('nav.php');
 	?>
     <div class="registermessage">
-        <h2>Register</h2>
-        <p>Fill in the below details to start using our services</p>
+        <h2>Edit profile</h2>
+        <p>Edit details in here</p>
     </div>
     <div class="row content">
         <div class="col-xs-12">
-            <form method="POST" action="newregister.php">
+            <form method="POST" action="savechanges.php">
                 <div id="login">
                     <p><label for="fullname">Full name :</label></p>
-                    <p><input type="text" name="full_name" id="fullname" /></p>
+                    <p><input type="text" name="full_name" id="fullname" value="<?php echo $row['full_name']; ?>"/></p>
                     <p><label for="Email">Enter your Email :</label></p>
-                    <p><input type="email" name="Email" id="Email" /></p>
-                    <p><label for="ReEmail">Re-enter your Email :</label></p>
-                    <p><input type="email" name="ReEmail" id="ReEmail" /></p>
+                    <p><input type="email" name="Email" id="Email" value="<?php echo $row['email']; ?>"/></p>
                     <p><label for="Phone">Phone Number :</label></p>
-                    <p><input type="text" name="phone" id="phone" /></p>
-                    <p><label for="Password">Enter your Password :</label></p>
-                    <p><input type="password" name="Password" id="Password" /></p>
-                    <p><label for="RePassword">Re-enter your Password :</label></p>
-                    <p><input type="password" name="RePassword" id="RePassword" /></p>
+                    <p><input type="text" name="phone" id="phone" value="<?php echo $row['phone']; ?>"//></p>
                 </div>
-                <p><input type="submit" class="btn btn-success" value="Register" /> <input type="reset" class="btn btn-success" value="Reset" /></p>
+                <p><input type="submit" class="btn btn-success" value="Save changes" /></p>                
             </form>
         </div>
     </div>
