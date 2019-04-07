@@ -2,13 +2,6 @@
 if(session_id() == '' || !isset($_SESSION)){session_start();}
     
 include ('config.php');
-
-if(isset($_SESSION["email"])){
-  $res = $mysqli->query("SELECT * FROM users");
-  $row = mysqli_fetch_array($res);
-}
-
-
 ?>
 <!DOCTYPE html>
 
@@ -36,9 +29,9 @@ if(isset($_SESSION["email"])){
         </div>
         <div class="col-xs-8">
           <form action="editprofile.php">
-            <p>Name: <?php echo $row["full_name"] ?></p>
-            <p>Email: <?php echo $row["email"] ?></p>
-            <p>Phone number: <?php echo $row['phone']?></p>
+            <p>Name: <?php echo $_SESSION["full_name"]; ?></p>
+            <p>Email: <?php echo $_SESSION["email"]; ?></p>
+            <p>Phone number: <?php echo $_SESSION["phone"]; ?></p>
             <p><button type="submit" class="btn btn-primary">Edit</button></p>
           </form>
         </div>         
