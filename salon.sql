@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2019 at 01:16 PM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: Apr 08, 2019 at 05:28 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.1.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,6 +47,26 @@ INSERT INTO `booking` (`bookingid`, `date`, `time`, `email`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `stock`
+--
+
+CREATE TABLE `stock` (
+  `prod_id` varchar(10) NOT NULL,
+  `prod_name` varchar(225) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stock`
+--
+
+INSERT INTO `stock` (`prod_id`, `prod_name`, `qty`, `price`) VALUES
+('QWE1234', 'Test Item', 12, 12.5);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -76,6 +96,12 @@ INSERT INTO `users` (`email`, `full_name`, `password`, `phone`, `role`) VALUES
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`bookingid`),
   ADD KEY `email` (`email`);
+
+--
+-- Indexes for table `stock`
+--
+ALTER TABLE `stock`
+  ADD PRIMARY KEY (`prod_id`);
 
 --
 -- Indexes for table `users`

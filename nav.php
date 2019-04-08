@@ -20,7 +20,7 @@ if(isset($_SESSION['email'])){
 				else if($_SESSION['role'] == "admin")
                 {
                 echo"<li><a href='managebook.php'>Manage Appointments</a></li>";
-				echo"<li><a href=#>Inventory</a></li>";
+				echo"<li><a href='allstock.php'>Inventory</a></li>";
                 }	
 			}
 echo"</ul>";
