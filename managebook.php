@@ -60,7 +60,7 @@ ORDER BY    `booking`.bookingid");
 			  echo '<td>'.$obj->status.'</td>';
             echo '<td><a href="bookconfirm.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-primary">Confirm</button></a>';
 			  echo '<td><a href="reshedule.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-warning">Reschedule</button></a>';
-                echo '<td><a  href="cancelbooking.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-danger">Cancel </button></a>';
+                echo '<td><a  href="bookcancel.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-danger">Cancel </button></a>';
 			  
 
 			  echo'</tr>';
