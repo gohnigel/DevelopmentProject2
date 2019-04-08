@@ -40,6 +40,7 @@ include ('config.php');
                         <th style="width:60%;">Date</th>
                         <th style="width:60%;">Time</th>
                         <th style="width:40%;">Status</th>
+                        <th style="width:60%;">Confirm Appointment</th>
                         <th style="width:60%;">Reshedule Appointment</th>
                         <th style="width:60%;">Cancel Appointment</th>
                     </tr>
@@ -57,6 +58,7 @@ ORDER BY    `booking`.bookingid");
 			  echo '<td>'.$obj->date.'</td>';
 			  echo '<td>'.$obj->time.'</td>';
 			  echo '<td>'.$obj->status.'</td>';
+            echo '<td><a href="bookconfirm.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-primary">Confirm</button></a>';
 			  echo '<td><a href="reshedule.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-warning">Reschedule</button></a>';
                 echo '<td><a  href="cancelbooking.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-danger">Cancel </button></a>';
 			  
