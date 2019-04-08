@@ -2,9 +2,9 @@
 
 include 'config.php';
 
-$fullname = $_POST["full_name"];
-$email = $_POST["Email"];
-$phone = $_POST["phone"];
+$fullname = $_GET['full_name'];
+$email = $_GET['Email'];
+$phone = $_GET['phone'];
 
 $result = $mysqli->query("UPDATE users SET full_name='$fullname', Email='$email', phone='$phone' WHERE Email='$email'");
 
@@ -20,9 +20,5 @@ else
     header ("location:editprofile.php");
 
 }
-
-$_SESSION["full_name"] = $fullname;
-$_SESSION["Email"] = $email;
-$_SESSION["phone"] = $phone;
 
 ?>

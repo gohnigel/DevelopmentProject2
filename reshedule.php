@@ -30,19 +30,18 @@ $id = $_GET['bookingid'];
             <!--Dont Remove This line(Displays the users name)-->
             <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
             <p>Select a new date and time to reshedule</p>
-            <form method="POST" action="newreshedule.php">
+            <form method="GET" action="newreshedule.php">
                 <div id="reshedule">
                     <h4>Booking Reference</h4>
                     <?php echo"<input type='text' name = 'bookref' value=' $id'>" ?>
 
-                    <p><label for="Date">Date :</label></p>
-                    <p><input type="date" name="date"></p>
+                    <p><label for="date">Date :</label></p>
+                    <p><input type="date" name="date" id="date"></p>
                     <p><label for="time">Time :</label></p>
-                    <p><input type="time" name="time"></p>
+                    <p><input type="time" name="time" id="time"></p>
 
                 </div>
-                <p><input type="submit" name="submit" class="btn btn-success" value="Make Appointment" />
-                    </p>
+                <p><input type="submit" name="submit" class="btn btn-success" value="Reschedule Appointment" /></p>
             </form>
 
 

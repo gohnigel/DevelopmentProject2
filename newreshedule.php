@@ -3,9 +3,9 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     
 include ('config.php');
 
-$date = $_POST["date"];
-$time = $_POST["time"];
-$id = $_POST['bookref']; 
+$date = $_GET["date"];
+$time = $_GET["time"];
+$id = $_GET['bookref']; 
 
 echo $date;
 echo $time;

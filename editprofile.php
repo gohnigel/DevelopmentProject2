@@ -32,14 +32,22 @@ include ('config.php');
     </div>
     <div class="row content">
         <div class="col-xs-12">
-            <form method="POST" action="savechanges.php">
+            <form method="GET" action="savechanges.php">
                 <div id="login">
-                    <p><label for="fullname">Full name :</label></p>
-                    <p><input type="text" name="full_name" id="fullname" value="<?php $fullname = $_SESSION['full_name']; echo $fullname; ?>"/></p>
-                    <p><label for="Email">Enter your Email :</label></p>
-                    <p><input type="email" name="Email" id="Email" value="<?php $email = $_SESSION['email']; echo $email; ?>"/></p>
-                    <p><label for="Phone">Phone Number :</label></p>
-                    <p><input type="text" name="phone" id="phone" value="<?php $phone = $_SESSION['phone']; echo $phone; ?>"//></p>
+                   <?php
+                    $user = $_SESSION["email"];
+                    $result = $mysqli->query("SELECT * from users where email='".$user."'");
+                    if($result) {
+                      while($obj = $result->fetch_object()) {
+                        echo "<p><label for='fullname'>Full name :</label></p>";
+                        echo "<p><input type='text' name='full_name' id='fullname' value='".$obj->full_name."'/></p>";
+                        echo "<p><label for='Email'>Email :</label></p>";
+                        echo "<p><input type='text' name='Email' id='Email' value='".$obj->email."'/></p>";
+                        echo "<p><label for='phone'>Phone :</label></p>";
+                        echo "<p><input type='text' name='phone' id='phone' value='".$obj->phone."'/></p>";
+                      }
+                    }
+                  ?>
                 </div>
                 <p><input type="submit" class="btn btn-success" value="Save changes" /></p>                
             </form>

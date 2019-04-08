@@ -28,12 +28,18 @@ include ('config.php');
             <img src="images/profile.png" alt="Profile picture"/>
         </div>
         <div class="col-xs-8">
-          <form action="editprofile.php">
-            <p>Name: <?php echo $_SESSION["full_name"]; ?></p>
-            <p>Email: <?php echo $_SESSION["email"]; ?></p>
-            <p>Phone number: <?php echo $_SESSION["phone"]; ?></p>
-            <p><button type="submit" class="btn btn-primary">Edit</button></p>
-          </form>
+           <?php
+              $user = $_SESSION["email"];
+              $result = $mysqli->query("SELECT * from users where email='".$user."'");
+              if($result) {
+                while($obj = $result->fetch_object()) {
+                  echo "<p>Name: ".$obj->full_name."</p>";
+                  echo "<p>Email: ".$obj->email."</p>";
+                  echo "<p>Phone: ".$obj->phone."</p>";
+                }
+              }
+        ?>
+          <p><a href="editprofile.php"><button class="btn btn-primary">Edit</button></a></p>
         </div>         
     </div>
 
