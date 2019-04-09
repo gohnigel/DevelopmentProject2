@@ -3,6 +3,8 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     
 include ('config.php');
 $id = $_GET['bookingid']; 
+$date = $_GET['date'];
+$time = $_GET['time'];
 
 ?>
 <!DOCTYPE html>
@@ -33,12 +35,12 @@ $id = $_GET['bookingid'];
             <form method="GET" action="newreshedule.php">
                 <div id="reshedule">
                     <h4>Booking Reference</h4>
-                    <?php echo"<input type='text' name = 'bookref' value=' $id'>" ?>
+                    <?php echo"<p><input type='text' name = 'bookref' value=' $id' /></p>"; ?>
 
                     <p><label for="date">Date :</label></p>
-                    <p><input type="date" name="date" id="date" required></p>
+                    <?php echo "<p><input type='date' name='date' id='date' value='$date' required></p>"; ?>
                     <p><label for="time">Time :</label></p>
-                    <p><input type="time" name="time" id="time" required></p>
+                    <?php echo "<p><input type='time' name='time' id='time' value= '$time' required></p>"; ?>
 
                 </div>
                 <p><input type="submit" name="submit" class="btn btn-success" value="Reschedule Appointment" /></p>

@@ -51,7 +51,7 @@ include ('config.php');
 			  echo '<td>'.$obj->date.'</td>';
 			  echo '<td>'.$obj->time.'</td>';
 			  echo '<td>'.$obj->status.'</td>';
-			  echo '<td><a href="reshedule.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-warning">Reschedule</button></a>';
+			  echo '<td><a href="reshedule.php?bookingid=' .$obj->bookingid. '&date=' .$obj->date. '&time=' .$obj->time. '"><button class="btn btn-warning">Reschedule</button></a>';
                 echo '<td><a  href="cancelbooking.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-danger">Cancel </button></a>';
 			  
 
