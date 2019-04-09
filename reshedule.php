@@ -36,9 +36,9 @@ $id = $_GET['bookingid'];
                     <?php echo"<input type='text' name = 'bookref' value=' $id'>" ?>
 
                     <p><label for="date">Date :</label></p>
-                    <p><input type="date" name="date" id="date"></p>
+                    <p><input type="date" name="date" id="date" required></p>
                     <p><label for="time">Time :</label></p>
-                    <p><input type="time" name="time" id="time"></p>
+                    <p><input type="time" name="time" id="time" required></p>
 
                 </div>
                 <p><input type="submit" name="submit" class="btn btn-success" value="Reschedule Appointment" /></p>

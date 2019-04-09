@@ -40,17 +40,17 @@ if(isset($_SESSION["email"])){
             <form method="POST" action="newregister.php">
                 <div id="login">
                     <p><label for="fullname">Full name :</label></p>
-                    <p><input type="text" name="full_name" id="fullname" /></p>
+                    <p><input type="text" name="full_name" id="fullname" required/></p>
                     <p><label for="Email">Enter your Email :</label></p>
-                    <p><input type="email" name="Email" id="Email" /></p>
+                    <p><input type="email" name="Email" id="Email" required/></p>
                     <p><label for="ReEmail">Re-enter your Email :</label></p>
-                    <p><input type="email" name="ReEmail" id="ReEmail" /></p>
+                    <p><input type="email" name="ReEmail" id="ReEmail" required/></p>
                     <p><label for="Phone">Phone Number :</label></p>
-                    <p><input type="text" name="phone" id="phone" /></p>
+                    <p><input type="text" name="phone" id="phone"required /></p>
                     <p><label for="Password">Enter your Password :</label></p>
-                    <p><input type="password" name="Password" id="Password" /></p>
+                    <p><input type="password" name="Password" id="Password" required/></p>
                     <p><label for="RePassword">Re-enter your Password :</label></p>
-                    <p><input type="password" name="RePassword" id="RePassword" /></p>
+                    <p><input type="password" name="RePassword" id="RePassword" required/></p>
                 </div>
                 <p><input type="submit" class="btn btn-success" value="Register" /> <input type="reset" class="btn btn-success" value="Reset" /></p>
             </form>

@@ -31,7 +31,7 @@ include ('config.php');
             <form method="POST" action="confirmbooking.php">
                 <div id="booking">
                     <p><label for="service">Choose your Services :</label></p>
-                    <select id="services" name="services" >
+                    <select id="services" name="services">
                         <option value="haircutting">Hair Cutting</option>
                         <option value="styling">Styling</option>
                         <option value="body_waxing">Body Waxing</option>
@@ -40,9 +40,9 @@ include ('config.php');
                     </select>
 
                     <p><label for="Date">Date :</label></p>
-                    <p><input type="date" name="date"></p>
+                    <p><input type="date" name="date" required></p>
                     <p><label for="time">Time :</label></p>
-                    <p><input type="time" name="time"></p>
+                    <p><input type="time" name="time" required></p>
 
                 </div>
                 <p><input type="submit" name="submit" class="btn btn-success" value="Make Appointment" />

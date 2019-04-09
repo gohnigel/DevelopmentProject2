@@ -31,13 +31,13 @@ include ('config.php');
             <form method="POST" action="addedstock.php">
                 <div id="booking">
                     <p><label for="service">Product Id</label></p>
-                    <input type="text" name="prod_id">
+                    <input type="text" name="prod_id" required>
                     <p><label for="service">Inventory Name</label></p>
-                    <input type="text" name="prod_inventory">
+                    <input type="text" name="prod_inventory" required>
                     <p><label for="service">Quantity Avaiable</label></p>
-                    <input type="text" name="prod_qty">
+                    <input type="text" name="prod_qty" required>
                     <p><label for="service">Price</label></p>
-                    <p><input type="text" name="prod_price"></p>
+                    <p><input type="text" name="prod_price" required></p>
 
                 </div>
                 <p><input type="submit" name="submit" class="btn btn-success" value="Add to Inventory" />

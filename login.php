@@ -42,9 +42,9 @@ if(isset($_SESSION["email"])){
             <form method="POST" action="verify.php">
                 <div id="login">
                     <p><label for="email">Email :</label></p>
-                    <p><input type="text" name="email" id="email" /></p>
+                    <p><input type="text" name="email" id="email" required/></p>
                     <p><label for="passwrd">Password :</label></p>
-                    <p><input type="password" name="password" id="password" /></p>
+                    <p><input type="password" name="password" id="password" required/></p>
                 </div>
                 <p><input type="submit" class="btn btn-primary" value="Log in" />  <input type="reset" class="btn btn-primary" value="Reset" /></p>
             </form>
