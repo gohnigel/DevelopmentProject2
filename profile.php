@@ -34,14 +34,16 @@ if($_SESSION["role"]!="client") {
 <body>
     <div class="row content">
         <div class="col-xs-4">
-            <img src="images/profile.png" alt="Profile picture"/>
-        </div>
-        <div class="col-xs-8">
            <?php
               $user = $_SESSION["email"];
               $result = $mysqli->query("SELECT * from users where email='".$user."'");
               if($result) {
                 while($obj = $result->fetch_object()) {
+                  echo "<img src='images/$obj->image' alt='Profile picture'/>";
+                ?>
+        </div>
+        <div class="col-xs-8">
+           <?php
                   echo "<p>Name: ".$obj->full_name."</p>";
                   echo "<p>Email: ".$obj->email."</p>";
                   echo "<p>Phone: ".$obj->phone."</p>";

@@ -53,6 +53,8 @@ if($_SESSION["role"]!="client") {
                         echo "<p><input type='text' name='Email' id='Email' value='".$obj->email."'/></p>";
                         echo "<p><label for='phone'>Phone :</label></p>";
                         echo "<p><input type='text' name='phone' id='phone' value='".$obj->phone."'/></p>";
+                        echo "<p><label for='image'>Image :</label></p>";
+                        echo "<p><input type='file' name='image' id='image' value='".$obj->image."'/></p>";
                       }
                     }
                   ?>
