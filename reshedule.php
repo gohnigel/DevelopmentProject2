@@ -6,6 +6,14 @@ $id = $_GET['bookingid'];
 $date = $_GET['date'];
 $time = $_GET['time'];
 
+if(!isset($_SESSION["email"])) {
+  header("location:login.php");
+}
+
+if($_SESSION["role"]!="client") {
+  header("location:index.php");
+}
+
 ?>
 <!DOCTYPE html>
 
