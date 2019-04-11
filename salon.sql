@@ -75,7 +75,7 @@ CREATE TABLE `users` (
   `full_name` varchar(225) NOT NULL,
   `password` varchar(225) NOT NULL,
   `phone` int(10) NOT NULL,
-  `role` varchar(50) NOT NULL
+  `role` varchar(50) NOT NULL,
   `image` varbinary(2000000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -84,8 +84,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`email`, `full_name`, `password`, `phone`, `role`, `image`) VALUES
-('isal@salon.com', 'Isal Korale', '1234', 12345678, 'client'),
-('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin');
+('isal@salon.com', 'Isal Korale', '1234', 12345678, 'client', 'images/profile.png'),
+('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin', '');
 
 --
 -- Indexes for dumped tables
