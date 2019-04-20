@@ -31,7 +31,7 @@ if($_SESSION["role"]!="admin") {
 	?>
 
 <body>
-    <button onclick="goBack()" style="margin-left:20px;">&laquo; Back</button>
+    <button onclick="goBack()" style="margin-left:20px;" class="btn btn-info">&laquo; Back</button>
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
