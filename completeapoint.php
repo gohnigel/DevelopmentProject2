@@ -31,6 +31,7 @@ if($_SESSION["role"]!="admin") {
 	?>
 
 <body>
+    <button onclick="goBack()" style="margin-left:20px;">&laquo; Back</button>
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
@@ -94,6 +95,11 @@ ORDER BY    `booking`.bookingid
                     }
                 }
             }
+        }
+
+
+        function goBack() {
+            window.history.back();
         }
 
     </script>

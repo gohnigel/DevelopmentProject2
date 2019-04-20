@@ -31,6 +31,7 @@ if($_SESSION["role"]!="admin") {
 	?>
 
 <body>
+    <button onclick="goBack()" style="margin-left:20px;">&laquo; Back</button>
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
@@ -42,18 +43,18 @@ if($_SESSION["role"]!="admin") {
         </div>
         <div class="col-xs-8">
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Customer Name" style="margin-top:20px;width:50%;margin-left:10%;"><br>
-                <table id="myTable" class="table table-active">
-                    <tr class="header">
-                        <th style="width:40%;">Booking ID</th>
-                        <th style="width:40%;">Customer Name</th>
-                        <th style="width:60%;">Date</th>
-                        <th style="width:60%;">Time</th>
-                        <th style="width:40%;">Status</th>
-                        <th style="width:60%;">Confirm Appointment</th>
-                        <th style="width:60%;">Reshedule Appointment</th>
-                        <th style="width:60%;">Cancel Appointment</th>
-                    </tr>
-                    <?php
+            <table id="myTable" class="table table-active">
+                <tr class="header">
+                    <th style="width:40%;">Booking ID</th>
+                    <th style="width:40%;">Customer Name</th>
+                    <th style="width:60%;">Date</th>
+                    <th style="width:60%;">Time</th>
+                    <th style="width:40%;">Status</th>
+                    <th style="width:60%;">Confirm Appointment</th>
+                    <th style="width:60%;">Reshedule Appointment</th>
+                    <th style="width:60%;">Cancel Appointment</th>
+                </tr>
+                <?php
           $user = $_SESSION["email"];
           $result = $mysqli->query("SELECT      `booking`.bookingid, `users`.`full_name`, `booking`.`date`, `booking`.`time`, `booking`.`status`
 FROM        `booking`
@@ -79,33 +80,38 @@ ORDER BY    `booking`.bookingid
             }
           }
         ?>
-                </table>
+            </table>
 
 
 
 
-            </div>
         </div>
-    
-        <script>
-            function myFunction() {
-                var input, filter, table, tr, td, i;
-                input = document.getElementById("myInput");
-                filter = input.value.toUpperCase();
-                table = document.getElementById("myTable");
-                tr = table.getElementsByTagName("tr");
-                for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[1];
-                    if (td) {
-                        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                            tr[i].style.display = "";
-                        } else {
-                            tr[i].style.display = "none";
-                        }
+    </div>
+
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
                     }
                 }
             }
-        </script>
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+    </script>
 
 
 
