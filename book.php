@@ -48,6 +48,20 @@ if($_SESSION["role"]!="client") {
                         <option value="hair_care_services">HairCare Services</option>
                     </select>
 
+                    <br>
+                    <br>
+                    <?php
+                    $user = $_SESSION["role"];
+                    $result = $mysqli->query("SELECT * from users where role='admin'");
+                    echo "<p><label for='chooseStylist'>Choose Your Stylist :</label></p>";
+                        echo "<select name='stylist'>";
+                      if($result) {
+                      while($obj = $result->fetch_object()) {
+                        echo "<option value='.$obj->full_name.' >$obj->full_name</option>";
+                          }
+                        echo "</select>";
+                    }
+                  ?>
                     <p><label for="Date">Date :</label></p>
                     <p><input type="date" name="date" required></p>
                     <p><label for="time">Time :</label></p>
@@ -59,7 +73,7 @@ if($_SESSION["role"]!="client") {
             </form>
 
 
-            
+
         </div>
 
 
