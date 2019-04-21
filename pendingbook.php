@@ -56,7 +56,7 @@ if($_SESSION["role"]!="admin") {
                 </tr>
                 <?php
           $user = $_SESSION["email"];
-          $result = $mysqli->query("SELECT      `booking`.bookingid, `users`.`full_name`, `booking`.`date`, `booking`.`time`, `booking`.`status`
+          $result = $mysqli->query("SELECT      `booking`.bookingid, `users`.`full_name`, `booking`.`date`, `booking`.`time`, `booking`.`status`, `booking`.`email`
 FROM        `booking`
 INNER JOIN  `users` ON `booking`.email = `users`.email
 WHERE `status` = 'pending' OR `status` = 'Please Reshedule' OR `status` = 'Resheduled'
@@ -70,9 +70,9 @@ ORDER BY    `booking`.bookingid
 			  echo '<td>'.$obj->date.'</td>';
 			  echo '<td>'.$obj->time.'</td>';
 			  echo '<td>'.$obj->status.'</td>';
-            echo '<td><a href="bookconfirm.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-primary">Confirm</button></a>';
-			  echo '<td><a href="staffreshedule.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-warning">Reschedule</button></a>';
-                echo '<td><a  href="bookcancel.php?bookingid=' .$obj->bookingid. '"><button class="btn btn-danger">Cancel </button></a>';
+            echo '<td><a href="bookconfirm.php?bookingid=' .$obj->bookingid. '&email='.$obj->email. '&full_name='.$obj->full_name.'&status='.$obj->status.'"><button class="btn btn-primary">Confirm</button></a>';
+			  echo '<td><a href="staffreshedule.php?bookingid=' .$obj->bookingid. '&email='.$obj->email. '&full_name='.$obj->full_name.'&status='.$obj->status.'"><button class="btn btn-warning">Reschedule</button></a>';
+                echo '<td><a  href="bookcancel.php?bookingid=' .$obj->bookingid. '&email='.$obj->email. '&full_name='.$obj->full_name.'&status='.$obj->status.'"><button class="btn btn-danger">Cancel </button></a>';
 			  
 
 			  echo'</tr>';
