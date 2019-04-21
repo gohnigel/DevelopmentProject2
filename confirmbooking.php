@@ -16,9 +16,10 @@ $bookid = uniqid();
 $services = $_POST["services"];
 $date = $_POST["date"];
 $time = $_POST["time"];
+$staff = $_POST["stylist"];
 $email = $_SESSION['email'];
 
-if($mysqli->query("INSERT INTO booking (`bookingid`, `date`, `time`, `email`, `status`) VALUES('$bookid', '$date', '$time', '$email', 'pending')")){
+if($mysqli->query("INSERT INTO booking (`bookingid`, `date`, `time`, `full_name`, `email`, `status`) VALUES('$bookid', '$date', '$time', '$staff', '$email', 'pending')")){
 }
 else
 {
@@ -58,6 +59,7 @@ else
                     <?php echo '<p>Customer Name :' .$_SESSION['full_name'] .'</p>'; ?>
                     <?php echo '<p>Date :' .$date .'</p>'; ?>
                     <?php echo '<p>Time :' .$time .'</p>'; ?>
+                    <?php echo '<p>Stylist :' .$staff  .'</p>'; ?>
                     <?php echo '<p>Service :' .$services .'</p>'; ?>
                     <p> Status: Pending Confirmation</p>
                 </div>
