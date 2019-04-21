@@ -66,15 +66,17 @@ CREATE TABLE `stock` (
   `prod_id` varchar(10) NOT NULL,
   `prod_name` varchar(225) NOT NULL,
   `qty` int(11) NOT NULL,
-  `price` double NOT NULL
+  `price` double NOT NULL,
+  `desc` varchar(225),
+  `colour` varchar(225)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock`
 --
 
-INSERT INTO `stock` (`prod_id`, `prod_name`, `qty`, `price`) VALUES
-('QWE1234', 'Test Item', 12, 12.5);
+INSERT INTO `stock` (`prod_id`, `prod_name`, `qty`, `price`, `desc`, `colour`) VALUES
+('QWE1234', 'Test Item', 12, 12.5, '', '');
 
 -- --------------------------------------------------------
 

@@ -41,12 +41,15 @@ if($_SESSION["role"]!="admin") {
         <div class="col-xs-2">
         </div>
         <div class="col-xs-8">
-                <table id="myTable" class="table table-active">
+                <table id="myTable" class="table table-active table-hover">
                     <tr class="header">
-                        <th style="width:40%;">Product ID</th>
-                        <th style="width:40%;">Item Name</th>
-                        <th style="width:60%;">Qty Avaiable</th>
-                        <th style="width:60%;">Price</th>
+                        <th style="width:13%;">Product ID</th>
+                        <th style="width:13%;">Item Name</th>
+                        <th style="width:13%;">Qty Avaiable</th>
+                        <th style="width:13%;">Price</th>
+                        <th style="width:13%;">Description</th>  
+                        <th style="width:13%;">Colour</th> 
+                        <th style="width:13%;">Total price</th>                     
                     </tr>
                     <?php
           $user = $_SESSION["email"];
@@ -57,8 +60,10 @@ if($_SESSION["role"]!="admin") {
               echo '<td>'.$obj->prod_id.'</td>';
               echo '<td>'.$obj->prod_name.'</td>';
 			  echo '<td>'.$obj->qty.'</td>';
-			  echo '<td>'.$obj->price.'</td>';
-			 
+			  echo '<td>$'.$obj->price.'</td>';
+              echo '<td>'.$obj->desc.'</td>';
+			  echo '<td>'.$obj->colour.'</td>';
+              echo '<td>$'.$obj->qty * $obj->price.'</td>';
 			  echo'</tr>';
 
             }

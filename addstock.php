@@ -39,15 +39,18 @@ if($_SESSION["role"]!="admin") {
             <p>Add Inventory Item</p>
             <form method="POST" action="addedstock.php">
                 <div id="booking">
-                    <p><label for="service">Product Id</label></p>
-                    <input type="text" name="prod_id" required>
-                    <p><label for="service">Inventory Name</label></p>
-                    <input type="text" name="prod_inventory" required>
-                    <p><label for="service">Quantity Avaiable</label></p>
-                    <input type="text" name="prod_qty" required>
-                    <p><label for="service">Price</label></p>
-                    <p><input type="text" name="prod_price" required></p>
-
+                    <p><label for="prod_id">Product Id</label></p>
+                    <input type="text" name="prod_id" id="prod_id" required>
+                    <p><label for="prod_inventory">Inventory Name</label></p>
+                    <input type="text" name="prod_inventory" id="prod_inventory" required>
+                    <p><label for="prod_qty">Quantity Avaiable</label></p>
+                    <input type="text" name="prod_qty" id="prod_qty" required>
+                    <p><label for="prod_price">Price</label></p>
+                    <p><input type="text" name="prod_price" id="prod_price" required></p>
+                    <p><label for="prod_desc">Description</label></p>
+                    <p><input type="text" name="prod_desc" id="prod_desc"></p>
+                    <p><label for="prod_colour">Colour</label></p>
+                    <p><input type="text" name="prod_colour" id="prod_colour"></p>
                 </div>
                 <p><input type="submit" name="submit" class="btn btn-success" value="Add to Inventory" />
                     <input type="reset" class="btn btn-success" value="Clear Form" /></p>
