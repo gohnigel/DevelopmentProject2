@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2019 at 04:58 PM
+-- Generation Time: Apr 22, 2019 at 08:44 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -32,7 +32,7 @@ CREATE TABLE `booking` (
   `bookingid` varchar(225) NOT NULL,
   `date` date NOT NULL,
   `time` varchar(20) NOT NULL,
-    `full_name` varchar(225) NOT NULL,
+  `full_name` varchar(225) NOT NULL,
   `email` varchar(225) NOT NULL,
   `status` varchar(225) NOT NULL,
   `notes` varchar(225) NOT NULL
@@ -43,18 +43,36 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`bookingid`, `date`, `time`, `full_name`, `email`, `status`, `notes`) VALUES
-('5ca9db90d5ddd', '2019-04-02', '14:06','Staff member', 'isal@salon.com', 'pending', ''),
-('5cb5eaae3281e', '2019-05-25', '14:00','Staff member', 'nigel@salon.com', 'Completed', 'Used a salon package but didnt use the conditioner included'),
-('5cb5eabc11665', '2019-05-25', '14:00','Staff member', 'nigel@salon.com', 'Confirmed', ''),
-('5cb5eacd3e410', '2019-05-12', '17:00','Staff member', 'nigel@salon.com', 'Canceled', ''),
-('5cb5eade733f5', '2019-05-05', '12:00','Staff member', 'nigel@salon.com', 'pending', ''),
-('5cb5eb3492151', '2019-05-01', '13:30','Staff member', 'Ignatius@salon.com', 'pending', ''),
-('5cb5eb447723d', '2019-04-10', '18:30','Staff member', 'Ignatius@salon.com', 'pending', ''),
-('5cb5eb51dc323', '2019-05-19', '17:30','Staff member', 'Ignatius@salon.com', 'Confirmed', ''),
-('5cb5eb773e65d', '2019-05-18', '18:30','Staff member', 'Ignatius@salon.com', 'Confirmed', ''),
-('5cb5ebba197a4', '2019-05-12', '16:30','Staff member', 'isal@salon.com', 'pending', ''),
-('5cb5ebcaf0520', '2019-05-17', '15:30','Staff member', 'isal@salon.com', 'Completed', 'No Notes Added'),
-('5cb5ebd98ead7', '2019-05-02', '18:30','Staff member', 'isal@salon.com', 'pending', '');
+('5ca9db90d5ddd', '2019-04-02', '14:06', 'Staff member', 'isal@salon.com', 'pending', ''),
+('5cb5eaae3281e', '2019-05-25', '14:00', 'Staff member', 'nigel@salon.com', 'Completed', 'Used a salon package but didnt use the conditioner included'),
+('5cb5eabc11665', '2019-05-25', '14:00', 'Staff member', 'nigel@salon.com', 'Confirmed', ''),
+('5cb5eacd3e410', '2019-05-12', '17:00', 'Staff member', 'nigel@salon.com', 'Canceled', ''),
+('5cb5eade733f5', '2019-05-05', '12:00', 'Staff member', 'nigel@salon.com', 'pending', ''),
+('5cb5eb3492151', '2019-05-01', '13:30', 'Staff member', 'Ignatius@salon.com', 'pending', ''),
+('5cb5eb447723d', '2019-04-10', '18:30', 'Staff member', 'Ignatius@salon.com', 'pending', ''),
+('5cb5eb51dc323', '2019-05-19', '17:30', 'Staff member', 'Ignatius@salon.com', 'Confirmed', ''),
+('5cb5eb773e65d', '2019-05-18', '18:30', 'Staff member', 'Ignatius@salon.com', 'Confirmed', ''),
+('5cb5ebba197a4', '2019-05-12', '16:30', 'Staff member', 'isal@salon.com', 'pending', ''),
+('5cb5ebcaf0520', '2019-05-17', '15:30', 'Staff member', 'isal@salon.com', 'Completed', 'No Notes Added'),
+('5cb5ebd98ead7', '2019-05-02', '18:30', 'Staff member', 'isal@salon.com', 'pending', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` varchar(50) NOT NULL,
+  `product_code` varchar(225) NOT NULL,
+  `product_name` varchar(225) NOT NULL,
+  `product_desc` varchar(225) NOT NULL,
+  `price` int(10) NOT NULL,
+  `qty` int(10) NOT NULL,
+  `total` int(10) NOT NULL,
+  `date` date NOT NULL,
+  `status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -67,8 +85,8 @@ CREATE TABLE `stock` (
   `prod_name` varchar(225) NOT NULL,
   `qty` int(11) NOT NULL,
   `price` double NOT NULL,
-  `desc` varchar(225),
-  `colour` varchar(225)
+  `desc` varchar(225) DEFAULT NULL,
+  `colour` varchar(225) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
