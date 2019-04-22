@@ -22,6 +22,7 @@ if(isset($_SESSION['email'])){
                 echo"<li><a href='managebook.php'>Manage Appointments</a></li>";
 				echo"<li><a href='allstock.php'>Inventory</a></li>";
 				echo"<li><a href='addstock.php'>Add Inventory</a></li>";
+                echo"<li><a href='staffperformance.php'>Staff Performance</a></li>";
                 }	
 			}
 echo"</ul>";

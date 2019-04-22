@@ -1,0 +1,91 @@
+<?php
+if(session_id() == '' || !isset($_SESSION)){session_start();}
+    
+include ('config.php');
+
+if(!isset($_SESSION["email"])) {
+  header("location:login.php");
+}
+
+if($_SESSION["role"]!="admin") {
+  header("location:index.php");
+}
+?>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Salon</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/gui.css" />
+</head>
+<header>
+    <div class=banner-div>
+        <img class="banner" src="images/banner.JPG" alt="banner">
+    </div>
+</header>
+
+<?php
+		include ('nav.php');
+	?>
+
+<body>
+    <div class="row content">
+        <div class="col-xs-12">
+            <!--Dont Remove This line(Displays the users name)-->
+            <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
+            <h5> Staff Mode</h5>
+            <p><b>Your Currently viewing all Staff Performance</b></p>
+        </div>
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-8">
+           <br>
+            <table id="myTable" class="table table-active">
+                <tr class="header">
+                    <th>Staff Name</th>
+                    <th>Number of times chosen by Customer </th>
+                </tr>
+                <?php
+          $user = $_SESSION["email"];
+          $result = $mysqli->query("SELECT users.full_name, (SELECT COUNT(full_name) FROM booking) as StaffCount
+FROM booking
+INNER JOIN users ON booking.full_name = users.full_name
+GROUP BY 1");
+          if($result) {
+            while($obj = $result->fetch_object()) {
+			  echo '<tr>';
+              echo '<td>'.$obj->full_name.'</td>';
+              echo '<td>'.$obj->StaffCount.'</td>';
+			  echo'</tr>';
+            }
+          }
+        ?>
+            </table>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/slideshow.js"></script>
+
+</body>
+<?php
+		include ('footer.php');
+	?>
+
+</html>
