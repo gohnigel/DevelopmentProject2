@@ -26,7 +26,7 @@ if($_SESSION["role"]!="client") {
 
 <body>
     <header>
-        <div class=banner-div>
+        <div class="banner-div">
             <img class="banner" src="images/banner.JPG" alt="banner">
         </div>
     </header>
