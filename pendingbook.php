@@ -32,17 +32,18 @@ if($_SESSION["role"]!="admin") {
 
 <body>
     <button onclick="goBack()" style="margin-left:20px;" class="btn btn-info">&laquo; Back</button>
+    <div class="container-fluid">
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
             <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
             <h5> Staff Mode</h5>
-            <p><b>Your Currently viewing all pending appointments</b></p>
+            <p><strong>Your Currently viewing all pending appointments</strong></p>
+            <p><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Customer Name" style="margin-top:20px;width:50%"></p>
         </div>
-        <div class="col-xs-2">
-        </div>
-        <div class="col-xs-8">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Customer Name" style="margin-top:20px;width:50%;margin-left:10%;"><br>
+      </div>
+    <div class="row">       
+        <div class="col-xs-12">
             <table id="myTable" class="table table-active">
                 <tr class="header">
                     <th style="width:40%;">Booking ID</th>
@@ -87,6 +88,7 @@ ORDER BY    `booking`.bookingid
 
         </div>
     </div>
+  </div>
 
     <script>
         function myFunction() {

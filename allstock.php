@@ -31,27 +31,28 @@ if($_SESSION["role"]!="admin") {
 	?>
 
 <body>
+   <div class="container-fluid">
     <div class="row content">
+      <div class="col-xs-12">
+          <!--Dont Remove This line(Displays the users name)-->
+          <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
+          <h5> Staff Mode</h5>
+          <p>Your Currently viewing all stock available</p>
+      </div>
+    </div>
+    <div class="row">
         <div class="col-xs-12">
-            <!--Dont Remove This line(Displays the users name)-->
-            <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
-            <h5> Staff Mode</h5>
-            <p>Your Currently viewing all stock available</p>
-        </div>
-        <div class="col-xs-2">
-        </div>
-        <div class="col-xs-8">
                 <table id="myTable" class="table table-active table-hover">
                     <tr class="header">
-                        <th style="width:13%;">Product ID</th>
-                        <th style="width:13%;">Item Name</th>
-                        <th style="width:13%;">Brand</th>
-                        <th style="width:13%;">Qty Avaiable</th>
-                        <th style="width:13%;">Price</th>
-                        <th style="width:13%;">Description</th> 
-                        <th style="width:13%;">Total price</th>
-                        <th style="width:13%;">Edit product</th> 
-                        <th style="width:13%;">Cancel product</th>                      
+                        <th style="width:11%;">Product ID</th>
+                        <th style="width:11%;">Item Name</th>
+                        <th style="width:11%;">Brand</th>
+                        <th style="width:11%;">Qty Avaiable</th>
+                        <th style="width:11%;">Price</th>
+                        <th style="width:11%;">Description</th> 
+                        <th style="width:11%;">Total price</th>
+                        <th style="width:11%;">Edit product</th> 
+                        <th style="width:11%;">Cancel product</th>                      
                     </tr>
                     <?php
           $user = $_SESSION["email"];
@@ -77,6 +78,7 @@ if($_SESSION["role"]!="admin") {
 
             </div>
         </div>
+  </div>  
         
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
