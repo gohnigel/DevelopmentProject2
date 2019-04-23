@@ -22,6 +22,8 @@ SET time_zone = "+00:00";
 -- Database: `salon`
 --
 
+CREATE DATABASE `salon`;
+
 -- --------------------------------------------------------
 
 --
@@ -82,18 +84,18 @@ CREATE TABLE `orders` (
 CREATE TABLE `stock` (
   `prod_id` varchar(10) NOT NULL,
   `prod_name` varchar(225) NOT NULL,
+  `brand` varchar(225) NOT NULL,
   `qty` int(11) NOT NULL,
   `price` double NOT NULL,
-  `desc` varchar(225) DEFAULT NULL,
-  `colour` varchar(225) DEFAULT NULL
+  `desc` varchar(225) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock`
 --
 
-INSERT INTO `stock` (`prod_id`, `prod_name`, `qty`, `price`, `desc`, `colour`) VALUES
-('QWE1234', 'Test Item', 12, 12.5, '', '');
+INSERT INTO `stock` (`prod_id`, `prod_name`, `brand`, `qty`, `price`, `desc`) VALUES
+('QWE1234', 'Test Item', 'Test Brand', 12, 12.5, '');
 
 -- --------------------------------------------------------
 

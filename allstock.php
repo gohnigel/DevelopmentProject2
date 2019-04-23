@@ -45,10 +45,10 @@ if($_SESSION["role"]!="admin") {
                     <tr class="header">
                         <th style="width:13%;">Product ID</th>
                         <th style="width:13%;">Item Name</th>
+                        <th style="width:13%;">Brand</th>
                         <th style="width:13%;">Qty Avaiable</th>
                         <th style="width:13%;">Price</th>
-                        <th style="width:13%;">Description</th>  
-                        <th style="width:13%;">Colour</th> 
+                        <th style="width:13%;">Description</th> 
                         <th style="width:13%;">Total price</th>
                         <th style="width:13%;">Edit product</th> 
                         <th style="width:13%;">Cancel product</th>                      
@@ -61,12 +61,12 @@ if($_SESSION["role"]!="admin") {
 			  echo '<tr>';
               echo '<td>'.$obj->prod_id.'</td>';
               echo '<td>'.$obj->prod_name.'</td>';
+              echo '<td>'.$obj->brand.'</td>';  
 			  echo '<td>'.$obj->qty.'</td>';
 			  echo '<td>$'.$obj->price.'</td>';
               echo '<td>'.$obj->desc.'</td>';
-			  echo '<td>'.$obj->colour.'</td>';
               echo '<td>$'.$obj->qty * $obj->price.'</td>';
-              echo '<td><a href="editstock.php?prod_id='.$obj->prod_id.'&prod_name='.$obj->prod_name.'&qty='.$obj->qty.'&price='.$obj->price.'&desc='.$obj->desc.'&colour='.$obj->colour.'"><button class="btn btn-primary">Edit stock</button></a></td>';
+              echo '<td><a href="editstock.php?prod_id='.$obj->prod_id.'&prod_name='.$obj->prod_name.'&brand='.$obj->brand.'&qty='.$obj->qty.'&price='.$obj->price.'&desc='.$obj->desc.'"><button class="btn btn-primary">Edit stock</button></a></td>';
               echo '<td><a href="deletestock.php?prod_id='.$obj->prod_id.'"><button class="btn btn-danger" onclick="if(!confirm(\'Are you sure you want to delete this stock?\')) return false;">Delete stock</button></a></td>';
 			  echo'</tr>';
 

@@ -6,20 +6,20 @@ include ('config.php');
 
 $id = $_POST["prod_id"];
 $inventory = $_POST["prod_inventory"];
+$brand = $_POST["prod_brand"];
 $qty = $_POST["prod_qty"];
 $price = $_POST['prod_price'];
 $desc = $_POST["prod_desc"];
-$colour = $_POST["prod_colour"];
 
 echo $id;
 echo $inventory;
+echo $brand;
 echo $qty;
 echo $price;
 echo $desc;
-echo $colour;
 
 
-if($mysqli->query("INSERT INTO stock (`prod_id`, `prod_name`, `qty`, `price`, `desc`, `colour`) VALUES('$id', '$inventory', '$qty', '$price', '$desc', '$colour')")){
+if($mysqli->query("INSERT INTO stock (`prod_id`, `prod_name`, `brand`, `qty`, `price`, `desc`) VALUES('$id', '$inventory', '$brand', '$qty', '$price', '$desc')")){
     echo"Added Success";
     header("Location: allstock.php");
 }

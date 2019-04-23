@@ -4,10 +4,10 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 include ('config.php');
 $id = $_GET['prod_id'];
 $name = $_GET['prod_name'];
+$brand = $_GET['brand'];
 $qty = $_GET['qty'];
 $price = $_GET['price'];
 $desc = $_GET['desc'];
-$colour = $_GET['colour'];
 
 if(!isset($_SESSION["email"])) {
   header("location:login.php");
@@ -47,14 +47,14 @@ if(!isset($_SESSION["email"])) {
                         echo "<p><input type='text' name='prod_id' id='prod_id' value='".$id."'/></p>";
                         echo "<p><label for='prod_name'>Name :</label></p>";
                         echo "<p><input type='text' name='prod_name' id='prod_name' value='".$name."'/></p>";
+                        echo "<p><label for='brand'>Brand :</label></p>";
+                        echo "<p><input type='text' name='brand' id='brand' value='".$brand."'/></p>";
                         echo "<p><label for='qty'>Quantity :</label></p>";
                         echo "<p><input type='text' name='qty' id='qty' value='".$qty."'/></p>";
                         echo "<p><label for='price'>Price :</label></p>";
                         echo "<p><input type='text' name='price' id='price' value='".$price."'/></p>";
                         echo "<p><label for='desc'>Description :</label></p>";
                         echo "<p><input type='text' name='desc' id='desc' value='".$desc."'/></p>";
-                        echo "<p><label for='colour'>Colour :</label></p>";
-                        echo "<p><input type='text' name='colour' id='colour' value='".$colour."'/></p>";
                   ?>
                 </div>
                 <p><input type="submit" name="submit" class="btn btn-success" value="Save changes" /></p>
