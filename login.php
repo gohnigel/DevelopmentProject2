@@ -16,13 +16,13 @@ if(isset($_SESSION["email"])){
 
 <html lang="en">
 
-<head>
-    <title>Salon</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/gui.css" />
-</head>
+  <head>
+      <title>Salon</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" type="text/css" href="css/gui.css" />
+  </head>
 
-<body>
+  <body>
     <header>
         <div class=banner-div>
             <img class="banner" src="images/banner.JPG" alt="banner">
@@ -37,21 +37,23 @@ if(isset($_SESSION["email"])){
         <p>Enter Your Registered Email and Password</p>
     </div>
 
-    <div class="row content">
-        <div class="col-xs-12">
-            <form method="POST" action="verify.php">
-                <div id="login">
-                    <p><label for="email">Email :</label></p>
-                    <p><input type="text" name="email" id="email" required/></p>
-                    <p><label for="passwrd">Password :</label></p>
-                    <p><input type="password" name="password" id="password" required/></p>
-                </div>
-                <p><input type="submit" class="btn btn-primary" value="Log in" />  <input type="reset" class="btn btn-primary" value="Reset" /></p>
-            </form>
-        </div>
+    <div class="container-fluid">
+      <div class="row content">
+          <div class="col-xs-12">
+              <form method="POST" action="verify.php">
+                  <div id="login">
+                      <p><label for="email">Email :</label></p>
+                      <p><input type="text" name="email" id="email" required/></p>
+                      <p><label for="passwrd">Password :</label></p>
+                      <p><input type="password" name="password" id="password" required/></p>
+                  </div>
+                  <p><input type="submit" class="btn btn-primary" value="Log in" />  <input type="reset" class="btn btn-primary" value="Reset" /></p>
+              </form>
+          </div>
+      </div>
     </div>
 
-    </body>
+  </body>
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>

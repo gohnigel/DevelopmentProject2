@@ -38,6 +38,7 @@ if(!isset($_SESSION["email"])) {
         <h2>Edit stock</h2>
         <p>Edit details in here</p>
     </div>
+  <div class="container-fluid">   
     <div class="row content">
         <div class="col-xs-12">
             <form method="GET" action="savestock.php">
@@ -60,11 +61,8 @@ if(!isset($_SESSION["email"])) {
                 <p><input type="submit" name="submit" class="btn btn-success" value="Save changes" /></p>
           </form>            
         </div>
-
-
-
-
     </div>
+  </div>  
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>

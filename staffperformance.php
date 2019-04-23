@@ -21,7 +21,7 @@ if($_SESSION["role"]!="admin") {
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
 </head>
 <header>
-    <div class=banner-div>
+    <div class="banner-div">
         <img class="banner" src="images/banner.JPG" alt="banner">
     </div>
 </header>
@@ -31,6 +31,7 @@ if($_SESSION["role"]!="admin") {
 	?>
 
 <body>
+  <div class="container-fluid"> 
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
@@ -38,8 +39,8 @@ if($_SESSION["role"]!="admin") {
             <h5> Staff Mode</h5>
             <p><b>Your Currently viewing all Staff Performance</b></p>
         </div>
-        <div class="col-xs-2">
-        </div>
+    </div>
+    <div class="row">
         <div class="col-xs-8">
            <br>
             <table id="myTable" class="table table-active">
@@ -69,12 +70,7 @@ GROUP BY 1");
 
         </div>
     </div>
-
-
-
-
-
-
+  </div>
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
     <!-- All Bootstrap plug-ins file -->

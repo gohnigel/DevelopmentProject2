@@ -32,6 +32,7 @@ if($_SESSION["role"]!="admin") {
 	?>
 
 <body>
+  <div class="container-fluid"> 
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
@@ -55,15 +56,9 @@ if($_SESSION["role"]!="admin") {
                 <p><input type="submit" name="submit" class="btn btn-success" value="Add to Inventory" />
                     <input type="reset" class="btn btn-success" value="Clear Form" /></p>
             </form>
-
-
-            
         </div>
-
-
-
-
     </div>
+  </div>  
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>

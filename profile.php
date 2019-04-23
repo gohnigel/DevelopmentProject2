@@ -32,6 +32,7 @@ if($_SESSION["role"]!="client") {
 	?>
 
 <body>
+   <div class="container-fluid">
     <div class="row content">
         <div class="col-xs-4">
            <?php
@@ -53,6 +54,7 @@ if($_SESSION["role"]!="client") {
           <p><a href="editprofile.php"><button class="btn btn-primary">Edit</button></a></p>
         </div>         
     </div>
+  </div>  
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>

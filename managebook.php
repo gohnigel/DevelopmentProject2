@@ -21,7 +21,7 @@ if($_SESSION["role"]!="admin") {
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
 </head>
 <header>
-    <div class=banner-div>
+    <div class="banner-div">
         <img class="banner" src="images/banner.JPG" alt="banner">
     </div>
 </header>
@@ -31,22 +31,24 @@ if($_SESSION["role"]!="admin") {
 	?>
 
 <body>
+   <div class="container-fluid">
     <div class="row content">
-        <div class="col-xs-12">
-            <!--Dont Remove This line(Displays the users name)-->
-            <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
-            <h5> Staff Mode</h5>
-            <p><b>Select One of the following buttons to manage appointments</b></p>
-        </div>
-        <div class="col-xs">
-        </div>
-          <a href="pendingbook.php"><button type="button" class="btn btn-primary">View Pending Appointments</button></a>
-          <a href="confirmedbook.php"><button type="button" class="btn btn-primary">View Confirmed Appointments</button></a>
-          <a href="completeapoint.php"><button type="button" class="btn btn-primary">View Completed Appointments</button></a>
-          <a href="canceledbook.php"><button type="button" class="btn btn-primary">View Cancelled Appointments</button></a>
-
-
-        </div>
+      <div class="col-xs-12">
+          <!--Dont Remove This line(Displays the users name)-->
+          <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
+          <h5> Staff Mode</h5>
+          <p><b>Select One of the following buttons to manage appointments</b></p>
+      </div>
+     </div>
+     <div class="row content">
+      <div class="col-xs-12">
+      <a href="pendingbook.php"><button type="button" class="btn btn-primary">View Pending Appointments</button></a>
+        <a href="confirmedbook.php"><button type="button" class="btn btn-primary">View Confirmed Appointments</button></a>
+        <a href="completeapoint.php"><button type="button" class="btn btn-primary">View Completed Appointments</button></a>
+        <a href="canceledbook.php"><button type="button" class="btn btn-primary">View Cancelled Appointments</button></a>
+      </div>
+      </div>
+    </div>    
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>

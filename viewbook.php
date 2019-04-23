@@ -31,15 +31,16 @@ if($_SESSION["role"]!="client") {
 	?>
 
 <body>
+   <div class="container-fluid">
     <div class="row content">
+      <div class="col-xs-12">
+          <!--Dont Remove This line(Displays the users name)-->
+          <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
+          <p>Showing All Your Appointments</p>
+      </div>
+    </div>
+    <div class="row">
         <div class="col-xs-12">
-            <!--Dont Remove This line(Displays the users name)-->
-            <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
-            <p>Showing All Your Appointments</p>
-        </div>
-        <div class="col-xs-2">
-        </div>
-        <div class="col-xs-8">
                 <table id="myTable" class="table table-active">
                     <tr class="header">
                         <th style="width:40%;">Booking ID</th>
@@ -69,12 +70,9 @@ if($_SESSION["role"]!="client") {
           }
         ?>
                 </table>
-
-
-
-
             </div>
-        </div>
+          </div>
+      </div>
 
 
 

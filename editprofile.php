@@ -38,6 +38,7 @@ if($_SESSION["role"]!="client") {
         <h2>Edit profile</h2>
         <p>Edit details in here</p>
     </div>
+  <div class="container-fluid">
     <div class="row content">
         <div class="col-xs-12">
             <form method="GET" action="savechanges.php">
@@ -63,6 +64,7 @@ if($_SESSION["role"]!="client") {
             </form>
         </div>
     </div>
+  </div>  
 
 </body>
 

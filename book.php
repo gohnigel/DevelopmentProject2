@@ -32,6 +32,7 @@ if($_SESSION["role"]!="client") {
 	?>
 
 <body>
+   <div class="container-fluid">
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
@@ -75,11 +76,8 @@ if($_SESSION["role"]!="client") {
 
 
         </div>
-
-
-
-
     </div>
+  </div>
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>

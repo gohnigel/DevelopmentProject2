@@ -31,53 +31,52 @@ if($_SESSION["role"]!="admin") {
 	?>
 
 <body>
-    <button onclick="goBack()" style="margin-left:20px;" class="btn btn-info">&laquo; Back</button>
+  <button onclick="goBack()" style="margin-left:20px;" class="btn btn-info">&laquo; Back</button>
+  <div class="container-fluid">
     <div class="row content">
-        <div class="col-xs-12">
-            <!--Dont Remove This line(Displays the users name)-->
-            <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
-            <h5> Staff Mode</h5>
-            <p><b>Your Currently viewing all Completed appointments</b></p>
-        </div>
-        <div class="col-xs-2">
-        </div>
-        <div class="col-xs-8">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Customer Name" style="margin-top:20px;width:50%;margin-left:10%;"><br>
-            <table id="myTable" class="table table-active">
-                <tr class="header">
-                    <th style="width:40%;">Booking ID</th>
-                    <th style="width:40%;">Customer Name</th>
-                    <th style="width:60%;">Date</th>
-                    <th style="width:60%;">Time</th>
-                    <th style="width:60%;">Notes</th>
-                </tr>
-                <?php
-          $user = $_SESSION["email"];
-          $result = $mysqli->query("SELECT      `booking`.bookingid, `users`.`full_name`, `booking`.`date`, `booking`.`time`, `booking`.`notes`
+      <div class="col-xs-12">
+          <!--Dont Remove This line(Displays the users name)-->
+          <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
+          <h5> Staff Mode</h5>
+          <p><strong>Your Currently viewing all Completed appointments</strong></p>
+          <p><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Customer Name" style="margin-top:20px;width:50%"></p>
+      </div>
+    </div>    
+      <div class="row">
+      <div class="col-xs-12">
+
+          <table id="myTable" class="table table-active">
+              <tr class="header">
+                  <th style="width:40%;">Booking ID</th>
+                  <th style="width:40%;">Customer Name</th>
+                  <th style="width:60%;">Date</th>
+                  <th style="width:60%;">Time</th>
+                  <th style="width:60%;">Notes</th>
+              </tr>
+              <?php
+        $user = $_SESSION["email"];
+        $result = $mysqli->query("SELECT      `booking`.bookingid, `users`.`full_name`, `booking`.`date`, `booking`.`time`, `booking`.`notes`
 FROM        `booking`
 INNER JOIN  `users` ON `booking`.email = `users`.email
 WHERE `status` = 'Completed'
 ORDER BY    `booking`.bookingid
 ");
-          if($result) {
-            while($obj = $result->fetch_object()) {
-			  echo '<tr>';
-              echo '<td>'.$obj->bookingid.'</td>';
-              echo '<td>'.$obj->full_name.'</td>';
-			  echo '<td>'.$obj->date.'</td>';
-			  echo '<td>'.$obj->time.'</td>';
-			  echo '<td>'.$obj->notes.'</td>';
-			  echo'</tr>';
-            }
+        if($result) {
+          while($obj = $result->fetch_object()) {
+            echo '<tr>';
+            echo '<td>'.$obj->bookingid.'</td>';
+            echo '<td>'.$obj->full_name.'</td>';
+            echo '<td>'.$obj->date.'</td>';
+            echo '<td>'.$obj->time.'</td>';
+            echo '<td>'.$obj->notes.'</td>';
+            echo'</tr>';
           }
-        ?>
-            </table>
-
-
-
-
-        </div>
+        }
+      ?>
+          </table>
+      </div>
     </div>
+  </div>
     <script>
         function myFunction() {
             var input, filter, table, tr, td, i;

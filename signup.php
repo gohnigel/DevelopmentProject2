@@ -31,32 +31,35 @@ if(isset($_SESSION["email"])){
     <?php
 		include ('nav.php');
 	?>
+   
     <div class="registermessage">
-        <h2>Register</h2>
-        <p>Fill in the below details to start using our services</p>
+          <h2>Register</h2>
+          <p>Fill in the below details to start using our services</p>
     </div>
-    <div class="row content">
-        <div class="col-xs-12">
-            <form method="POST" name="validateregister" action="newregister.php" enctype="multipart/form-data" autocomplete="off">
-                <div id="login">
-                    <p><label for="fullname">Full name :</label></p>
-                    <p><input type="text" name="full_name" id="fullname" required /></p>
-                    <p><label for="Email">Enter your Email :</label></p>
-                    <p><input type="email" name="Email" id="Email" required /></p>
-                    <p><label for="ReEmail">Re-enter your Email :</label></p>
-                    <p><input type="email" name="ReEmail" id="ReEmail" required /></p>
-                    <p><label for="Phone">Phone Number :</label></p>
-                    <p><input type="text" name="phone" id="phone" required /></p>
-                    <p><label for="Password">Enter your Password :</label></p>
-                    <p><input type="password" name="Password" id="Password" required /></p>
-                    <p><label for="RePassword">Re-enter your Password :</label></p>
-                    <p><input type="password" name="RePassword" id="RePassword" required /></p>
-                    <p><label for="image">Select image :</label></p>
-                    <p id='image'><input type='file' name='image' id='image' required/></p>
-                </div>
-                <p><input type="submit" class="btn btn-success" value="Register" /> <input type="reset" class="btn btn-success" value="Reset" /></p>
-            </form>
-        </div>
+    <div class="container-fluid">
+      <div class="row content">
+          <div class="col-xs-12">
+              <form method="POST" name="validateregister" action="newregister.php" enctype="multipart/form-data" autocomplete="off">
+                  <div id="login">
+                      <p><label for="fullname">Full name :</label></p>
+                      <p><input type="text" name="full_name" id="fullname" required /></p>
+                      <p><label for="Email">Enter your Email :</label></p>
+                      <p><input type="email" name="Email" id="Email" required /></p>
+                      <p><label for="ReEmail">Re-enter your Email :</label></p>
+                      <p><input type="email" name="ReEmail" id="ReEmail" required /></p>
+                      <p><label for="Phone">Phone Number :</label></p>
+                      <p><input type="text" name="phone" id="phone" required /></p>
+                      <p><label for="Password">Enter your Password :</label></p>
+                      <p><input type="password" name="Password" id="Password" required /></p>
+                      <p><label for="RePassword">Re-enter your Password :</label></p>
+                      <p><input type="password" name="RePassword" id="RePassword" required /></p>
+                      <p><label for="image">Select image :</label></p>
+                      <p id='image'><input type='file' name='image' id='image' required/></p>
+                  </div>
+                  <p><input type="submit" class="btn btn-success" value="Register" /> <input type="reset" class="btn btn-success" value="Reset" /></p>
+              </form>
+          </div>
+      </div>
     </div>
 
 </body>
