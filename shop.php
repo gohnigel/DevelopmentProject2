@@ -51,12 +51,13 @@ if($_SESSION["role"]!="client") {
 
             while($obj = $result->fetch_object()) {
 
-              echo '<div class="col-xs-3">';
+              echo '<div class="col-xs-4" id="shopGrid">';
               echo '<p><h3 style="margin-top:80px">'.$obj->prod_name.'</h3></p>';
               echo '<p><strong>Product Code</strong>: '.$obj->prod_id.'</p>';
                 echo '<p><strong>Brand</strong>: '.$obj->brand.'</p>';
               echo '<p><strong>Qty Available</strong>: '.$obj->qty.'</p>';
               echo '<p><strong>Price</strong>: '.$obj->price.'</p>';
+                echo '<p><strong>Description</strong>: '.$obj->desc.'</p>';
                 echo '<input type="text" placeholder="enter your quantity">';
                 
 
