@@ -30,8 +30,9 @@ if(!isset($_SESSION["email"])) {
 </header>
 
 <?php
-		include ('nav.php');
-	?>
+  $currentPage = 'All stock';
+  include ('nav.php');
+?>
 
 <body>
    <div class="registermessage">

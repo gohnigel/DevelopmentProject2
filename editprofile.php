@@ -2,6 +2,9 @@
 if(session_id() == '' || !isset($_SESSION)){session_start();}
     
 include ('config.php');
+$full_name = $_GET['full_name'];
+$email = $_GET['email'];
+$phone = $_GET['phone'];
 
 if(!isset($_SESSION["email"])) {
   header("location:login.php");
@@ -32,6 +35,7 @@ if($_SESSION["role"]!="client") {
     </header>
 
     <?php
+        $currentPage = 'Customer profile';
 		include ('nav.php');
 	?>
     <div class="registermessage">
@@ -41,23 +45,17 @@ if($_SESSION["role"]!="client") {
   <div class="container-fluid">
     <div class="row content">
         <div class="col-xs-12">
-            <form method="GET" action="savechanges.php">
+            <form method="POST" action="savechanges.php" enctype="multipart/form-data" autocomplete="off">
                 <div id="login">
                    <?php
-                    $user = $_SESSION["email"];
-                    $result = $mysqli->query("SELECT * from users where email='".$user."'");
-                    if($result) {
-                      while($obj = $result->fetch_object()) {
                         echo "<p><label for='fullname'>Full name :</label></p>";
-                        echo "<p><input type='text' name='full_name' id='fullname' value='".$obj->full_name."'/></p>";
+                        echo "<p><input type='text' name='full_name' id='fullname' value='".$full_name."' required/></p>";
                         echo "<p><label for='Email'>Email :</label></p>";
-                        echo "<p><input type='text' name='Email' id='Email' value='".$obj->email."'/></p>";
+                        echo "<p><input type='text' name='Email' id='Email' value='".$email."' required/></p>";
                         echo "<p><label for='phone'>Phone :</label></p>";
-                        echo "<p><input type='text' name='phone' id='phone' value='".$obj->phone."'/></p>";
+                        echo "<p><input type='text' name='phone' id='phone' value='".$phone."' required/></p>";
                         echo "<p><label for='image'>Image :</label></p>";
-                        echo "<p id='image'><input type='file' name='image' id='image' value='".$obj->image."'/></p>";
-                      }
-                    }
+                        echo "<p id='image'><input type='file' name='image' id='image' required/></p>";
                   ?>
                 </div>
                 <p><input type="submit" class="btn btn-success" value="Save changes" /></p>                

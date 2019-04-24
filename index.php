@@ -14,11 +14,10 @@
 </header>
 
 <?php
-		include ('nav.php');
+  $currentPage = 'Home';
+  include ('nav.php');
     
 ?>
-
-
 
 <body>
 

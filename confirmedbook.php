@@ -27,8 +27,9 @@ if($_SESSION["role"]!="admin") {
 </header>
 
 <?php
-		include ('nav.php');
-	?>
+  $currentPage = 'Manage book';
+  include ('nav.php');
+?>
 
 <body>
     <button onclick="goBack()" style="margin-left:20px;" class="btn btn-info">&laquo; Back</button>

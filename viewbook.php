@@ -27,8 +27,9 @@ if($_SESSION["role"]!="client") {
 </header>
 
 <?php
-		include ('nav.php');
-	?>
+  $currentPage = 'View client';
+  include ('nav.php');
+?>
 
 <body>
    <div class="container-fluid">

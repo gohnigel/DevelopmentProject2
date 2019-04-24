@@ -21,16 +21,18 @@ if($_SESSION["role"]!="client") {
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
 </head>
 <header>
-    <div class=banner-div>
+    <div class="banner-div">
         <img class="banner" src="images/banner.JPG" alt="banner">
     </div>
 </header>
 
 <?php
-		include ('nav.php');
-	?>
+  $currentPage = 'Shop';
+  include ('nav.php');
+?>
 
 <body>
+   <div class="container-fluid">
     <div class="row content">
         <div class="col-xs-12">
             <h1>Shop</h1>
@@ -79,6 +81,7 @@ if($_SESSION["role"]!="client") {
           ?>
         </div>
     </div>
+  </div>  
 
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->

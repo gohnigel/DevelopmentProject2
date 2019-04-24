@@ -29,6 +29,7 @@ if(isset($_SESSION["email"])){
     </header>
 
     <?php
+        $currentPage = 'Sign up';
 		include ('nav.php');
 	?>
    

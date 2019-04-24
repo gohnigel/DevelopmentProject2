@@ -28,8 +28,9 @@ if($_SESSION["role"]!="admin") {
 </header>
 
 <?php
-		include ('nav.php');
-	?>
+  $currentPage = 'Add stock';
+  include ('nav.php');
+?>
 
 <body>
   <div class="container-fluid"> 

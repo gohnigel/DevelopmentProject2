@@ -30,6 +30,7 @@ if(isset($_SESSION["email"])){
     </header>
 
     <?php
+        $currentPage = 'Login';
 		include ('nav.php');
 	?>
     <div class="loginmessage">

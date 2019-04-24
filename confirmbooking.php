@@ -45,8 +45,9 @@ else
 </header>
 
 <?php
-		include ('nav.php');
-	?>
+  $currentPage = 'Book now';
+  include ('nav.php');
+?>
 
 <body>
     <div class="row content">
@@ -55,12 +56,12 @@ else
             <h3>Booking Placed</h3>
             <h4>One of our staff members will confirm your booking shortly.</h4>
                 <div id="booking">
-                    <?php echo '<p>Booking Ref :' .$bookid .'</p>'; ?>
-                    <?php echo '<p>Customer Name :' .$_SESSION['full_name'] .'</p>'; ?>
-                    <?php echo '<p>Date :' .$date .'</p>'; ?>
-                    <?php echo '<p>Time :' .$time .'</p>'; ?>
-                    <?php echo '<p>Stylist :' .$staff  .'</p>'; ?>
-                    <?php echo '<p>Service :' .$services .'</p>'; ?>
+                    <?php echo '<p>Booking Ref: ' .$bookid .'</p>'; ?>
+                    <?php echo '<p>Customer Name: ' .$_SESSION['full_name'] .'</p>'; ?>
+                    <?php echo '<p>Date: ' .$date .'</p>'; ?>
+                    <?php echo '<p>Time: ' .$time .'</p>'; ?>
+                    <?php echo '<p>Stylist: ' .$staff  .'</p>'; ?>
+                    <?php echo '<p>Service: ' .$services .'</p>'; ?>
                     <p> Status: Pending Confirmation</p>
                 </div>
                 <p><a class="btn btn-success" href=viewbook.php>Manage Appointments</a></p>

@@ -28,8 +28,9 @@ if($_SESSION["role"]!="client") {
 </header>
 
 <?php
-		include ('nav.php');
-	?>
+  $currentPage = 'Book now';
+  include ('nav.php');
+?>
 
 <body>
    <div class="container-fluid">
@@ -40,7 +41,8 @@ if($_SESSION["role"]!="client") {
             <p>Fill in the below form to make an appointment</p>
             <form method="POST" action="confirmbooking.php">
                 <div id="booking">
-                    <p><label for="service">Choose your Services :</label></p>
+                  <p><label for="services">Choose your Services :</label></p>
+                  <p>
                     <select id="services" name="services">
                         <option value="haircutting">Hair Cutting</option>
                         <option value="styling">Styling</option>
@@ -48,25 +50,23 @@ if($_SESSION["role"]!="client") {
                         <option value="hair_colouring">Hair Colouring</option>
                         <option value="hair_care_services">HairCare Services</option>
                     </select>
-
-                    <br>
-                    <br>
+                  </p>
                     <?php
                     $user = $_SESSION["role"];
                     $result = $mysqli->query("SELECT * from users where role='admin'");
-                    echo "<p><label for='chooseStylist'>Choose Your Stylist :</label></p>";
-                        echo "<select name='stylist'>";
+                    echo "<p><label for='stylist'>Choose Your Stylist :</label></p>";
+                        echo "<p><select name='stylist' id='stylist'>";
                       if($result) {
                       while($obj = $result->fetch_object()) {
-                        echo "<option value='.$obj->full_name.' >$obj->full_name</option>";
+                        echo "<option value='$obj->full_name' >$obj->full_name</option>";
                           }
-                        echo "</select>";
+                        echo "</select></p>";
                     }
                   ?>
-                    <p><label for="Date">Date :</label></p>
-                    <p><input type="date" name="date" required></p>
-                    <p><label for="time">Time :</label></p>
-                    <p><input type="time" name="time" required></p>
+                  <p><label for="Date">Date :</label></p>
+                  <p><input type="date" name="date" id="date" required></p>
+                  <p><label for="time">Time :</label></p>
+                  <p><input type="time" name="time" id="time" required></p>
 
                 </div>
                 <p><input type="submit" name="submit" class="btn btn-success" value="Make Appointment" />

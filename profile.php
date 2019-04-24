@@ -28,8 +28,9 @@ if($_SESSION["role"]!="client") {
 </header>
 
 <?php
-		include ('nav.php');
-	?>
+    $currentPage = 'Customer profile';
+    include ('nav.php');
+?>
 
 <body>
    <div class="container-fluid">
@@ -40,7 +41,7 @@ if($_SESSION["role"]!="client") {
               $result = $mysqli->query("SELECT * from users where email='".$user."'");
               if($result) {
                 while($obj = $result->fetch_object()) {
-                  echo "<img src='images/$obj->image' alt='Profile picture'/>";
+                  echo "<img class='proim' src='images/$obj->image' alt='Profile picture'/>";
                 ?>
         </div>
         <div class="col-xs-8">
@@ -48,10 +49,10 @@ if($_SESSION["role"]!="client") {
                   echo "<p>Name: ".$obj->full_name."</p>";
                   echo "<p>Email: ".$obj->email."</p>";
                   echo "<p>Phone: ".$obj->phone."</p>";
+                  echo "<p><a href='editprofile.php?full_name=".$obj->full_name."&email=".$obj->email."&phone=".$obj->phone."'><button class='btn btn-primary'>Edit</button></a></p>";
                 }
               }
         ?>
-          <p><a href="editprofile.php"><button class="btn btn-primary">Edit</button></a></p>
         </div>         
     </div>
   </div>  

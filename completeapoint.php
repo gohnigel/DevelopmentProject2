@@ -21,14 +21,15 @@ if($_SESSION["role"]!="admin") {
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
 </head>
 <header>
-    <div class=banner-div>
+    <div class="banner-div">
         <img class="banner" src="images/banner.JPG" alt="banner">
     </div>
 </header>
 
 <?php
-		include ('nav.php');
-	?>
+  $currentPage = 'Manage book';
+  include ('nav.php');
+?>
 
 <body>
   <button onclick="goBack()" style="margin-left:20px;" class="btn btn-info">&laquo; Back</button>
@@ -47,11 +48,11 @@ if($_SESSION["role"]!="admin") {
 
           <table id="myTable" class="table table-active">
               <tr class="header">
-                  <th style="width:40%;">Booking ID</th>
-                  <th style="width:40%;">Customer Name</th>
-                  <th style="width:60%;">Date</th>
-                  <th style="width:60%;">Time</th>
-                  <th style="width:60%;">Notes</th>
+                  <th style="width:20%;">Booking ID</th>
+                  <th style="width:20%;">Customer Name</th>
+                  <th style="width:20%;">Date</th>
+                  <th style="width:20%;">Time</th>
+                  <th style="width:20%;">Notes</th>
               </tr>
               <?php
         $user = $_SESSION["email"];

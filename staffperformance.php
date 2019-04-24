@@ -27,8 +27,9 @@ if($_SESSION["role"]!="admin") {
 </header>
 
 <?php
-		include ('nav.php');
-	?>
+  $currentPage = 'Staff performance';
+  include ('nav.php');
+?>
 
 <body>
   <div class="container-fluid"> 
