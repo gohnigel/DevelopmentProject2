@@ -6,6 +6,8 @@
     <title>Salon</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
+        <link rel="stylesheet" type="text/css" href="css/foundation.css" />
+
 </head>
 <header>
     <div class=banner-div>
@@ -64,9 +66,7 @@
   </div>
 
     <div class="row content">
-      <div class="col-xs-12">   
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus commodo nulla, non dignissim arcu tincidunt maximus. Nulla eget vestibulum mi. In condimentum lectus eget tellus egestas ultrices. Aenean aliquet tempus neque, sed rutrum nulla lacinia et. Etiam volutpat enim eu vestibulum egestas. Etiam luctus quis diam ut bibendum. Aliquam tortor odio, suscipit quis efficitur at, congue pretium tellus. Morbi ullamcorper accumsan ligula in laoreet. Vestibulum blandit massa in purus mollis molestie. Curabitur elementum massa ut quam faucibus, sed egestas mauris tincidunt. Vestibulum faucibus massa laoreet pharetra dignissim. Nam eget eleifend nulla. Maecenas fringilla tellus eget odio volutpat, eu gravida mi blandit. Mauris a faucibus neque, sit amet tristique felis.</p>
-      </div>
+ 
     </div> 
   </div>
 

@@ -19,6 +19,8 @@ if($_SESSION["role"]!="admin") {
     <title>Salon</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
+        <link rel="stylesheet" type="text/css" href="css/foundation.css" />
+
 </head>
 <header>
     <div class=banner-div>
@@ -53,7 +55,7 @@ if($_SESSION["role"]!="admin") {
                         <th style="width:11%;">Description</th> 
                         <th style="width:11%;">Total price</th>
                         <th style="width:11%;">Edit product</th> 
-                        <th style="width:11%;">Cancel product</th>                      
+                        <th style="width:13%;">Delete product</th>                      
                     </tr>
                     <?php
           $user = $_SESSION["email"];

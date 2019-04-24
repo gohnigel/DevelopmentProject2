@@ -19,6 +19,7 @@ if($_SESSION["role"]!="client") {
     <title>Salon</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
+    <link rel="stylesheet" type="text/css" href="css/foundation.css" />
 </head>
 <header>
     <div class=banner-div>

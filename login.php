@@ -16,13 +16,15 @@ if(isset($_SESSION["email"])){
 
 <html lang="en">
 
-  <head>
-      <title>Salon</title>
-      <link href="css/bootstrap.min.css" rel="stylesheet" />
-      <link rel="stylesheet" type="text/css" href="css/gui.css" />
-  </head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salon</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/gui.css" />
+    <link rel="stylesheet" type="text/css" href="css/foundation.css" />
+</head>
 
-  <body>
+<body>
     <header>
         <div class=banner-div>
             <img class="banner" src="images/banner.JPG" alt="banner">
@@ -33,38 +35,59 @@ if(isset($_SESSION["email"])){
         $currentPage = 'Login';
 		include ('nav.php');
 	?>
-    <div class="loginmessage">
-        <h2>Login</h2>
-        <p>Enter Your Registered Email and Password</p>
-    </div>
 
-    <div class="container-fluid">
-      <div class="row content">
-          <div class="col-xs-12">
-              <form method="POST" action="verify.php">
-                  <div id="login">
-                      <p><label for="email">Email :</label></p>
-                      <p><input type="text" name="email" id="email" required/></p>
-                      <p><label for="passwrd">Password :</label></p>
-                      <p><input type="password" name="password" id="password" required/></p>
-                  </div>
-                  <p><input type="submit" class="btn btn-primary" value="Log in" />  <input type="reset" class="btn btn-primary" value="Reset" /></p>
-              </form>
-          </div>
-      </div>
-    </div>
+  
+    <form method="POST" action="verify.php" style="margin-top:100px;margin-left:200px">
+        <div class="row">
+            <div class="small-8">
+                <h3 align="center">Enter Your Registered Email and Password</h3>
 
-  </body>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <label for="right-label" class="right inline" placeholder="Staff@Salon.com">Email</label>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type="email" name="email" id="right-label" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <label for="right-label" class="right inline">Password</label>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type="password" name="password" id="right-label" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-4 columns">
+                    </div>
+                    <div class="small-8 columns">
 
-    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
-    <!-- All Bootstrap plug-ins file -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Basic AngularJS -->
-    <script src="js/angular.min.js"></script>
-    
-     <?php
+                        <input type="submit" class="btn btn-primary" value="Log in" id="right-label" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;" /> <input type="reset" class="btn btn-primary" value="Reset" id="right-label" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div class="row" style="margin-top:10px;">
+        <div class="small-12">
+
+
+
+            <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+            <script src="js/jquery.min.js"></script>
+            <!-- All Bootstrap plug-ins file -->
+            <script src="js/bootstrap.min.js"></script>
+            <!-- Basic Angular
+</div>JS -->
+            <script src="js/angular.min.js"></script>
+
+            <?php
 		include ('footer.php');
 	?>
+        </div>
+    </div>
+</body>
 
 </html>

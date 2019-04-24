@@ -19,6 +19,7 @@ if(isset($_SESSION["email"])){
     <title>Salon</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
+    <link rel="stylesheet" type="text/css" href="css/foundation.css" />
 </head>
 
 <body>
@@ -32,67 +33,120 @@ if(isset($_SESSION["email"])){
         $currentPage = 'Sign up';
 		include ('nav.php');
 	?>
-   
-    <div class="registermessage">
-          <h2>Register</h2>
-          <p>Fill in the below details to start using our services</p>
+
+    <form method="POST" name="validateregister" action="newregister.php" enctype="multipart/form-data" autocomplete="off">
+        <div class="row">
+            <h3 align="center"> Fill in the below details to register for our services</h3>
+            <div class="small-8">
+
+                <div class="row">
+                    
+            
+                    <div class="small-4 columns">
+                    
+                        <label for="right-label" class="right inline">Full Name</label>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type="text" name="full_name" id="right-label" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <label for="right-label" class="right inline">Email:</label>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type="email" name="Email" id="right-label" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <label for="right-label" class="right inline">Re-enter your Email :</label>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type="email" name="ReEmail" id="right-label" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <label for="right-label" class="right inline">Phone Number</label>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type="text" name="phone" id="right-label" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <label for="right-label" class="right inline">Enter your Password</label>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type="password" name="Password" id="right-label" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <label for="right-label" class="right inline">Re-enter your Password</label>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type="password" name="RePassword" id="right-label" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <label for="right-label" class="right inline">Upload Profile Picture</label>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type='file' name='image' id='right-label' required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-4 columns">
+
+
+
+                    </div>
+                    <div class="small-8 columns">
+
+                        <input type="submit" class="btn btn-success" value="Register" /> <input type="reset" class="btn btn-success" value="Reset" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row" style="margin-top:10px;">
+        <div class="small-12">
+            <?php
+		include ('footer.php');
+	?>
+        </div>
     </div>
-    <div class="container-fluid">
-      <div class="row content">
-          <div class="col-xs-12">
-              <form method="POST" name="validateregister" action="newregister.php" enctype="multipart/form-data" autocomplete="off">
-                  <div id="login">
-                      <p><label for="fullname">Full name :</label></p>
-                      <p><input type="text" name="full_name" id="fullname" required /></p>
-                      <p><label for="Email">Enter your Email :</label></p>
-                      <p><input type="email" name="Email" id="Email" required /></p>
-                      <p><label for="ReEmail">Re-enter your Email :</label></p>
-                      <p><input type="email" name="ReEmail" id="ReEmail" required /></p>
-                      <p><label for="Phone">Phone Number :</label></p>
-                      <p><input type="text" name="phone" id="phone" required /></p>
-                      <p><label for="Password">Enter your Password :</label></p>
-                      <p><input type="password" name="Password" id="Password" required /></p>
-                      <p><label for="RePassword">Re-enter your Password :</label></p>
-                      <p><input type="password" name="RePassword" id="RePassword" required /></p>
-                      <p><label for="image">Select image :</label></p>
-                      <p id='image'><input type='file' name='image' id='image' required/></p>
-                  </div>
-                  <p><input type="submit" class="btn btn-success" value="Register" /> <input type="reset" class="btn btn-success" value="Reset" /></p>
-              </form>
-          </div>
-      </div>
-    </div>
+
+
+
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="js/angular.min.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementsByName("Password").onchange = validatePassword;
+            document.getElementByName("RePassword").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementByName("RePassword").value;
+            var pass1 = document.getElementByName("Password").value;
+            if (pass1 != pass2)
+                document.getElementById("RePassword").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("RePassword").setCustomValidity('');
+        }
+
+    </script>
 
 </body>
 
-
-
-<!-- jQuery – required for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
-<!-- All Bootstrap plug-ins file -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Basic AngularJS -->
-<script src="js/angular.min.js"></script>
-
-<script type="text/javascript">
-    window.onload = function() {
-        document.getElementById("Password").onchange = validatePassword;
-        document.getElementById("RePassword").onchange = validatePassword;
-    }
-
-    function validatePassword() {
-        var pass2 = document.getElementById("RePassword").value;
-        var pass1 = document.getElementById("Password").value;
-        if (pass1 != pass2)
-            document.getElementById("RePassword").setCustomValidity("Passwords Don't Match");
-        else
-            document.getElementById("RePassword").setCustomValidity('');
-    }
-
-</script>
-
-<?php
-		include ('footer.php');
-	?>
 
 </html>

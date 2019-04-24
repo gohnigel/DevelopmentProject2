@@ -19,6 +19,8 @@ if($_SESSION["role"]!="admin") {
     <title>Salon</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
+        <link rel="stylesheet" type="text/css" href="css/foundation.css" />
+
 </head>
 <header>
     <div class=banner-div>
@@ -47,14 +49,14 @@ if($_SESSION["role"]!="admin") {
         <div class="col-xs-12">
             <table id="myTable" class="table table-active">
                 <tr class="header">
-                    <th style="width:40%;">Booking ID</th>
+                    <th style="width:60%;">Booking ID</th>
                     <th style="width:40%;">Customer Name</th>
                     <th style="width:60%;">Date</th>
                     <th style="width:60%;">Time</th>
                     <th style="width:40%;">Status</th>
-                    <th style="width:60%;">Confirm Appointment</th>
-                    <th style="width:60%;">Reshedule Appointment</th>
-                    <th style="width:60%;">Cancel Appointment</th>
+                    <th style="width:50%;">Confirm Appointment</th>
+                    <th style="width:50%;">Reshedule Appointment</th>
+                    <th style="width:50%;">Cancel Appointment</th>
                 </tr>
                 <?php
           $user = $_SESSION["email"];
