@@ -23,6 +23,9 @@ if($_SESSION["role"]!="client") {
     <title>Salon</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <link rel='stylesheet' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
 </head>
 <header>
     <div class=banner-div>
@@ -46,7 +49,7 @@ if($_SESSION["role"]!="client") {
                     <?php echo"<p><input type='text' name = 'bookref' value=' $id' /></p>"; ?>
 
                     <p><label for="date">Date :</label></p>
-                    <?php echo "<p><input type='date' name='date' id='date' value='$date' required></p>"; ?>
+                    <?php echo "<p><input type='text' name='date' id='date' value='$date' autocomplete='off' required></p>"; ?>
                     <p><label for="time">Time :</label></p>
                     <?php echo "<p><input type='time' name='time' id='time' value= '$time' required></p>"; ?>
 
@@ -70,6 +73,18 @@ if($_SESSION["role"]!="client") {
     <!-- Basic AngularJS -->
     <script src="js/angular.min.js"></script>
     <script src="js/slideshow.js"></script>
+        <script src="http:////ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js">
+    </script>
+    <script>
+        $(function() {
+            $("#date").datepicker({
+                dateFormat: 'yy-mm-dd',
+                minDate: 0,
+                maxDate: "+60D"
+            });
+        });
+
+    </script>
 
 </body>
 <?php
