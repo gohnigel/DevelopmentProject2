@@ -2,10 +2,9 @@
 if(session_id() == '' || !isset($_SESSION)){session_start();}
     
 include ('config.php');
-$full_name = $_POST['full_name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$password = $_POST['password'];
+$full_name = $_GET['full_name'];
+$email = $_GET['email'];
+$phone = $_GET['phone'];
 
 if(!isset($_SESSION["email"])) {
   header("location:login.php");
@@ -46,7 +45,7 @@ if($_SESSION["role"]!="client") {
   <div class="container-fluid">
     <div class="row content">
         <div class="col-xs-12">
-            <form method="POST" action="savechanges.php">
+            <form method="POST" action="savechanges.php" enctype="multipart/form-data" autocomplete="off">
                 <div id="login">
                    <?php
                         echo "<p><label for='fullname'>Full name :</label></p>";
@@ -55,8 +54,8 @@ if($_SESSION["role"]!="client") {
                         echo "<p><input type='text' name='Email' id='Email' value='".$email."' required/></p>";
                         echo "<p><label for='phone'>Phone :</label></p>";
                         echo "<p><input type='text' name='phone' id='phone' value='".$phone."' required/></p>";
-                        echo "<p><label for='password'>Password :</label></p>";
-                        echo "<p><input type='password' name='password' id='password' value='".$password."' required/></p>";
+                        echo "<p><label for='image'>Image :</label></p>";
+                        echo "<p id='image'><input type='file' name='image' id='image' required/></p>";
                   ?>
                 </div>
                 <p><input type="submit" class="btn btn-success" value="Save changes" /></p>                
