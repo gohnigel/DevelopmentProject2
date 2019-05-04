@@ -7,7 +7,6 @@ $fullname = $_POST['full_name'];
 $email = $_POST['Email'];
 $phone = $_POST['phone'];
 $password = $_POST['password'];
-$message = '';
 
 $result = $mysqli->query("UPDATE users SET full_name='$fullname', Email='$email', phone='$phone', password='$password' WHERE Email='$email'");
 
