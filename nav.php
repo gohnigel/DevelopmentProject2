@@ -19,6 +19,7 @@ if(isset($_SESSION['email'])){
     <li class='<?php if($currentPage == 'View client') echo 'active' ?>'><a href='viewbook.php'>Manage Appointments</a></li>
     <li class='<?php if($currentPage == 'Shop') echo 'active' ?>'><a href='shop.php'>Shop</a></li>
     <li class='<?php if($currentPage == 'Customer profile') echo 'active' ?>'><a href='profile.php'>Customer Profile</a></li>
+    <li><?php echo '<h3 style = "color:white; margin-left:180px;">Welcome, ' .$_SESSION['full_name'] .'</h3>'; ?></li>
 <?php    
     }
     else if($_SESSION['role'] == "admin"){
@@ -27,6 +28,7 @@ if(isset($_SESSION['email'])){
     <li class='<?php if($currentPage == 'All stock') echo 'active' ?>'><a href='allstock.php'>Inventory</a></li>
     <li class='<?php if($currentPage == 'Add stock') echo 'active' ?>'><a href='addstock.php'>Add Inventory</a></li>
     <li class='<?php if($currentPage == 'Staff performance') echo 'active' ?>'><a href='staffperformance.php'>Staff Performance</a></li>
+    <li><?php echo '<h3 style = "color:white; margin-left:180px;">Welcome, ' .$_SESSION['full_name'] .'</h3>'; ?></li>
 <?php    
     }	
 }

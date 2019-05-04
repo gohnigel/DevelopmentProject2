@@ -34,7 +34,6 @@ if($_SESSION["role"]!="admin") {
 ?>
 
 <body>
-    <button onclick="goBack()" style="margin-left:20px;" class="btn btn-info">&laquo; Back</button>
     <div class="container-fluid">
     <div class="row content">
         <div class="col-xs-12">
@@ -42,6 +41,10 @@ if($_SESSION["role"]!="admin") {
             <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
             <h5> Staff Mode</h5>
             <p><strong>Your Currently viewing all pending appointments</strong></p>
+            <a href="pendingbook.php"><button type="button" class="btn btn-primary">View Pending Appointments</button></a>
+        <a href="confirmedbook.php"><button type="button" class="btn btn-primary">View Confirmed Appointments</button></a>
+        <a href="completeapoint.php"><button type="button" class="btn btn-primary">View Completed Appointments</button></a>
+        <a href="canceledbook.php"><button type="button" class="btn btn-primary">View Cancelled Appointments</button></a>
             <p><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Customer Name" style="margin-top:20px;width:50%"></p>
         </div>
       </div>
