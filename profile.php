@@ -42,7 +42,13 @@ if($_SESSION["role"]!="client") {
               $result = $mysqli->query("SELECT * from users where email='".$user."'");
               if($result) {
                 while($obj = $result->fetch_object()) {
-                  echo "<img class='proim' src='images/$obj->image' alt='Profile picture'/>";
+                  echo "<p><img class='proim' src='images/$obj->image' alt='Profile picture'/></p>";
+                  echo "<form action='savepicture.php' method='post' enctype='multipart/form-data' autocomplete='off'>";
+                  echo "<p><input type='hidden' name='email' value='$obj->email'/></p>";
+                  echo "<p><label for='image'>Change profile picture :</label></p>";
+                  echo "<p id='image'><input type='file' name='image' id='image' required/></p>";
+                  echo "<p><button type='submit' class='btn btn-success'>Upload</button></p>";
+                  echo "</form>";
                 ?>
         </div>
         <div class="col-xs-8">
@@ -50,7 +56,14 @@ if($_SESSION["role"]!="client") {
                   echo "<p>Name: ".$obj->full_name."</p>";
                   echo "<p>Email: ".$obj->email."</p>";
                   echo "<p>Phone: ".$obj->phone."</p>";
-                  echo "<p><a href='editprofile.php?full_name=".$obj->full_name."&email=".$obj->email."&phone=".$obj->phone."'><button class='btn btn-primary'>Edit</button></a></p>";
+                  echo "<form action='editprofile.php' method='post'>";
+                  echo "<p><input type='hidden' name='full_name' value='$obj->full_name'/></p>";                  
+                  echo "<p><input type='hidden' name='email' value='$obj->email'/></p>";
+                  echo "<p><input type='hidden' name='phone' value='$obj->phone'/></p>";
+                  echo "<p><input type='hidden' name='password' value='$obj->password'/></p>";
+                  echo "<p><button type='submit' class='btn btn-primary'>Edit</button></p>";
+                  echo "</form>";
+                  echo $_SESSION['message'];
                 }
               }
         ?>
