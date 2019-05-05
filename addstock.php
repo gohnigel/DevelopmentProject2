@@ -41,6 +41,7 @@ if($_SESSION["role"]!="admin") {
             <!--Dont Remove This line(Displays the users name)-->
             <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
             <p>Add Inventory Item</p>
+            <p><?php if(isset($_SESSION['message'])) echo $_SESSION['message']; ?></p>
             <form method="POST" action="addedstock.php">
                 <div id="booking">
                     <p><label for="prod_id">Product Id</label></p>

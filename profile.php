@@ -65,7 +65,7 @@ $_SESSION['message'] = '';
                   echo "<p><input type='hidden' name='password' value='$obj->password'/></p>";
                   echo "<p><button type='submit' class='btn btn-primary'>Edit</button></p>";
                   echo "</form>";
-                  echo "<p>"; echo $_SESSION['message']; echo "</p>";
+                  echo "<p>"; if(isset($_SESSION['message'])) echo $_SESSION['message']; echo "</p>";
                 }
               }
         ?>

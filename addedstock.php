@@ -19,7 +19,16 @@ echo $price;
 echo $desc;
 
 
-if($mysqli->query("INSERT INTO stock (`prod_id`, `prod_name`, `brand`, `qty`, `price`, `desc`) VALUES('$id', '$inventory', '$brand', '$qty', '$price', '$desc')")){
+$check = $mysqli->query("select * from stock where prod_id='$id'");
+$checkrows = mysqli_num_rows($check);
+
+if($checkrows>0){
+  echo "Customer exists";
+  $message = 'Items added must be unique';
+  $_SESSION['message'] = $message;
+  header("Location: addstock.php");
+}
+else if($mysqli->query("INSERT INTO stock (`prod_id`, `prod_name`, `brand`, `qty`, `price`, `desc`) VALUES('$id', '$inventory', '$brand', '$qty', '$price', '$desc')")){
     echo"Added Success";
     header("Location: allstock.php");
 }

@@ -14,7 +14,7 @@ $result = $mysqli->query("UPDATE users SET full_name='$fullname', Email='$email'
 if ($result){
 	echo 'Changes saved';
 	echo '<br/>';
-    $message = 'Password changed';
+    $message = 'Profile details are changed';
     $_SESSION['message'] = $message;
     header ("location:profile.php");
 }
