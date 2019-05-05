@@ -1,19 +1,19 @@
 <?php
 
+//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 include 'config.php';
 
-$product_id = $_GET['id'];
+$prod_id = $_GET['id'];
 $action = $_GET['action'];
-
-echo $product_id;
+$shippingMethod = $_GET["shipping"];
 
 
 if($action === 'empty')
   unset($_SESSION['cart']);
 
-$result = $mysqli->query("SELECT qty FROM stock WHERE id = ".$product_id);
+$result = $mysqli->query("SELECT qty FROM products WHERE id = ".$prod_id);
 
 
 if($result){
@@ -23,21 +23,24 @@ if($result){
     switch($action) {
 
       case "add":
-      if($_SESSION['cart'][$product_id]+1 <= $obj->qty)
-        $_SESSION['cart'][$product_id]++;
+      if($_SESSION['cart'][$prod_id]+1 <= $obj->qty)
+        $_SESSION['cart'][$prod_id]++;
       break;
 
       case "remove":
-      $_SESSION['cart'][$product_id]--;
-      if($_SESSION['cart'][$product_id] == 0)
-        unset($_SESSION['cart'][$product_id]);
+      $_SESSION['cart'][$prod_id]--;
+      if($_SESSION['cart'][$prod_id] == 0)
+        unset($_SESSION['cart'][$prod_id]);
         break;
+	case "shipping": {
+		$_SESSION['shipping'] = strtolower($shippingMethod);
+		break;
 	}
 
 
 
     }
-  
+  }
 }
 
 

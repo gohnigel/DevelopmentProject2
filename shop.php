@@ -58,12 +58,9 @@ if($_SESSION["role"]!="client") {
               echo '<p><strong>Qty Available</strong>: '.$obj->qty.'</p>';
               echo '<p><strong>Price</strong>: '.$obj->price.'</p>';
                 echo '<p><strong>Description</strong>: '.$obj->desc.'</p>';
-                echo '<input type="text" placeholder="enter your quantity">';
                 
-
-
               if($obj->qty > 0){
-                echo '<p><a href="update-cart.php?action=add&id='.$obj->prod_id.'"><input type="submit" value="Reserve" style="clear:both; background: #0078A0; border: none; color: #fff; font-size: 1em; margin: 10px;padding: 10px;" /></a></p>';
+                echo '<p><a href="update-cart.php?action=add&id='.$obj->prod_id.'"><input type="submit" value="Add to Cart" style="clear:both; background: #0078A0; border: none; color: #fff; font-size: 1em; margin: 10px;padding: 10px;" /></a></p>';
               }
               else {
                 echo 'Out Of Stock!';
@@ -75,7 +72,7 @@ if($_SESSION["role"]!="client") {
 
           }
 
-          $_SESSION['product_id'] = $product_id;
+          $_SESSION['product_id'] = $prod_id;
 
 
           echo '</div>';
