@@ -10,7 +10,6 @@ if(!isset($_SESSION["email"])) {
 if($_SESSION["role"]!="admin") {
   header("location:index.php");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +40,6 @@ if($_SESSION["role"]!="admin") {
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
             <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
-            <p><?php if(isset($_SESSION['message'])) echo $_SESSION['message']; ?></p>
             <p>Add Inventory Item</p>
             <form method="POST" action="addedstock.php">
                 <div id="booking">

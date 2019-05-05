@@ -1,8 +1,7 @@
 <?php
 
-if(session_id() == '' || !isset($_SESSION)){session_start();}
-
 include 'config.php';
+session_start();
 
 $fullname = $_POST['full_name'];
 $email = $_POST['Email'];
@@ -15,7 +14,7 @@ $result = $mysqli->query("UPDATE users SET full_name='$fullname', Email='$email'
 if ($result){
 	echo 'Changes saved';
 	echo '<br/>';
-    $message = 'Profile details are changed';
+    $message = 'Password changed';
     $_SESSION['message'] = $message;
     header ("location:profile.php");
 }
