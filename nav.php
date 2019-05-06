@@ -18,6 +18,7 @@ if(isset($_SESSION['email'])){
             <li class='<?php if($currentPage == 'Book now') echo 'active' ?>'><a href='book.php'>Book Now</a></li>
             <li class='<?php if($currentPage == 'View client') echo 'active' ?>'><a href='viewbook.php'>Manage Appointments</a></li>
             <li class='<?php if($currentPage == 'Shop') echo 'active' ?>'><a href='shop.php'>Shop</a></li>
+            <li class='<?php if($currentPage == 'Orders') echo 'active' ?>'><a href='orders.php'>My Orders</a></li>
             <li class='<?php if($currentPage == 'Customer profile') echo 'active' ?>'><a href='profile.php'>Customer Profile</a></li>
             <?php    
     }

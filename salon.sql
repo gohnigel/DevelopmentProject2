@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2019 at 09:41 AM
+-- Generation Time: May 06, 2019 at 11:14 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -65,15 +65,14 @@ INSERT INTO `booking` (`bookingid`, `date`, `time`, `full_name`, `email`, `statu
 --
 
 CREATE TABLE `orders` (
-  `order_id` varchar(50) NOT NULL,
-  `product_code` varchar(225) NOT NULL,
-  `product_name` varchar(225) NOT NULL,
-  `product_desc` varchar(225) NOT NULL,
-  `price` int(10) NOT NULL,
-  `qty` int(10) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `order_desc` varchar(225) NOT NULL,
+  `item_code` varchar(225) NOT NULL,
   `total` int(10) NOT NULL,
-  `date` date NOT NULL,
-  `status` varchar(10) NOT NULL
+  `qty` int(50) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(225) NOT NULL,
+  `customer` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -97,7 +96,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_code`, `product_name`, `product_brand`, `product_desc`, `qty`, `price`) VALUES
-(24, 'Q123', 'Shampoo', 'dede', 'cdecdcd', 12, '12.00');
+(24, 'Q123', 'Shampoo', 'dede', 'cdecdcd', 0, '12.00'),
+(25, 'ID', 'Soap', 'Dettol', '8', 9, '12.00');
 
 -- --------------------------------------------------------
 
@@ -136,6 +136,12 @@ ALTER TABLE `booking`
   ADD KEY `email` (`email`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -153,10 +159,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1222;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables

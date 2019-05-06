@@ -106,12 +106,12 @@ if($_SESSION["role"]!="client") {
 
               }
               
-              
           echo '<tr>';
           echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Empty Cart</a>&nbsp;<a href="shop.php" class="button [secondary success alert]">Continue Shopping</a>';
               
           if(isset($_SESSION['email'])) {
             echo '<a href="orders-update.php"><button style="float:right;">Check Out</button></a>';
+            echo'<P><B>Note :</B> Payement Method Currently Supported is only Cash On Delivery</p>';
           }
 
           else {
