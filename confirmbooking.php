@@ -19,12 +19,18 @@ $time = $_POST["time"];
 $staff = $_POST["stylist"];
 $email = $_SESSION['email'];
 
-if($mysqli->query("INSERT INTO booking (`bookingid`, `date`, `time`, `full_name`, `email`, `status`) VALUES('$bookid', '$date', '$time', '$staff', '$email', 'pending')")){
+$check = $mysqli->query("select * from booking where date='$date' and time='$time'");
+$checkrows = mysqli_num_rows($check);
+
+if($checkrows == 0){
+  $mysqli->query("INSERT INTO booking (`bookingid`, `date`, `time`, `full_name`, `email`, `status`) VALUES('$bookid', '$date', '$time', '$staff', '$email', 'pending')");
 }
-else
+else if($checkrows > 0)
 {
-
-
+  echo "Appointment has clashed";
+  $message = 'Appointment has clashed';
+  $_SESSION['message'] = $message;
+  header("location:book.php");
 }
 
 

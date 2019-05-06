@@ -74,6 +74,7 @@ if($_SESSION["role"]!="client") {
                         <p><input type="time" name="time" id="time" required></p>
 
                     </div>
+                    <p> <?php if(isset($_SESSION['message'])) echo $_SESSION['message']; ?></p>
                     <p><input type="submit" name="submit" class="btn btn-success" value="Make Appointment" />
                         <input type="reset" class="btn btn-success" value="Clear Form" /></p>
                 </form>
