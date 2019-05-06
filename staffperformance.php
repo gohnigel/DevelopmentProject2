@@ -35,7 +35,7 @@ if($_SESSION["role"]!="admin") {
 ?>
 
 <body>
-  <div class="container-fluid"> 
+  <div class="container-fluid" id="HTMLtoPDF"> 
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
@@ -45,7 +45,7 @@ if($_SESSION["role"]!="admin") {
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-8 col-xs-offset-2" style="text-align:center;">
            <br>
             <table id="myTable" class="table table-active">
                 <tr class="header">
@@ -68,10 +68,7 @@ GROUP BY 1");
           }
         ?>
             </table>
-
-
-
-
+            <button type="button" class="btn btn-primary" onclick="HTMLtoPDF()">Export PDF</button>
         </div>
     </div>
   </div>
@@ -82,6 +79,9 @@ GROUP BY 1");
     <!-- Basic AngularJS -->
     <script src="js/angular.min.js"></script>
     <script src="js/slideshow.js"></script>
+    <script src="js/jquery-2.1.3.js"></script>
+    <script src="js/pdfFromHTML.js"></script>
+    <script src="js/jspdf.js"></script>
 
 </body>
 <?php
