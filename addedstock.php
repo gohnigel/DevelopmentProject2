@@ -19,7 +19,7 @@ echo $price;
 echo $desc;
 
 
-$check = $mysqli->query("select * from stock where prod_id='$id'");
+$check = $mysqli->query("select * from products where product_code='$id'");
 $checkrows = mysqli_num_rows($check);
 
 if($checkrows>0){
@@ -28,14 +28,15 @@ if($checkrows>0){
   $_SESSION['message'] = $message;
   header("Location: addstock.php");
 }
-else if($mysqli->query("INSERT INTO stock (`prod_id`, `prod_name`, `brand`, `qty`, `price`, `desc`) VALUES('$id', '$inventory', '$brand', '$qty', '$price', '$desc')")){
+else if($mysqli->query("INSERT INTO products (`product_code`, `product_name`,`product_brand`, `product_desc`, `qty`, `price`) VALUES('$id', '$inventory', '$brand', '$desc', '$qty', '$price')")){
     echo"Added Success";
     header("Location: allstock.php");
 }
 else
 {
     echo"Cannot add";
-    header("Location: addstock.php");
+      header("Location: addstock.php");
+
 
 }
 

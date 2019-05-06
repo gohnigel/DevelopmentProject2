@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2019 at 08:44 AM
+-- Generation Time: May 06, 2019 at 09:41 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `salon`
 --
-
-CREATE DATABASE `salon`;
 
 -- --------------------------------------------------------
 
@@ -45,18 +43,21 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`bookingid`, `date`, `time`, `full_name`, `email`, `status`, `notes`) VALUES
-('5ca9db90d5ddd', '2019-04-02', '14:06','Staff Member', 'isal@salon.com', 'pending', ''),
-('5cb5eaae3281e', '2019-05-25', '14:00','Staff Member', 'nigel@salon.com', 'Completed', 'Used a salon package but didnt use the conditioner included'),
-('5cb5eabc11665', '2019-05-25', '14:00','Staff Member', 'nigel@salon.com', 'Confirmed', ''),
-('5cb5eacd3e410', '2019-05-12', '17:00','Staff Member', 'nigel@salon.com', 'Canceled', ''),
-('5cb5eade733f5', '2019-05-05', '12:00','Staff Member', 'nigel@salon.com', 'pending', ''),
-('5cb5eb3492151', '2019-05-01', '13:30','Staff Member', 'Ignatius@salon.com', 'pending', ''),
-('5cb5eb447723d', '2019-04-10', '18:30','Staff Member', 'Ignatius@salon.com', 'pending', ''),
-('5cb5eb51dc323', '2019-05-19', '17:30','Staff Member', 'Ignatius@salon.com', 'Confirmed', ''),
-('5cb5eb773e65d', '2019-05-18', '18:30','Staff Member', 'Ignatius@salon.com', 'Confirmed', ''),
-('5cb5ebba197a4', '2019-05-12', '16:30','Staff Member', 'isal@salon.com', 'pending', ''),
-('5cb5ebcaf0520', '2019-05-17', '15:30','Staff Member', 'isal@salon.com', 'Completed', 'No Notes Added'),
-('5cb5ebd98ead7', '2019-05-02', '18:30','Staff Member', 'isal@salon.com', 'pending', '');
+('5ca9db90d5ddd', '2019-05-10', '14:06', 'Staff Member', 'isal@salon.com', 'Canceled', ''),
+('5cb5eaae3281e', '2019-05-25', '14:00', 'Staff Member', 'nigel@salon.com', 'Completed', 'Used a salon package but didnt use the conditioner included'),
+('5cb5eabc11665', '2019-05-25', '14:00', 'Staff Member', 'nigel@salon.com', 'Confirmed', ''),
+('5cb5eacd3e410', '2019-05-12', '17:00', 'Staff Member', 'nigel@salon.com', 'Canceled', ''),
+('5cb5eade733f5', '2019-05-05', '12:00', 'Staff Member', 'nigel@salon.com', 'Confirmed', ''),
+('5cb5eb3492151', '2019-05-01', '13:30', 'Staff Member', 'Ignatius@salon.com', 'pending', ''),
+('5cb5eb447723d', '2019-04-10', '18:30', 'Staff Member', 'Ignatius@salon.com', 'pending', ''),
+('5cb5eb51dc323', '2019-05-19', '17:30', 'Staff Member', 'Ignatius@salon.com', 'Confirmed', ''),
+('5cb5eb773e65d', '2019-05-18', '18:30', 'Staff Member', 'Ignatius@salon.com', 'Confirmed', ''),
+('5cb5ebba197a4', '2019-05-12', '16:30', 'Staff Member', 'isal@salon.com', 'pending', ''),
+('5cb5ebcaf0520', '2019-05-17', '15:30', 'Staff Member', 'isal@salon.com', 'Completed', 'No Notes Added'),
+('5cb5ebd98ead7', '2019-05-02', '18:30', 'Staff Member', 'isal@salon.com', 'pending', ''),
+('5ccd30475a486', '0000-00-00', '01:00', 'Staff Member', 'isal@salon.com', 'pending', ''),
+('5ccd308f89282', '2019-05-27', '17:06', 'Staff Member', 'isal@salon.com', 'Canceled', '');
+
 -- --------------------------------------------------------
 
 --
@@ -78,24 +79,25 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `stock`
+-- Table structure for table `products`
 --
 
-CREATE TABLE `stock` (
-  `prod_id` varchar(10) NOT NULL,
-  `prod_name` varchar(225) NOT NULL,
-  `brand` varchar(225) NOT NULL,
-  `qty` int(11) NOT NULL,
-  `price` double NOT NULL,
-  `desc` varchar(225) DEFAULT NULL
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `product_code` varchar(60) NOT NULL,
+  `product_name` varchar(60) NOT NULL,
+  `product_brand` varchar(255) NOT NULL,
+  `product_desc` tinytext NOT NULL,
+  `qty` int(5) NOT NULL,
+  `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `stock`
+-- Dumping data for table `products`
 --
 
-INSERT INTO `stock` (`prod_id`, `prod_name`, `brand`, `qty`, `price`, `desc`) VALUES
-('QWE1234', 'Test Item', 'Test Brand', 12, 12.5, '');
+INSERT INTO `products` (`id`, `product_code`, `product_name`, `product_brand`, `product_desc`, `qty`, `price`) VALUES
+(24, 'Q123', 'Shampoo', 'dede', 'cdecdcd', 12, '12.00');
 
 -- --------------------------------------------------------
 
@@ -134,16 +136,27 @@ ALTER TABLE `booking`
   ADD KEY `email` (`email`);
 
 --
--- Indexes for table `stock`
+-- Indexes for table `products`
 --
-ALTER TABLE `stock`
-  ADD PRIMARY KEY (`prod_id`);
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `product_code` (`product_code`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Constraints for dumped tables

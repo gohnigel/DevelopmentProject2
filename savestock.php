@@ -10,7 +10,7 @@ $qty = $_GET['qty'];
 $price = $_GET['price'];
 $desc = $_GET['desc'];
 
-$mysqli->query("UPDATE `stock` SET `prod_id` = '$id', `prod_name` = '$name', `brand` = '$brand', `qty` = '$qty', `price` = '$price', `desc` = '$desc' WHERE `stock`.`prod_id` = '$id'");
+$mysqli->query("UPDATE `products` SET `product_code` = '$id', `product_name` = '$name', `product_brand` = '$brand', `qty` = '$qty', `price` = '$price', `product_desc` = '$desc' WHERE `products`.`product_code` = '$id'");
 mysqli_close($mysqli);
 header("location:allstock.php");
 

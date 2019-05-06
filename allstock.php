@@ -59,19 +59,19 @@ if($_SESSION["role"]!="admin") {
                     </tr>
                     <?php
           $user = $_SESSION["email"];
-          $result = $mysqli->query("SELECT * from stock");
+          $result = $mysqli->query("SELECT * from products");
           if($result) {
             while($obj = $result->fetch_object()) {
 			  echo '<tr>';
-              echo '<td>'.$obj->prod_id.'</td>';
-              echo '<td>'.$obj->prod_name.'</td>';
-              echo '<td>'.$obj->brand.'</td>';  
+              echo '<td>'.$obj->product_code.'</td>';
+              echo '<td>'.$obj->product_name.'</td>';
+              echo '<td>'.$obj->product_brand.'</td>';  
 			  echo '<td>'.$obj->qty.'</td>';
 			  echo '<td>$'.$obj->price.'</td>';
-              echo '<td>'.$obj->desc.'</td>';
+              echo '<td>'.$obj->product_desc.'</td>';
               echo '<td>$'.$obj->qty * $obj->price.'</td>';
-              echo '<td><a href="editstock.php?prod_id='.$obj->prod_id.'&prod_name='.$obj->prod_name.'&brand='.$obj->brand.'&qty='.$obj->qty.'&price='.$obj->price.'&desc='.$obj->desc.'"><button class="btn btn-primary">Edit stock</button></a></td>';
-              echo '<td><a href="deletestock.php?prod_id='.$obj->prod_id.'"><button class="btn btn-danger" onclick="if(!confirm(\'Are you sure you want to delete this stock?\')) return false;">Delete stock</button></a></td>';
+              echo '<td><a href="editstock.php?prod_id='.$obj->product_code.'&prod_name='.$obj->product_name.'&brand='.$obj->product_brand.'&qty='.$obj->qty.'&price='.$obj->price.'&desc='.$obj->product_desc.'"><button class="btn btn-primary">Edit stock</button></a></td>';
+              echo '<td><a href="deletestock.php?prod_id='.$obj->product_code.'"><button class="btn btn-danger" onclick="if(!confirm(\'Are you sure you want to delete this stock?\')) return false;">Delete stock</button></a></td>';
 			  echo'</tr>';
 
             }
