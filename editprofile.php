@@ -26,6 +26,7 @@ if($_SESSION["role"]!="client") {
     <title>Salon</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
+    <link rel="stylesheet" type="text/css" href="css/foundation.css" />
 </head>
 
 <body>
@@ -40,7 +41,7 @@ if($_SESSION["role"]!="client") {
 		include ('nav.php');
 	?>
     <div class="registermessage">
-        <h2>Edit profile</h2>
+        <h3>Edit profile</h3>
         <p>Edit details in here</p>
     </div>
   <div class="container-fluid">

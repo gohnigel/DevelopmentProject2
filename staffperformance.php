@@ -39,7 +39,7 @@ if($_SESSION["role"]!="admin") {
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
-            <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
+            <?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?>
             <h5> Staff Mode</h5>
             <p><b>Your Currently viewing all Staff Performance</b></p>
         </div>

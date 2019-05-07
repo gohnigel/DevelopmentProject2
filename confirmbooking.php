@@ -24,6 +24,8 @@ $checkrows = mysqli_num_rows($check);
 
 if($checkrows == 0){
   $mysqli->query("INSERT INTO booking (`bookingid`, `date`, `time`, `full_name`, `email`, `status`) VALUES('$bookid', '$date', '$time', '$staff', '$email', 'pending')");
+  $message = '';
+  $_SESSION['message'] = $message;
 }
 else if($checkrows > 0)
 {
@@ -56,29 +58,24 @@ else if($checkrows > 0)
 ?>
 
 <body>
-    <div class="row content">
-        <div class="col-xs-12">
-            <!--Dont Remove This line(Displays the users name)-->
-            <h3>Booking Placed</h3>
-            <h4>One of our staff members will confirm your booking shortly.</h4>
-                <div id="booking">
-                    <?php echo '<p>Booking Ref: ' .$bookid .'</p>'; ?>
-                    <?php echo '<p>Customer Name: ' .$_SESSION['full_name'] .'</p>'; ?>
-                    <?php echo '<p>Date: ' .$date .'</p>'; ?>
-                    <?php echo '<p>Time: ' .$time .'</p>'; ?>
-                    <?php echo '<p>Stylist: ' .$staff  .'</p>'; ?>
-                    <?php echo '<p>Service: ' .$services .'</p>'; ?>
-                    <p> Status: Pending Confirmation</p>
-                </div>
-                <p><a class="btn btn-success" href=viewbook.php>Manage Appointments</a></p>
-
-
-            
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-xs-12">
+                <!--Dont Remove This line(Displays the users name)-->
+                <h3>Booking Placed</h3>
+                <h4>One of our staff members will confirm your booking shortly.</h4>
+                    <div id="booking">
+                        <?php echo '<p>Booking Ref: ' .$bookid .'</p>'; ?>
+                        <?php echo '<p>Customer Name: ' .$_SESSION['full_name'] .'</p>'; ?>
+                        <?php echo '<p>Date: ' .$date .'</p>'; ?>
+                        <?php echo '<p>Time: ' .$time .'</p>'; ?>
+                        <?php echo '<p>Stylist: ' .$staff  .'</p>'; ?>
+                        <?php echo '<p>Service: ' .$services .'</p>'; ?>
+                        <p> Status: Pending Confirmation</p>
+                    </div>
+                    <p><a class="btn btn-success" href=viewbook.php>Manage Appointments</a></p>
+            </div>
         </div>
-
-
-
-
     </div>
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->

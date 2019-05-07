@@ -37,11 +37,10 @@ if(isset($_SESSION["email"])){
 	?>
 
   
-    <form method="POST" action="verify.php" style="margin-top:100px;margin-left:200px">
+    <form method="POST" action="verify.php" style="margin-top:100px">
         <div class="row">
-            <div class="small-8">
-                <h3 align="center">Enter Your Registered Email and Password</h3>
-
+            <h3 class="text-center">Enter Your Registered Email and Password</h3>
+                <div class="small-10">
                 <div class="row">
                     <div class="small-4 columns">
                         <label for="right-label" class="right inline" placeholder="Staff@Salon.com">Email</label>
@@ -63,7 +62,7 @@ if(isset($_SESSION["email"])){
                     </div>
                     <div class="small-8 columns">
 
-                        <input type="submit" class="btn btn-primary" value="Log in" id="right-label" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;" /> <input type="reset" class="btn btn-primary" value="Reset" id="right-label" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;" />
+                        <input type="submit" class="btn btn-primary" value="Log in" id="right-label" /> <input type="reset" class="btn btn-primary" value="Reset" id="right-label" />
                     </div>
                 </div>
             </div>

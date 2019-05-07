@@ -36,8 +36,8 @@ if(isset($_SESSION["email"])){
 
     <form method="POST" name="validateregister" action="newregister.php" enctype="multipart/form-data" autocomplete="off">
         <div class="row">
-            <h3 align="center"> Fill in the below details to register for our services</h3>
-            <div class="small-8">
+            <h3 class="text-center"> Fill in the below details to register for our services</h3>
+            <div class="small-10">
 
                 <div class="row">
                     
@@ -52,7 +52,7 @@ if(isset($_SESSION["email"])){
                 </div>
                 <div class="row">
                     <div class="small-4 columns">
-                        <label for="right-label" class="right inline">Email:</label>
+                        <label for="right-label" class="right inline">Email</label>
                     </div>
                     <div class="small-8 columns">
                         <input type="email" name="Email" id="right-label" required />
@@ -60,7 +60,7 @@ if(isset($_SESSION["email"])){
                 </div>
                 <div class="row">
                     <div class="small-4 columns">
-                        <label for="right-label" class="right inline">Re-enter your Email :</label>
+                        <label for="right-label" class="right inline">Re-enter your Email</label>
                     </div>
                     <div class="small-8 columns">
                         <input type="email" name="ReEmail" id="right-label" required />

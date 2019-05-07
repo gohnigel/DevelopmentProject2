@@ -36,6 +36,8 @@ if($_SESSION["role"]!="client") {
    <div class="container-fluid">
     <div class="row content">
         <div class="col-xs-12">
+            <?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?>
+            <p>Shopping for inventory</p>
             <?php
           $i=0;
           $product_id = array();
@@ -51,7 +53,7 @@ if($_SESSION["role"]!="client") {
             while($obj = $result->fetch_object()) {
 
               echo '<div class="large-4 columns">';
-              echo '<p><h3 style="margin-top:80px">'.$obj->product_name.'</h3></p>';
+              echo '<p><h3>'.$obj->product_name.'</h3></p>';
               echo '<p><strong>Brand</strong>: '.$obj->product_brand.'</p>';
               echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
               echo '<p><strong>Description</strong>: '.$obj->product_desc.'</p>';
@@ -82,7 +84,6 @@ if($_SESSION["role"]!="client") {
         </div>
         </div>
        </div>
-    </div>
 
 
     <script src="js/jquery.min.js"></script>

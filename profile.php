@@ -38,7 +38,8 @@ $_SESSION['message'] = '';
 <body>
    <div class="container-fluid">
     <div class="row content">
-        <div class="col-xs-5 col-xs-offset-3">
+        <div class="col-xs-12">
+            <h3>Customer Profile</h3>
            <?php
               $user = $_SESSION["email"];
               $result = $mysqli->query("SELECT * from users where email='".$user."'");
@@ -47,7 +48,7 @@ $_SESSION['message'] = '';
                   echo "<p><img class='proim' src='images/$obj->image' alt='Profile picture'/></p>";
                   echo "<form action='savepicture.php' method='post' enctype='multipart/form-data' autocomplete='off'>";
                   echo "<p><input type='hidden' name='email' value='$obj->email'/></p>";
-                  echo "<p><label style=font-size:20px; for='image'>Change profile picture :</label></p>";
+                  echo "<p><label for='image'>Change profile picture :</label></p>";
                   echo "<p id='image'><input type='file' name='image' id='image' required/></p>";
                   echo "<p><button style='width:100px;'type='submit' class='btn btn-success'>Upload</button></p>";
                   echo "</form>";
@@ -55,17 +56,17 @@ $_SESSION['message'] = '';
         </div>
         </div>
         <div class="row">
-        <div class="col-xs-5 col-xs-offset-4">
+        <div class="col-xs-12 text-center">
            <?php
-                  echo "<p style=font-size:20px;>Name: ".$obj->full_name."</p>";
-                  echo "<p style=font-size:20px;>Email: ".$obj->email."</p>";
-                  echo "<p style=font-size:20px;>Phone: ".$obj->phone."</p>";
+                  echo "<p>Name: ".$obj->full_name."</p>";
+                  echo "<p>Email: ".$obj->email."</p>";
+                  echo "<p>Phone: ".$obj->phone."</p>";
                   echo "<form action='editprofile.php' method='post'>";
                   echo "<p><input type='hidden' name='full_name' value='$obj->full_name'/></p>";                  
                   echo "<p><input type='hidden' name='email' value='$obj->email'/></p>";
                   echo "<p><input type='hidden' name='phone' value='$obj->phone'/></p>";
                   echo "<p><input type='hidden' name='password' value='$obj->password'/></p>";
-                  echo "<p style= margin-left:60px;><button style='width:100px;' type='submit' class='btn btn-primary'>Edit</button></p>";
+                  echo "<p><button style='width:100px;' type='submit' class='btn btn-primary'>Edit</button></p>";
                   echo "</form>";
                   echo "<p>"; if(isset($_SESSION['message'])) echo $_SESSION['message']; echo "</p>";
                 }

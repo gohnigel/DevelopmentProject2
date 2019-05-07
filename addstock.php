@@ -39,7 +39,7 @@ if($_SESSION["role"]!="admin") {
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
-            <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
+            <?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?>
             <p>Add Inventory Item</p>
             <p><?php if(isset($_SESSION['message'])) echo $_SESSION['message']; ?></p>
             <form method="POST" action="addedstock.php">

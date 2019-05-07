@@ -23,11 +23,10 @@
 
 <body>
 
-
   <div class="container-fluid">
     <div class="row content">
       <div class="col-xs-12">
-        <h2>Welcome to Hair Salon Online Booking</h2>
+        <h3>Welcome to Hair Salon Online Booking</h3>
         <p>We have many features to work on for this website itself</p>
       </div>
     </div>

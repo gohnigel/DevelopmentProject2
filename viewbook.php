@@ -37,7 +37,7 @@ if($_SESSION["role"]!="client") {
     <div class="row content">
       <div class="col-xs-12">
           <!--Dont Remove This line(Displays the users name)-->
-          <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
+          <?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?>
           <p>Showing All Your Appointments</p>
       </div>
     </div>

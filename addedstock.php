@@ -30,6 +30,8 @@ if($checkrows>0){
 }
 else if($mysqli->query("INSERT INTO products (`product_code`, `product_name`,`product_brand`, `product_desc`, `qty`, `price`) VALUES('$id', '$inventory', '$brand', '$desc', '$qty', '$price')")){
     echo"Added Success";
+    $message = '';
+    $_SESSION['message'] = $message;
     header("Location: allstock.php");
 }
 else

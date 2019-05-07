@@ -43,7 +43,7 @@ if($_SESSION["role"]!="client") {
           $delivery = 5;
                            
 
-          echo '<p><h3>Your Shopping Cart</h3></p>';
+          echo '<h3>Your Shopping Cart</h3>';
 
           if(isset($_SESSION['cart'])) {
 

@@ -38,7 +38,7 @@ if($_SESSION["role"]!="admin") {
     <div class="row content">
       <div class="col-xs-12">
           <!--Dont Remove This line(Displays the users name)-->
-          <p><?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?></p>
+          <?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?>
           <h5> Staff Mode</h5>
           <p><strong>Your Currently viewing all Cancelled appointments</strong></p>
           <a href="pendingbook.php"><button type="button" class="btn btn-primary">View Pending Appointments</button></a>
