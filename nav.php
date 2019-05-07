@@ -28,6 +28,7 @@ if(isset($_SESSION['email'])){
             <li class='<?php if($currentPage == 'All stock') echo 'active' ?>'><a href='allstock.php'>Inventory</a></li>
             <li class='<?php if($currentPage == 'Add stock') echo 'active' ?>'><a href='addstock.php'>Add Inventory</a></li>
             <li class='<?php if($currentPage == 'Staff performance') echo 'active' ?>'><a href='staffperformance.php'>Staff Performance</a></li>
+            <li class='<?php if($currentPage == 'Sales performance') echo 'active' ?>'><a href='salesperformance.php'>Sales Performance</a></li>
             <?php    
     }	
 }
