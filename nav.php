@@ -29,6 +29,8 @@ if(isset($_SESSION['email'])){
             <li class='<?php if($currentPage == 'Add stock') echo 'active' ?>'><a href='addstock.php'>Add Inventory</a></li>
             <li class='<?php if($currentPage == 'Staff performance') echo 'active' ?>'><a href='staffperformance.php'>Staff Performance</a></li>
             <li class='<?php if($currentPage == 'Sales performance') echo 'active' ?>'><a href='salesperformance.php'>Sales Performance</a></li>
+            <li class='<?php if($currentPage == 'Orders') echo 'active' ?>'><a href='manageorders.php'>Manage Orders</a></li>
+
             <?php    
     }	
 }
@@ -53,7 +55,7 @@ if(isset($_SESSION['email'])){
     {
 
 ?>
-            <li><a href='cart.php'><span class='glyphicon glyphicon-shopping-cart'  ></span>Shopping Cart</a></li>
+            <li><a href='cart.php'><span class='glyphicon glyphicon-shopping-cart'></span>Shopping Cart</a></li>
             <?php
     }
     else 
