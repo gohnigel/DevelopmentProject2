@@ -10,6 +10,8 @@ if(!isset($_SESSION["email"])) {
 if($_SESSION["role"]!="client") {
   header("location:index.php");
 }
+
+$_SESSION['message'] = '';
 ?>
 <!DOCTYPE html>
 

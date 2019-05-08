@@ -10,6 +10,8 @@ if(!isset($_SESSION["email"])) {
 if($_SESSION["role"]!="client") {
   header("location:index.php");
 }
+
+$_SESSION['message'] = '';
 ?>
 <!DOCTYPE html>
 
@@ -45,12 +47,12 @@ if($_SESSION["role"]!="client") {
         <div class="col-xs-12">
                 <table id="myTable" class="table table-active">
                     <tr class="header">
-                        <th style="width:40%;">Booking ID</th>
-                        <th style="width:60%;">Date</th>
-                        <th style="width:60%;">Time</th>
-                        <th style="width:40%;">Status</th>
-                        <th style="width:60%;">Reshedule Appointment</th>
-                        <th style="width:60%;">Cancel Appointment</th>
+                        <th>Booking ID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Reshedule Appointment</th>
+                        <th>Cancel Appointment</th>
                     </tr>
                     <?php
           $user = $_SESSION["email"];

@@ -10,6 +10,7 @@ if(!isset($_SESSION["email"])) {
 if($_SESSION["role"]!="client") {
   header("location:index.php");
 }
+$_SESSION['message'] = '';
 ?>
 <!DOCTYPE html>
 
@@ -152,10 +153,10 @@ if($_SESSION["role"]!="client") {
     <!-- Basic AngularJS -->
     <script src="js/angular.min.js"></script>
     <script src="js/slideshow.js"></script>
-
-</body>
 <?php
 		include ('footer.php');
 	?>
+
+</body>
 
 </html>

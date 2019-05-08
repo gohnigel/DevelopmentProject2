@@ -11,8 +11,6 @@ if($_SESSION["role"]!="client") {
   header("location:index.php");
 }
 
-$_SESSION['message'] = '';
-
 ?>
 <!DOCTYPE html>
 
@@ -83,9 +81,9 @@ $_SESSION['message'] = '';
     <!-- Basic AngularJS -->
     <script src="js/angular.min.js"></script>
     <script src="js/slideshow.js"></script>
-
-</body>
     <?php
 		include ('footer.php');
 	?>
+</body>
+    
 </html>

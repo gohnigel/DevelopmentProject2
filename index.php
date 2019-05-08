@@ -18,7 +18,7 @@
 <?php
   $currentPage = 'Home';
   include ('nav.php');
-    
+  $_SESSION['message'] = '';  
 ?>
 
 <body>

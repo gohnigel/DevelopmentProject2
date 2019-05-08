@@ -35,6 +35,7 @@ else if($checkrows > 0)
   header("location:book.php");
 }
 
+$_SESSION['message'] = '';
 
 ?>
 <!DOCTYPE html>

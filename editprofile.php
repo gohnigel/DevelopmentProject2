@@ -7,6 +7,8 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 $password = $_POST['password'];
 
+$_SESSION['message'] = '';
+
 if(!isset($_SESSION["email"])) {
   header("location:login.php");
 }
