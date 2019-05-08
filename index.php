@@ -27,7 +27,16 @@
         <div class="row content">
             <div class="col-xs-12">
                 <?php
-          $user = $_SESSION["email"];
+                if(session_id() == '' || !isset($_SESSION)){session_start();}
+    
+                include ('config.php');
+
+                if(!isset($_SESSION["email"])) {
+                    header("location:login.php");
+                }
+
+                if($_SESSION["role"]=="admin") {
+                    $user = $_SESSION["email"];
           $result = $mysqli->query("SELECT * from products");
           if($result) {
             while($obj = $result->fetch_object()) {
@@ -50,6 +59,8 @@
                 }
           }
             }
+                }
+          
         ?>
                 <h3>Welcome to Hair Salon Online Booking</h3>
                 <p>We have many features to work on for this website itself</p>
