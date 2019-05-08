@@ -119,6 +119,10 @@
             }
         }
 
+        
+            setTimeout(function() {
+                $('.alert,warning').slideUp("slow");
+            }, 5000);
     </script>
 
 
