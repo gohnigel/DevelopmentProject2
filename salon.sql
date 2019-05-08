@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2019 at 11:14 AM
+-- Generation Time: May 08, 2019 at 04:48 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -75,6 +75,16 @@ CREATE TABLE `orders` (
   `customer` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `order_desc`, `item_code`, `total`, `qty`, `date`, `status`, `customer`) VALUES
+(5, 'Shampoo', 'Hair7890', 60, 50, '2019-05-08 14:47:34', 'Preparing Your Order', 'isal@salon.com'),
+(6, 'Hair Wax', 'Styling9872', 13, 50, '2019-05-08 14:47:35', 'Preparing Your Order', 'isal@salon.com'),
+(7, 'Hair Mousse', 'Styling9874', 19, 25, '2019-05-08 14:47:41', 'Preparing Your Order', 'isal@salon.com'),
+(8, 'Conditioner', 'Hair7898', 126, 25, '2019-05-08 14:47:51', 'Preparing Your Order', 'isal@salon.com');
+
 -- --------------------------------------------------------
 
 --
@@ -96,8 +106,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_code`, `product_name`, `product_brand`, `product_desc`, `qty`, `price`) VALUES
-(24, 'Q123', 'Shampoo', 'dede', 'cdecdcd', 0, '12.00'),
-(25, 'ID', 'Soap', 'Dettol', '8', 9, '12.00');
+(26, 'Styling9872', 'Hair Wax', 'Bad Labs', 'Hair Wax For Men ', 49, '13.00'),
+(27, 'Styling9873', 'Hair Gel', 'Garnier', 'Hair Gel For men 300ml', 15, '7.00'),
+(28, 'Hair7890', 'Shampoo', 'Sunsilk', 'Shampoo (SunSilk) 500ML', 47, '20.00'),
+(29, 'Hair7898', 'Conditioner', 'Sunsilk', 'Sun Silk Conditioner 330 ML', 18, '18.00'),
+(30, 'Styling9874', 'Hair Mousse', 'HERBIVORE BOTANICALS', 'Hair Mousse 8 oz/240 ml', 24, '19.00');
 
 -- --------------------------------------------------------
 
@@ -162,13 +175,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1222;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Constraints for dumped tables
