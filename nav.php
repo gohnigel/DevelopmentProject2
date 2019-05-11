@@ -2,6 +2,8 @@
 /*Check for valid Session*/
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 require 'config.php';
+    include("functions.php");
+
 ?>
 <nav class='navbar navbar-inverse'>
     <div class='container-fluid'>
@@ -40,8 +42,53 @@ if(isset($_SESSION['email'])){
             <?php
   if(isset($_SESSION['email'])){
 ?>
-
             <li><?php echo '<h6 style = "color:white;margin-top: 12px;">Welcome, ' .$_SESSION['full_name'] .'</h6>'; ?></li>
+            <!--Notification-->
+             <li class="nav-item dropdown">
+            <a class="nav-link" href="notifications.php" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notifications 
+                <?php
+                $query = "SELECT * from notification where user='".$_SESSION["email"]."' OR `status` = 'unread' order by `date` DESC";
+                if(count(fetchAll($query))>0){
+                ?>
+                <span class="badge badge-light"><?php echo count(fetchAll($query)); ?></span>
+              <?php
+                }
+                    ?>
+              </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <?php
+                $query = "SELECT * from notification where user='".$_SESSION["email"]."' Order by `date` DESC";
+                 if(count(fetchAll($query))>0){
+                     foreach(fetchAll($query) as $i){
+                ?>
+              <a style ="
+                         <?php
+                            if($i['status']=='unread'){
+                                echo "font-weight:bold;";
+                            }
+                         ?>
+                         " class="dropdown-item" href="notifications.php?id=<?php echo $i['id'] ?>">
+                <small><i><?php echo date('F j, Y, g:i a',strtotime($i['date'])) ?></i></small><br/>
+                  <?php 
+                  
+                if($i['type']=='update'){
+                    echo "Your appointment has been updated.";
+                }else if($i['type']=='cart'){
+                    echo "Your Recent Order has been updated.";
+                }
+                  ?>
+                </a>
+              <div class="dropdown-divider"></div>
+                <?php
+                     }
+                 }else{
+                     echo "No Records yet.";
+                 }
+                     ?>
+            </div>
+          </li>
+
+            <!--Notification end-->
             <?php  
 }
 else{            

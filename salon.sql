@@ -58,6 +58,28 @@ INSERT INTO `booking` (`bookingid`, `date`, `time`, `full_name`, `email`, `statu
 ('5ccd30475a486', '0000-00-00', '01:00', 'Ben', 'isal@salon.com', 'pending', ''),
 ('5ccd308f89282', '2019-05-27', '17:06', 'Andy', 'isal@salon.com', 'Canceled', '');
 
+
+--
+-- Table structure for table `notification`
+--
+
+CREATE TABLE `notification` (
+  `id` int(11) NOT NULL,
+  `message` varchar(225) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `user` varchar(225) NOT NULL,
+  `date` datetime NOT NULL,
+  `type` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`id`, `message`, `status`, `user`, `date`, `type`) VALUES
+(12, 'Your Appointment has been updated', 'read', 'isal@salon.com', '2019-05-11 16:08:02', 'update');
+
+
 -- --------------------------------------------------------
 
 --
