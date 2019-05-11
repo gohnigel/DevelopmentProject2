@@ -35,7 +35,7 @@ if(isset($_SESSION["email"])){
 	?>
 
     <form method="POST" name="validateregister" action="newregister.php" enctype="multipart/form-data" autocomplete="off">
-        <div class="row">
+        <div class="row panel panel-default">
             <h3 class="text-center"> Fill in the below details to register for our services</h3>
             <div class="small-10">
 

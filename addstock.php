@@ -37,7 +37,7 @@ if($_SESSION["role"]!="admin") {
 <body>
   <div class="container-fluid"> 
     <div class="row content">
-        <div class="col-xs-12">
+        <div class="col-xs-12 panel panel-default">
             <!--Dont Remove This line(Displays the users name)-->
             <?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?>
             <p>Add Inventory Item</p>

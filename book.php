@@ -11,8 +11,6 @@ if($_SESSION["role"]!="client") {
   header("location:index.php");
 }
 
-$_SESSION['message'] = '';
-
 ?>
 <!DOCTYPE html>
 
@@ -42,7 +40,7 @@ $_SESSION['message'] = '';
 <body>
     <div class="container-fluid">
         <div class="row content">
-            <div class="col-xs-12">
+            <div class="col-xs-12 panel panel-default">
                 <!--Dont Remove This line(Displays the users name)-->
                 <?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?>
                 <p>Fill in the below form to make an appointment</p>

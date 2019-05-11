@@ -22,6 +22,7 @@ if(!isset($_SESSION["email"])) {
     <title>Salon</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/gui.css" />
+    <link rel="stylesheet" type="text/css" href="css/foundation.css" />
 </head>
 <header>
     <div class="banner-div">
@@ -35,13 +36,11 @@ if(!isset($_SESSION["email"])) {
 ?>
 
 <body>
-   <div class="registermessage">
-        <h2>Edit stock</h2>
-        <p>Edit details in here</p>
-    </div>
   <div class="container-fluid">   
     <div class="row content">
-        <div class="col-xs-12">
+        <div class="col-xs-12 panel panel-default">
+           <h3>Edit stock</h3>
+           <p>Edit details in here</p>
             <form method="GET" action="savestock.php">
                 <div id="edit">
                     <?php

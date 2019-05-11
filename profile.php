@@ -36,7 +36,7 @@ if($_SESSION["role"]!="client") {
 <body>
    <div class="container-fluid">
     <div class="row content">
-        <div class="col-xs-12">
+        <div class="col-xs-12 panel panel-default">
             <h3>Customer Profile</h3>
            <?php
               $user = $_SESSION["email"];
@@ -54,7 +54,7 @@ if($_SESSION["role"]!="client") {
         </div>
         </div>
         <div class="row">
-        <div class="col-xs-12 text-center">
+        <div class="col-xs-12 text-center panel panel-default">
            <?php
                   echo "<p>Name: ".$obj->full_name."</p>";
                   echo "<p>Email: ".$obj->email."</p>";

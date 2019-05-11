@@ -42,13 +42,11 @@ if($_SESSION["role"]!="client") {
         $currentPage = 'Customer profile';
 		include ('nav.php');
 	?>
-    <div class="registermessage">
-        <h3>Edit profile</h3>
-        <p>Edit details in here</p>
-    </div>
   <div class="container-fluid">
     <div class="row content">
-        <div class="col-xs-12">
+        <div class="col-xs-12 panel panel-default">
+           <h3>Edit profile</h3>
+           <p>Edit details in here</p>
             <form method="POST" action="savechanges.php" enctype="multipart/form-data" autocomplete="off">
                 <div id="login">
                    <?php

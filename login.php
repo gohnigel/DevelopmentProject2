@@ -38,7 +38,7 @@ if(isset($_SESSION["email"])){
 
   
     <form method="POST" action="verify.php" style="margin-top:100px">
-        <div class="row">
+        <div class="row panel panel-default">
             <h3 class="text-center">Enter Your Registered Email and Password</h3>
                 <div class="small-10">
                 <div class="row">
