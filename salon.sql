@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2019 at 08:56 AM
+-- Generation Time: May 12, 2019 at 11:18 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -116,24 +116,24 @@ INSERT INTO `orders` (`order_id`, `order_desc`, `item_code`, `total`, `qty`, `da
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `product_code` varchar(60) NOT NULL,
-  `product_img_name` varchar(60) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `product_name` varchar(60) NOT NULL,
   `product_brand` varchar(255) NOT NULL,
   `product_desc` tinytext NOT NULL,
   `qty` int(5) NOT NULL,
-  `price` decimal(10,2) NOT NULL
+  `price` decimal(10,2) NOT NULL,
+  `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `product_code`, `product_img_name`, `product_name`, `product_brand`, `product_desc`, `qty`, `price`) VALUES
-(26, 'Styling9872', '', 'Hair Wax', 'Bad Labs', 'Hair Wax For Men ', 42, '13.00'),
-(27, 'Styling9873', '', 'Hair Gel', 'Garnier', 'Hair Gel For men 300ml', 15, '7.00'),
-(28, 'Hair7890', '', 'Shampoo', 'Sunsilk', 'Shampoo (SunSilk) 500ML', 47, '20.00'),
-(29, 'Hair7898', '', 'Conditioner', 'Sunsilk', 'Sun Silk Conditioner 330 ML', 18, '18.00'),
-(30, 'Styling9874', '', 'Hair Mousse', 'HERBIVORE BOTANICALS', 'Hair Mousse 8 oz/240 ml', 24, '19.00');
+INSERT INTO `products` (`id`, `product_code`, `product_name`, `product_brand`, `product_desc`, `qty`, `price`, `image`) VALUES
+(26, 'Styling9872', 'Hair Wax', 'Bad Labs', 'Hair Wax For Men ', 42, '13.00', ''),
+(27, 'Styling9873', 'Hair Gel', 'Garnier', 'Hair Gel For men 300ml', 15, '7.00', ''),
+(28, 'Hair7890', 'Shampoo', 'Sunsilk', 'Shampoo (SunSilk) 500ML', 47, '20.00', ''),
+(29, 'Hair7898', 'Conditioner', 'Sunsilk', 'Sun Silk Conditioner 330 ML', 18, '18.00', ''),
+(30, 'Styling9874', 'Hair Mousse', 'HERBIVORE BOTANICALS', 'Hair Mousse 8 oz/240 ml', 24, '19.00', '');
 
 -- --------------------------------------------------------
 
@@ -204,7 +204,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -216,7 +216,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Constraints for dumped tables

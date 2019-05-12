@@ -56,6 +56,7 @@ $_SESSION['message'] = '';
 
               echo '<div class="large-4 columns">';
               echo '<p><h3>'.$obj->product_name.'</h3></p>';
+              echo '<img style="width:400px;height:250px;" src="images/'.$obj->image.'"/>';
               echo '<p><strong>Brand</strong>: '.$obj->product_brand.'</p>';
               echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
               echo '<p><strong>Description</strong>: '.$obj->product_desc.'</p>';
