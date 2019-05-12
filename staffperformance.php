@@ -47,7 +47,7 @@ GROUP BY full_name");
             <?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?>
             <h5> Staff Mode</h5>
             <p><b>Your Currently viewing all Staff Performance</b></p>
-            <div id="piechart" style="width: 900px; height: 500px;"></div>
+            <div id="barchart_values" style="width: 1100px; height: 300px;"></div>
         </div>
     </div>
     <div class="row">
@@ -79,27 +79,29 @@ GROUP BY full_name");
     
     <script type="text/javascript">
         google.charts.load('current', {
-            'packages': ['corechart']
+            'packages': ['bar']
         });
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Gender', 'Number'],
+                ['Name', 'Times Chosen'],
                 <?php  
                           while($row = mysqli_fetch_array($result))  
                           {  
-                               echo "['".$row["full_name"]."', ".$row["StaffCount"]."],";  
+                               echo "['".$row['full_name']."', '".$row['StaffCount']."'],";  
                           }  
                           ?>
             ]);
-            var options = {
-                title: 'Percentage of Staff Chosen',
-                is3D: true,
-                pieHole: 0.4
-            };
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-            chart.draw(data, options);
+            
+        var options = {
+        chart: {
+            width: 5000,
+            height: 500
+        }
+      };
+            var chart = new google.charts.Bar(document.getElementById("barchart_values"));
+      chart.draw(data, google.charts.Bar.convertOptions(options));
         }
 
     </script>
