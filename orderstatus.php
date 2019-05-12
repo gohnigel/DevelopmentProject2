@@ -25,6 +25,14 @@ else if ($action=="cancel")
 
 
 }
+else if ($action=="delivered")
+{
+    $mysqli->query("UPDATE `orders` SET `status` = 'Delivered' WHERE `orders`.`order_id` = '$id'");
+    header("location:manageorders.php");
+    mysqli_close($mysqli);
+
+
+}
 else{
     mysqli_close($mysqli);
 
@@ -33,3 +41,4 @@ else{
 
 
 ?>
+

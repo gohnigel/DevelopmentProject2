@@ -46,7 +46,7 @@ if($_SESSION["role"]!="admin") {
             <div class="col-xs-12">
                 <table id="myTable" class="table table-active table-hover">
                     <tr class="header">
-                        <th style="width:11%;">Order ID</th>
+                        <th style="width:9%;">Order ID</th>
                         <th style="width:11%;">Product Name</th>
                         <th style="width:11%;">Product Code</th>
                         <th style="width:11%;">Qty Sold</th>
@@ -54,6 +54,7 @@ if($_SESSION["role"]!="admin") {
                         <th style="width:11%;">Order Date</th>
                         <th style="width:11%;">Status</th>
                         <th style="width:14%;">Customer</th>
+                        <th style="width:11%;">Delivered</th>
                         <th style="width:11%;">Shipped</th>
                         <th style="width:13%;">Cancelled</th>
                     </tr>
@@ -71,6 +72,7 @@ if($_SESSION["role"]!="admin") {
               echo '<td>'.$obj->date.'</td>';
               echo '<td>'.$obj->status.'</td>';
               echo '<td>'.$obj->customer.'</td>';
+            echo '<td><a href="orderstatus.php?order_id=' .$obj->order_id. '&action=delivered"><button class="btn btn-primary">Delivered</button></a>';
                  echo '<td><a href="orderstatus.php?order_id=' .$obj->order_id. '&action=shipped"><button class="btn btn-primary">Shipped</button></a>';
                 echo '<td><a  href="orderstatus.php?order_id=' .$obj->order_id. '&action=cancel"><button class="btn btn-danger">Cancelled </button></a>';
 			  echo'</tr>';
