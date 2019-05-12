@@ -6,6 +6,7 @@ $full_name = $_POST['full_name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $password = $_POST['password'];
+$add = $_POST['add'];
 
 $_SESSION['message'] = '';
 
@@ -58,6 +59,8 @@ if($_SESSION["role"]!="client") {
                         echo "<p><input type='text' name='phone' id='phone' value='".$phone."' required/></p>";
                         echo "<p><label for='password'>Password :</label></p>";
                         echo "<p><input type='password' name='password' id='password' value='".$password."' required/></p>";
+                        echo "<p><label for='add'>Address :</label></p>";
+                        echo "<p><input type='text' name='add' id='add' value='".$add."' required/></p>";
                   ?>
                 </div>
                 <p><input type="submit" class="btn btn-success" value="Save changes" /></p>                

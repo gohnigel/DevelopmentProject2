@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2019 at 11:18 PM
+-- Generation Time: May 13, 2019 at 01:02 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -87,25 +87,31 @@ CREATE TABLE `orders` (
   `qty` int(50) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` varchar(225) NOT NULL,
-  `customer` varchar(225) NOT NULL
+  `customer` varchar(225) NOT NULL,
+  `shipping_add` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`order_id`, `order_desc`, `item_code`, `total`, `qty`, `date`, `status`, `customer`) VALUES
-(5, 'Shampoo', 'Hair7890', 60, 50, '2019-05-08 14:47:34', 'Preparing Your Order', 'isal@salon.com'),
-(6, 'Hair Wax', 'Styling9872', 13, 50, '2019-05-08 14:47:35', 'Preparing Your Order', 'isal@salon.com'),
-(7, 'Hair Mousse', 'Styling9874', 19, 25, '2019-05-08 14:47:41', 'Preparing Your Order', 'isal@salon.com'),
-(8, 'Conditioner', 'Hair7898', 126, 25, '2019-05-08 14:47:51', 'Preparing Your Order', 'isal@salon.com'),
-(9, 'Hair Wax', 'Styling9872', 13, 49, '2019-05-11 07:04:08', 'Preparing Your Order', 'isal@salon.com'),
-(10, 'Hair Wax', 'Styling9872', 13, 48, '2019-05-11 07:06:05', 'Preparing Your Order', 'isal@salon.com'),
-(11, 'Hair Wax', 'Styling9872', 13, 47, '2019-05-11 07:08:46', 'Preparing Your Order', 'isal@salon.com'),
-(12, 'Hair Wax', 'Styling9872', 13, 46, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com'),
-(13, 'Hair Wax', 'Styling9872', 13, 45, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com'),
-(14, 'Hair Wax', 'Styling9872', 13, 44, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com'),
-(15, 'Hair Wax', 'Styling9872', 13, 43, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com');
+INSERT INTO `orders` (`order_id`, `order_desc`, `item_code`, `total`, `qty`, `date`, `status`, `customer`, `shipping_add`) VALUES
+(5, 'Shampoo', 'Hair7890', 60, 50, '2019-05-08 14:47:34', 'Preparing Your Order', 'isal@salon.com', ''),
+(6, 'Hair Wax', 'Styling9872', 13, 50, '2019-05-08 14:47:35', 'Preparing Your Order', 'isal@salon.com', ''),
+(7, 'Hair Mousse', 'Styling9874', 19, 25, '2019-05-08 14:47:41', 'Preparing Your Order', 'isal@salon.com', ''),
+(8, 'Conditioner', 'Hair7898', 126, 25, '2019-05-08 14:47:51', 'Preparing Your Order', 'isal@salon.com', ''),
+(9, 'Hair Wax', 'Styling9872', 13, 49, '2019-05-11 07:04:08', 'Preparing Your Order', 'isal@salon.com', ''),
+(10, 'Hair Wax', 'Styling9872', 13, 48, '2019-05-11 07:06:05', 'Preparing Your Order', 'isal@salon.com', ''),
+(11, 'Hair Wax', 'Styling9872', 13, 47, '2019-05-11 07:08:46', 'Preparing Your Order', 'isal@salon.com', ''),
+(12, 'Hair Wax', 'Styling9872', 13, 46, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
+(13, 'Hair Wax', 'Styling9872', 13, 45, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
+(14, 'Hair Wax', 'Styling9872', 13, 44, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
+(15, 'Hair Wax', 'Styling9872', 13, 43, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
+(16, 'Hair Wax', 'Styling9872', 13, 42, '2019-05-12 22:11:20', 'Preparing Your Order', 'isal@salon.com', ''),
+(18, 'Hair Wax', 'Styling9872', 26, 41, '2019-05-12 22:47:55', 'Preparing Your Order', 'isal@salon.com', 'Test Add'),
+(19, 'Hair Gel', 'Styling9873', 14, 12, '2019-05-12 22:59:58', 'Preparing Your Order', 'isal@salon.com', 'Test Add'),
+(20, 'Hair Gel', 'Styling9873', 14, 10, '2019-05-12 23:00:18', 'Preparing Your Order', 'isal@salon.com', 'Test Add'),
+(21, 'Shampoo', 'Hair7890', 20, 47, '2019-05-12 23:00:32', 'Preparing Your Order', 'isal@salon.com', 'Test Add');
 
 -- --------------------------------------------------------
 
@@ -129,9 +135,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_code`, `product_name`, `product_brand`, `product_desc`, `qty`, `price`, `image`) VALUES
-(26, 'Styling9872', 'Hair Wax', 'Bad Labs', 'Hair Wax For Men ', 42, '13.00', ''),
-(27, 'Styling9873', 'Hair Gel', 'Garnier', 'Hair Gel For men 300ml', 15, '7.00', ''),
-(28, 'Hair7890', 'Shampoo', 'Sunsilk', 'Shampoo (SunSilk) 500ML', 47, '20.00', ''),
+(26, 'Styling9872', 'Hair Wax', 'Bad Labs', 'Hair Wax For Men ', 39, '13.00', ''),
+(27, 'Styling9873', 'Hair Gel', 'Garnier', 'Hair Gel For men 300ml', 8, '7.00', ''),
+(28, 'Hair7890', 'Shampoo', 'Sunsilk', 'Shampoo (SunSilk) 500ML', 46, '20.00', ''),
 (29, 'Hair7898', 'Conditioner', 'Sunsilk', 'Sun Silk Conditioner 330 ML', 18, '18.00', ''),
 (30, 'Styling9874', 'Hair Mousse', 'HERBIVORE BOTANICALS', 'Hair Mousse 8 oz/240 ml', 24, '19.00', '');
 
@@ -147,6 +153,7 @@ CREATE TABLE `users` (
   `password` varchar(225) NOT NULL,
   `phone` int(10) NOT NULL,
   `role` varchar(50) NOT NULL,
+  `cust_add` varchar(225) NOT NULL,
   `image` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -154,11 +161,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`email`, `full_name`, `password`, `phone`, `role`, `image`) VALUES
-('Ignatius@salon.com', 'Ignatius Ting Moi Ing ', '1234', 11111111, 'client', ''),
-('isal@salon.com', 'Isal Korale', '1234', 12345678, 'client', 0x696d616765732f70726f66696c652e706e67),
-('nigel@salon.com', 'Nigel Goh Tze Fei', '1234', 1111111, 'client', ''),
-('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin', '');
+INSERT INTO `users` (`email`, `full_name`, `password`, `phone`, `role`, `cust_add`, `image`) VALUES
+('Ignatius@salon.com', 'Ignatius Ting Moi Ing ', '1234', 11111111, 'client', '', ''),
+('isal@salon.com', 'Isal Korale', '1234', 12345678, 'client', 'Test Ad9', 0x696d616765732f70726f66696c652e706e67),
+('nigel@salon.com', 'Nigel Goh Tze Fei', '1234', 1111111, 'client', '', ''),
+('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin', '', '');
 
 --
 -- Indexes for dumped tables
@@ -210,7 +217,7 @@ ALTER TABLE `notification`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `products`

@@ -9,7 +9,7 @@ $password = $_POST["password"];
 $flag = 'true';
 
 
-$result = $mysqli->query('SELECT email,full_name,password,phone,role from users');
+$result = $mysqli->query('SELECT email,full_name,password,phone,role,cust_add from users');
 
 if($result === FALSE){
   die(mysqli_error($mysqli));
@@ -24,6 +24,7 @@ if($result){
       $_SESSION['full_name'] = $obj->full_name;
       $_SESSION['role'] = $obj->role;
       $_SESSION['phone'] = $obj->phone;
+      $_SESSION['add'] = $obj->cust_add;
     echo '<h1>Success Login!</h1>';
     header ("location:index.php");
     } else {

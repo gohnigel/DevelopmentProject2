@@ -44,7 +44,9 @@
                 <label for="reEmail">Re-enter your Email</label>
                 <input type="email" name="ReEmail" id="reEmail" required />
                 <label for="phone">Phone Number</label>
-                <input type="text" name="phone" id="phone" required> 
+                <input type="text" name="phone" id="phone" required>
+                <label for="phone">Address (Item Purchased online will be shipped to this address)</label>
+                  <textarea rows="3" cols="50" name="cust_add" id="cust_add" required> </textarea>
                 <label for="password">Enter your Password</label>
                 <input type="password" name="Password" id="password" required />
                 <label for="RePassword">Re-enter your Password</label>

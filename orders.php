@@ -52,6 +52,7 @@ $_SESSION['message'] = '';
                         <th style="width:40%;">Total Price</th>
                         <th style="width:60%;">Date</th>
                         <th style="width:60%;">Status</th>
+                        <th style="width:60%;">Shipping Address</th>
                     </tr>
                     <?php
           $user = $_SESSION["email"];
@@ -66,6 +67,7 @@ $_SESSION['message'] = '';
 			  echo '<td>'.$obj->total.'</td>';
                 echo '<td>'.$obj->date.'</td>';
 			  echo '<td>'.$obj->status.'</td>';
+			  echo '<td>'.$obj->shipping_add.'</td>';
 			  
 
 			  echo'</tr>';
