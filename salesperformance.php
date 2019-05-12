@@ -44,7 +44,7 @@ $result = $mysqli->query("SELECT order_desc,sum(qty) as number from orders group
 ?>
 
 <body>
-    <div class="container-fluid" id="HTMLtoPDF">
+    <div class="container-fluid" >
         <div class="row content">
             <div class="col-xs-12">
 
@@ -54,13 +54,15 @@ $result = $mysqli->query("SELECT order_desc,sum(qty) as number from orders group
                     <br />
                     <div id="piechart" style="width: 900px; height: 500px;"></div>
                 </div>
-                <H2> Detailed View</H2>
-                <table id="myTable" class="table table-active">
+                <div id="HTMLtoPDF" >
+                <H2> Detailed View of the Sales Performance</H2>
+                <table id="myTable" class="table table-active" >
                     <tr class="header">
                         <th style="width:60%;">Item Name</th>
                         <th style="width:60%;">Item Code</th>
-                        <th style="width:60%;">Qty</th>
-                        <th style="width:40%;">Total Price</th>
+                        <th style="width:60%;">Qty Sold</th>
+                        <th style="width:40%;">Total Profit</th>
+                        <th style="width:40%;">Date&Time</th>
                     </tr>
                     <?php
           $user = $_SESSION["email"];
@@ -72,6 +74,7 @@ $result = $mysqli->query("SELECT order_desc,sum(qty) as number from orders group
               echo '<td>'.$obj->item_code.'</td>';
 			  echo '<td>'.$obj->qty.'</td>';
 			  echo '<td>'.$obj->total.'</td>';
+			  echo '<td>'.$obj->date.'</td>';
 			  
 
 			  echo'</tr>';
@@ -80,7 +83,8 @@ $result = $mysqli->query("SELECT order_desc,sum(qty) as number from orders group
           }
         ?>
                 </table>
-                <button type="button" class="btn btn-primary" onclick="HTMLtoPDF()">Export Sales Performance to PDF</button>
+                </div>
+            <button type="button" class="btn btn-primary" onclick="HTMLtoPDF()">Export PDF</button>
 
 
 
