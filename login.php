@@ -1,15 +1,10 @@
 <?php
+  if(session_id() == '' || !isset($_SESSION)){session_start();}
 
-if(session_id() == '' || !isset($_SESSION)){session_start();}
-
-if(isset($_SESSION["email"])){
-
-        header("location:book.php");
-}
-
-?>
-<?php
-	require 'config.php';
+  if(isset($_SESSION["email"])){
+    header("location:book.php");
+  }
+  require 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -36,57 +31,37 @@ if(isset($_SESSION["email"])){
 		include ('nav.php');
 	?>
 
-  
-    <form method="POST" action="verify.php" style="margin-top:100px">
-        <div class="row panel panel-default">
-            <h3 class="text-center">Enter Your Registered Email and Password</h3>
-                <div class="small-10">
-                <div class="row">
-                    <div class="small-4 columns">
-                        <label for="right-label" class="right inline" placeholder="Staff@Salon.com">Email</label>
-                    </div>
-                    <div class="small-8 columns">
-                        <input type="email" name="email" id="right-label" required />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="small-4 columns">
-                        <label for="right-label" class="right inline">Password</label>
-                    </div>
-                    <div class="small-8 columns">
-                        <input type="password" name="password" id="right-label" required />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="small-4 columns">
-                    </div>
-                    <div class="small-8 columns">
-
-                        <input type="submit" class="btn btn-primary" value="Log in" id="right-label" /> <input type="reset" class="btn btn-primary" value="Reset" id="right-label" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </form>
-    <div class="row" style="margin-top:10px;">
-        <div class="small-12">
-
-
-
-            <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
-            <script src="js/jquery.min.js"></script>
-            <!-- All Bootstrap plug-ins file -->
-            <script src="js/bootstrap.min.js"></script>
-            <!-- Basic Angular
-</div>JS -->
-            <script src="js/angular.min.js"></script>
-
-            <?php
-		include ('footer.php');
-	?>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 panel panel-default">
+        <form method="POST" action="verify.php">
+          <h3 class="text-center">Enter Your Registered Email and Password</h3>
+          <div class="form-group form-adjust">
+            <label for="email" placeholder="Staff@Salon.com">Email</label>
+            <input type="email" name="email" id="email" required />
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required />
+          </div>
+          <div class="text-center"><input type="submit" class="btn btn-success" value="Log in" /> <input type="reset" class="btn btn-success" value="Reset"/></div>
+        </form>
+      </div>
     </div>
+  </div>
+   
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <?php include ('footer.php'); ?>
+      </div>
+    </div>
+  </div>   
+    
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="js/angular.min.js"></script>
 </body>
 
 </html>

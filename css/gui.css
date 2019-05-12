@@ -7,9 +7,7 @@ body {
 }
 
 .banner {
-    padding: 60px;
     display: inline-block;
-    padding-left: 60px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -140,4 +138,9 @@ th, td{
   min-width: 5%;
   max-width: 5%;
   white-space: normal;
+}
+
+.form-adjust {
+  width: 50%;
+  margin: 0 auto;
 }
