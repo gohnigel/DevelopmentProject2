@@ -9,20 +9,8 @@ $email = $_GET['email'];
 
 
     $mysqli->query("UPDATE booking SET status = 'Canceled' WHERE bookingid='".$id."'");
-    $mail ->Subject = 'Appointment Update';
-   $mail ->Body = 'Dear '.$full_name.',<br>
-   We Would like to inform that the booking  the following Booking Reference<b>: '.$id.'</b> has been canceled.<br> Thank You,<br> Smile and Style Kuching';
-   $mail ->AddAddress($email);
-
-   if(!$mail->Send())
-   {
-       echo "Mail Not Sent";
-   }
-   else
-   {
-       echo "Mail Sent";
-   }
-
+   
+$mysqli->query("INSERT INTO `notification`(`message`, `status`, `user`, `type`) VALUES ('Your Recent Appointment has been Cancelled, Please Contact us for more information','unread','".$_GET['email']."','update')");
 
 			
 		mysqli_close($mysqli);

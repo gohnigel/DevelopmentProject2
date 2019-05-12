@@ -9,20 +9,8 @@ $id = $_GET['bookingid'];
 $email = $_GET['email'];
 $full_name = $_GET['full_name'];
 
+$mysqli->query("INSERT INTO `notification`(`message`, `status`, `user`, `type`) VALUES ('We are sorry but we are unable to serve you on the requested date. please reshedule.','unread','".$_GET['email']."','update')");
 
-   $mail ->Subject = 'Appointment Update';
-   $mail ->Body = 'Dear '.$full_name.',<br>
-   We would like to apologize since our staff members are unable to statisfy your needs with the time and date you have provided </b>for the following Booking Reference<b>: '.$id.'</b> Please login to to be able to select another date and time <br> Thank You,<br> Smile and Style Kuching';
-   $mail ->AddAddress($email);
-
-   if(!$mail->Send())
-   {
-       echo "Mail Not Sent";
-   }
-   else
-   {
-       echo "Mail Sent";
-   }
 
  
 $mysqli->query("UPDATE booking SET status = 'Please Reshedule' WHERE bookingid='$id'");
