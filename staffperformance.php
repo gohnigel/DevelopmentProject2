@@ -40,7 +40,7 @@ GROUP BY full_name");
 ?>
 
 <body>
-  <div class="container-fluid" id="HTMLtoPDF"> 
+  <div class="container-fluid"> 
     <div class="row content">
         <div class="col-xs-12">
             <!--Dont Remove This line(Displays the users name)-->
@@ -53,6 +53,7 @@ GROUP BY full_name");
     <div class="row">
         <div class="col-xs-8 col-xs-offset-2" style="text-align:center;">
            <br>
+            <div id="HTMLtoPDF">
             <table id="myTable" class="table table-active">
                 <tr class="header">
                     <th>Staff Name</th>
@@ -72,6 +73,7 @@ GROUP BY full_name");
           }
         ?>
             </table>
+                </div>
             <button type="button" class="btn btn-primary" onclick="HTMLtoPDF()">Export PDF</button>
         </div>
     </div>
