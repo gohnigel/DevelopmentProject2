@@ -166,15 +166,15 @@ INSERT INTO `users` (`email`, `full_name`, `password`, `phone`, `role`, `cust_ad
 ('isal@salon.com', 'Isal Korale', '1234', 12345678, 'client', 'Test Ad9', 0x696d616765732f70726f66696c652e706e67),
 ('nigel@salon.com', 'Nigel Goh Tze Fei', '1234', 1111111, 'client', '', ''),
 ('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin', '', ''),
-('Andrew@salon.com', 'Andrew', '1234', 1111111, 'admin', ''),
-('Andy@salon.com', 'Andy', '1234', 1111111, 'admin', ''),
-('Ben@salon.com', 'Ben', '1234', 1111111, 'admin', ''),
-('Sam@salon.com', 'Sam', '1234', 1111111, 'admin', ''),
-('Victor@salon.com', 'Victor', '1234', 1111111, 'admin', ''),
-('Steven@salon.com', 'Steven', '1234', 1111111, 'admin', ''),
-('George@salon.com', 'George', '1234', 1111111, 'admin', ''),
-('William@salon.com', 'William', '1234', 1111111, 'admin', ''),
-('James@salon.com', 'James', '1234', 1111111, 'admin', '');
+('Andrew@salon.com', 'Andrew', '1234', 1111111, 'admin', '', ''),
+('Andy@salon.com', 'Andy', '1234', 1111111, 'admin', '', ''),
+('Ben@salon.com', 'Ben', '1234', 1111111, 'admin', '', ''),
+('Sam@salon.com', 'Sam', '1234', 1111111, 'admin', '', ''),
+('Victor@salon.com', 'Victor', '1234', 1111111, 'admin', '', ''),
+('Steven@salon.com', 'Steven', '1234', 1111111, 'admin', '', ''),
+('George@salon.com', 'George', '1234', 1111111, 'admin', '', ''),
+('William@salon.com', 'William', '1234', 1111111, 'admin', '', ''),
+('James@salon.com', 'James', '1234', 1111111, 'admin', '', '');
 
 --
 -- Indexes for dumped tables
