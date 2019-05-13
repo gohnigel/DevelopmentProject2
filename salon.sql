@@ -49,14 +49,14 @@ INSERT INTO `booking` (`bookingid`, `date`, `time`, `full_name`, `email`, `statu
 ('5cb5eacd3e410', '2019-05-12', '17:00', 'Staff Member', 'nigel@salon.com', 'Canceled', ''),
 ('5cb5eade733f5', '2019-05-05', '12:00', 'Staff Member', 'nigel@salon.com', 'Confirmed', ''),
 ('5cb5eb3492151', '2019-05-01', '13:30', 'Staff Member', 'Ignatius@salon.com', 'Confirmed', ''),
-('5cb5eb447723d', '2019-04-10', '18:30', 'Staff Member', 'Ignatius@salon.com', 'pending', ''),
-('5cb5eb51dc323', '2019-05-19', '17:30', 'Staff Member', 'Ignatius@salon.com', 'Confirmed', ''),
-('5cb5eb773e65d', '2019-05-18', '18:30', 'Staff Member', 'Ignatius@salon.com', 'Confirmed', ''),
-('5cb5ebba197a4', '2019-05-12', '16:30', 'Staff Member', 'isal@salon.com', 'pending', ''),
-('5cb5ebcaf0520', '2019-05-17', '15:30', 'Staff Member', 'isal@salon.com', 'Completed', 'No Notes Added'),
-('5cb5ebd98ead7', '2019-05-02', '18:30', 'Staff Member', 'isal@salon.com', 'pending', ''),
-('5ccd30475a486', '0000-00-00', '01:00', 'Staff Member', 'isal@salon.com', 'pending', ''),
-('5ccd308f89282', '2019-05-27', '17:06', 'Staff Member', 'isal@salon.com', 'Canceled', '');
+('5cb5eb447723d', '2019-04-10', '18:30', 'Andrew', 'Ignatius@salon.com', 'pending', ''),
+('5cb5eb51dc323', '2019-05-19', '17:30', 'William', 'Ignatius@salon.com', 'Confirmed', ''),
+('5cb5eb773e65d', '2019-05-18', '18:30', 'James', 'Ignatius@salon.com', 'Confirmed', ''),
+('5cb5ebba197a4', '2019-05-12', '16:30', 'Victor', 'isal@salon.com', 'pending', ''),
+('5cb5ebcaf0520', '2019-05-17', '15:30', 'Sam', 'isal@salon.com', 'Completed', 'No Notes Added'),
+('5cb5ebd98ead7', '2019-05-02', '18:30', 'Ben', 'isal@salon.com', 'pending', ''),
+('5ccd30475a486', '0000-00-00', '01:00', 'Ben', 'isal@salon.com', 'pending', ''),
+('5ccd308f89282', '2019-05-27', '17:06', 'Andy', 'isal@salon.com', 'Canceled', '');
 
 -- --------------------------------------------------------
 
@@ -165,7 +165,16 @@ INSERT INTO `users` (`email`, `full_name`, `password`, `phone`, `role`, `cust_ad
 ('Ignatius@salon.com', 'Ignatius Ting Moi Ing ', '1234', 11111111, 'client', '', ''),
 ('isal@salon.com', 'Isal Korale', '1234', 12345678, 'client', 'Test Ad9', 0x696d616765732f70726f66696c652e706e67),
 ('nigel@salon.com', 'Nigel Goh Tze Fei', '1234', 1111111, 'client', '', ''),
-('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin', '', '');
+('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin', '', ''),
+('Andrew@salon.com', 'Andrew', '1234', 1111111, 'admin', ''),
+('Andy@salon.com', 'Andy', '1234', 1111111, 'admin', ''),
+('Ben@salon.com', 'Ben', '1234', 1111111, 'admin', ''),
+('Sam@salon.com', 'Sam', '1234', 1111111, 'admin', ''),
+('Victor@salon.com', 'Victor', '1234', 1111111, 'admin', ''),
+('Steven@salon.com', 'Steven', '1234', 1111111, 'admin', ''),
+('George@salon.com', 'George', '1234', 1111111, 'admin', ''),
+('William@salon.com', 'William', '1234', 1111111, 'admin', ''),
+('James@salon.com', 'James', '1234', 1111111, 'admin', '');
 
 --
 -- Indexes for dumped tables
