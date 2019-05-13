@@ -10,6 +10,8 @@
   if($_SESSION["role"]!="client") {
     header("location:index.php");
   }
+
+  $_SESSION['profmessage'] = '';
 ?>
 <!DOCTYPE html>
 
@@ -68,7 +70,7 @@
             <p><label for="time">Time :</label></p>
             <p><input type="time" name="time" id="time" required></p>
             </div>
-            <p class="text-center"> <?php if(isset($_SESSION['message'])) echo $_SESSION['message']; ?></p>
+            <p class="text-center clash"> <?php if(isset($_SESSION['bookmessage'])) echo $_SESSION['bookmessage']; ?></p>
             <p class="text-center"><input type="submit" name="submit" class="btn btn-success" value="Make Appointment" />
                 <input type="reset" class="btn btn-success" value="Clear Form" /></p>
             </form>

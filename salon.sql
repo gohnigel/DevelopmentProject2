@@ -162,7 +162,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`email`, `full_name`, `password`, `phone`, `role`, `cust_add`, `image`) VALUES
-('Ignatius@salon.com', 'Ignatius Ting Moi Ing ', '1234', 11111111, 'client', '', ''),
+('Ignatius@salon.com', 'Ignatius Ting Moi Ing', '1234', 11111111, 'client', '', ''),
 ('isal@salon.com', 'Isal Korale', '1234', 12345678, 'client', 'Test Ad9', 0x696d616765732f70726f66696c652e706e67),
 ('nigel@salon.com', 'Nigel Goh Tze Fei', '1234', 1111111, 'client', '', ''),
 ('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin', '', ''),

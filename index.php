@@ -19,7 +19,8 @@
     <?php
       $currentPage = 'Home';
       include ('nav.php');
-      $_SESSION['message'] = '';  
+      $_SESSION['profmessage'] = '';
+      $_SESSION['bookmessage'] = '';
     ?>
    
     <div class="container-fluid">

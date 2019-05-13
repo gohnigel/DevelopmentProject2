@@ -15,8 +15,7 @@ $result = $mysqli->query("UPDATE users SET full_name='$fullname',cust_add='$add'
 if ($result){
 	echo 'Changes saved';
 	echo '<br/>';
-    $message = 'Profile details are changed';
-    $_SESSION['message'] = $message;
+    $_SESSION['profmessage'] = 'Profile details are changed';
     header ("location:profile.php");
 }
 else

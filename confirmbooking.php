@@ -24,14 +24,12 @@ $checkrows = mysqli_num_rows($check);
 
 if($checkrows == 0){
   $mysqli->query("INSERT INTO booking (`bookingid`, `date`, `time`, `full_name`, `email`, `status`) VALUES('$bookid', '$date', '$time', '$staff', '$email', 'pending')");
-  $message = '';
-  $_SESSION['message'] = $message;
+  $_SESSION['bookmessage'] = '';
 }
 else if($checkrows > 0)
 {
   echo "Appointment has clashed";
-  $message = 'Appointment has clashed';
-  $_SESSION['message'] = $message;
+  $_SESSION['bookmessage'] = 'Appointment has clashed';
   header("location:book.php");
 }
 

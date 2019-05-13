@@ -1,42 +1,44 @@
 <?php
-if(session_id() == '' || !isset($_SESSION)){session_start();}
-    
-include ('config.php');
+  if(session_id() == '' || !isset($_SESSION)){session_start();}
 
-if(!isset($_SESSION["email"])) {
-  header("location:login.php");
-}
+  include ('config.php');
 
-if($_SESSION["role"]!="client") {
-  header("location:index.php");
-}
+  if(!isset($_SESSION["email"])) {
+    header("location:login.php");
+  }
 
-$_SESSION['message'] = '';
+  if($_SESSION["role"]!="client") {
+    header("location:index.php");
+  }
+
+  $_SESSION['profmessage'] = '';
+  $_SESSION['bookmessage'] = '';
 ?>
 <!DOCTYPE html>
 
 <html lang="en">
 
-<head>
-    <title>Salon</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/gui.css" />
-    <link rel="stylesheet" type="text/css" href="css/foundation.css" />
-</head>
-<header>
-    <div class="banner-div">
-        <img class="banner" src="images/banner.JPG" alt="banner">
-    </div>
-</header>
+  <head>
+      <title>Salon</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" type="text/css" href="css/gui.css" />
+      <link rel="stylesheet" type="text/css" href="css/foundation.css" />
+  </head>
 
-<?php
-  $currentPage = 'Shop';
-  include ('nav.php');
-?>
+  <header>
+      <div class="banner-div">
+          <img class="banner" src="images/banner.JPG" alt="banner">
+      </div>
+  </header>
 
-<body>
-   <div class="container-fluid">
-    <div class="row content">
+  <?php
+    $currentPage = 'Shop';
+    include ('nav.php');
+  ?>
+
+  <body>
+     <div class="container-fluid">
+      <div class="row content">
         <div class="col-xs-12">
             <?php echo '<h3>Hi ' .$_SESSION['full_name'] .'</h3>'; ?>
             <p>Shopping for inventory</p>
@@ -56,15 +58,13 @@ $_SESSION['message'] = '';
 
               echo '<div class="large-4 columns">';
               echo '<p><h3>'.$obj->product_name.'</h3></p>';
-              echo '<img style="width:400px;height:250px;" src="images/'.$obj->image.'"/>';
+              echo '<img style="width:300px;height:250px;" src="images/'.$obj->image.'"/>';
               echo '<p><strong>Brand</strong>: '.$obj->product_brand.'</p>';
               echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
               echo '<p><strong>Description</strong>: '.$obj->product_desc.'</p>';
               echo '<p><strong>Units Available</strong>: '.$obj->qty.'</p>';
               echo '<p><strong>Price</strong>: '.$obj->price.'</p>';
-
-
-
+              
               if($obj->qty > 0){
                 echo '<p><a href="update-cart.php?action=add&id='.$obj->id.'"><input type="submit" value="Add To Cart" style="clear:both; background: #0078A0; border: none; color: #fff; font-size: 1em; padding: 10px;" /></a></p>';
               }
@@ -85,9 +85,10 @@ $_SESSION['message'] = '';
           echo '</div>';
           ?>        
         </div>
-        </div>
-       </div>
-
+      </div>
+    </div>
+    
+    <?php include ('footer.php'); ?>
 
     <script src="js/jquery.min.js"></script>
     <!-- All Bootstrap plug-ins file -->
@@ -95,9 +96,6 @@ $_SESSION['message'] = '';
     <!-- Basic AngularJS -->
     <script src="js/angular.min.js"></script>
     <script src="js/slideshow.js"></script>
-</body>
-<?php
-		include ('footer.php');
-	?>
+  </body>
 
 </html>

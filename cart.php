@@ -1,16 +1,17 @@
 <?php
-if(session_id() == '' || !isset($_SESSION)){session_start();}
-    
-include ('config.php');
+  if(session_id() == '' || !isset($_SESSION)){session_start();}
 
-if(!isset($_SESSION["email"])) {
-  header("location:login.php");
-}
+  include ('config.php');
 
-if($_SESSION["role"]!="client") {
-  header("location:index.php");
-}
-$_SESSION['message'] = '';
+  if(!isset($_SESSION["email"])) {
+    header("location:login.php");
+  }
+
+  if($_SESSION["role"]!="client") {
+    header("location:index.php");
+  }
+  $_SESSION['profmessage'] = '';
+  $_SESSION['bookmessage'] = '';
 ?>
 <!DOCTYPE html>
 

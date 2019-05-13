@@ -11,7 +11,8 @@
     header("location:index.php");
   }
 
-  $_SESSION['message'] = '';
+  $_SESSION['profmessage'] = '';
+  $_SESSION['bookmessage'] = '';
 ?>
 <!DOCTYPE html>
 
