@@ -55,8 +55,9 @@
                 <th style="width:11%;">Price</th>
                 <th style="width:11%;">Description</th> 
                 <th style="width:11%;">Total price</th>
-                <th style="width:11%;">Edit product</th> 
-                <th style="width:13%;">Delete product</th>                      
+                <th style="width:25%;">Product Image</th>
+                <th style="width:15%;">Edit product</th> 
+                <th style="width:18%;">Delete product</th>                      
             </tr>
             <?php
               $user = $_SESSION["email"];
@@ -71,6 +72,13 @@
                   echo '<td>$'.$obj->price.'</td>';
                   echo '<td>'.$obj->product_desc.'</td>';
                   echo '<td>$'.$obj->qty * $obj->price.'</td>';
+                  echo "<td><img class='prodim' src='images/$obj->image' alt='Profile picture'/>";
+                  echo "<form action='saveprodpic.php' method='post' enctype='multipart/form-data' autocomplete='off'>";
+                  echo "<p><input type='hidden' name='product_code' value='$obj->product_code'/></p>";
+                  echo "<p><label for='image'>Change profile picture :</label></p>";
+                  echo "<p><input type='file' name='image' id='image' required/></p>";
+                  echo "<p><button style='width:100px;'type='submit' class='btn btn-success'>Upload</button></p>";
+                  echo "</form></td>";
                   echo '<td><a href="editstock.php?prod_id='.$obj->product_code.'&prod_name='.$obj->product_name.'&brand='.$obj->product_brand.'&qty='.$obj->qty.'&price='.$obj->price.'&desc='.$obj->product_desc.'"<button class="btn btn-primary">Edit stock</button></a></td>';
                   echo '<td><a href="deletestock.php?prod_id='.$obj->product_code.'"><button class="btn btn-danger" onclick="if(!confirm(\'Are you sure you want to delete this stock?\')) return false;">Delete stock</button></a></td>';
                   echo'</tr>';
