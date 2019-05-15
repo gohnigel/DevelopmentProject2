@@ -12,20 +12,20 @@ require 'config.php';
         </div>
         <ul class='nav navbar-nav'>
             <li class='<?php if($currentPage == 'Home') echo 'active' ?>'><a href='#'>Home</a></li>
-            <li><a href='#'>About Us</a></li>
+            <li class='<?php if($currentPage == 'About the application') echo 'active' ?>'><a href='aboutus.php'>About app</a></li>
             <?php
-if(isset($_SESSION['email'])){
-  if($_SESSION['role'] == "client"){
-?>
+            if(isset($_SESSION['email'])){
+              if($_SESSION['role'] == "client"){
+            ?>
             <li class='<?php if($currentPage == 'Book now') echo 'active' ?>'><a href='book.php'>Book Now</a></li>
             <li class='<?php if($currentPage == 'View client') echo 'active' ?>'><a href='viewbook.php'>Manage Appointments</a></li>
             <li class='<?php if($currentPage == 'Shop') echo 'active' ?>'><a href='shop.php'>Shop</a></li>
             <li class='<?php if($currentPage == 'Orders') echo 'active' ?>'><a href='orders.php'>My Orders</a></li>
             <li class='<?php if($currentPage == 'Customer profile') echo 'active' ?>'><a href='profile.php'>Customer Profile</a></li>
             <?php    
-    }
-    else if($_SESSION['role'] == "admin"){
-?>
+            }
+            else if($_SESSION['role'] == "admin"){
+            ?>
             <li class='<?php if($currentPage == 'Manage book') echo 'active' ?>'><a href='managebook.php'>Manage Appointments</a></li>
             <li class='<?php if($currentPage == 'All stock') echo 'active' ?>'><a href='allstock.php'>Inventory</a></li>
             <li class='<?php if($currentPage == 'Add stock') echo 'active' ?>'><a href='addstock.php'>Add Inventory</a></li>
@@ -34,14 +34,14 @@ if(isset($_SESSION['email'])){
             <li class='<?php if($currentPage == 'Orders') echo 'active' ?>'><a href='manageorders.php'>Manage Orders</a></li>
 
             <?php    
-    }	
-}
-?>
+                }	
+            }
+            ?>
         </ul>
         <ul class='nav navbar-nav navbar-right'>
             <?php
-  if(isset($_SESSION['email'])){
-?>
+              if(isset($_SESSION['email'])){
+            ?>
             <li><?php echo '<h6 style = "color:white;margin-top: 12px;">Welcome, ' .$_SESSION['full_name'] .'</h6>'; ?></li>
             <!--Notification-->
              <li class="nav-item dropdown">
@@ -53,7 +53,7 @@ if(isset($_SESSION['email'])){
                 <span class="badge badge-light"><?php echo count(fetchAll($query)); ?></span>
               <?php
                 }
-                    ?>
+              ?>
               </a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
                 <?php
@@ -90,43 +90,42 @@ if(isset($_SESSION['email'])){
 
             <!--Notification end-->
             <?php  
-}
-else{            
-}
-    
-?>
+            }
+            else{            
+            }
+
+            ?>
 
             <?php    
-if(isset($_SESSION['email'])){
-    if($_SESSION['role'] == 'client')
-    {
-
-?>
+            if(isset($_SESSION['email'])){
+              if($_SESSION['role'] == 'client')
+              {
+            ?>
             <li><a href='cart.php'><span class='glyphicon glyphicon-shopping-cart'></span>Shopping Cart</a></li>
             <?php
-    }
-    else 
-    {
-        
-    }
-}  ?>
+              }
+              else 
+              {
+
+              }
+            }  ?>
 
 
             <?php
-/*If condition to show relevant user functions*/
-if(isset($_SESSION['email'])){
-?>
+            /*If condition to show relevant user functions*/
+            if(isset($_SESSION['email'])){
+            ?>
             =
             <li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Log Out</a></li>
             <?php  
-}
-else{
-?>
+            }
+            else{
+            ?>
             <li class='<?php if($currentPage == 'Sign up') echo 'active' ?>'><a href='signup.php'><span class='glyphicon glyphicon-user'></span> Sign Up</a></li>
             <li class='<?php if($currentPage == 'Login') echo 'active' ?>'><a href='login.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>
             <?php
-}
-?>
+            }
+            ?>
         </ul>
     </div>
 </nav>

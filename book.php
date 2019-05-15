@@ -45,7 +45,7 @@
             <div class="form-group form-adjust">
               <p><label for="services">Choose your Services :</label></p>
               <p>
-                <select id="services[]" name="services[]" select size="5" multiple>
+                <select id="services[]" name="services[]" select size="5" multiple required>
                     <option value="haircutting">Hair Cutting</option>
                     <option value="styling">Styling</option>
                     <option value="body_waxing">Body Waxing</option>
