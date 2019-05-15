@@ -11,6 +11,8 @@ if(isset($_SESSION['cart'])) {
 
     $result = $mysqli->query("SELECT * FROM products WHERE id = ".$product_id);
 
+      $mysqli->query("INSERT INTO `notification`(`message`, `status`, `user`, `type`) VALUES ('Your Receive A New Order','unread','staff@salon.com','cart')");
+      
     if($result){
 
       if($obj = $result->fetch_object()) {

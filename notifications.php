@@ -12,9 +12,6 @@ if(!isset($_SESSION["email"])) {
   header("location:login.php");
 }
 
-if($_SESSION["role"]!="client") {
-  header("location:index.php");
-}
 
 ?>
 <!DOCTYPE html>
