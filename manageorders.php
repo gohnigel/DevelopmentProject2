@@ -47,7 +47,7 @@
         <div class="col-xs-12">
           <table id="myTable" class="table table-active table-hover">
             <tr class="header">
-              <th style="width:9%;">Order ID</th>
+              <th style="width:9%;">Order Ref</th>
               <th style="width:11%;">Product Name</th>
               <th style="width:11%;">Product Code</th>
               <th style="width:11%;">Qty Sold</th>
@@ -65,7 +65,7 @@
               if($result) {
                 while($obj = $result->fetch_object()) {
                   echo '<tr>';
-                  echo '<td>'.$obj->order_id.'</td>';
+                  echo '<td>'.$obj->order_ref.'</td>';
                   echo '<td>'.$obj->order_desc.'</td>';
                   echo '<td>'.$obj->item_code.'</td>';  
                   echo '<td>'.$obj->total.'</td>';

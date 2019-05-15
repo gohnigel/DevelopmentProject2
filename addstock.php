@@ -20,28 +20,27 @@
     $qty = $_POST["prod_qty"];
     $price = $_POST['prod_price'];
     $desc = $_POST["prod_desc"];
+    $image = $_FILES["image"]["name"];
+
     $check = $mysqli->query("select * from products where product_code='$id'");
     $checkrows = mysqli_num_rows($check);
 
-    $image = $_FILES['image']['name'];
 
-    $target = "images/products/".basename($image);
     if($checkrows>0){
     echo "Customer exists";
       $_SESSION['message'] = 'Items added must be unique';
       header("Location: addstock.php");
     }else{
       $sql = "INSERT INTO products (`product_code`, `product_name`,`product_brand`, `product_desc`, `qty`, `price`, `image`) VALUES('$id', '$inventory', '$brand', '$desc', '$qty', '$price', '$image')";
+      move_uploaded_file($_FILES["image"]["tmp_name"], 'images/'.$image);
+
       $_SESSION['message'] = '';
+      mysqli_query($db, $sql);
       mysqli_query($db, $sql);
       header("Location: allstock.php");
     }
 
-    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-      $msg = "Image uploaded successfully";
-    }else{
-      $msg = "Failed to upload image";
-    }
+   
   }
 
 ?>
