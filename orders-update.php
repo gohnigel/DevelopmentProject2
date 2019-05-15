@@ -2,6 +2,7 @@
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 include 'config.php';
+$ref = uniqid(Order);
 
 if(isset($_SESSION['cart'])) {
 
@@ -18,15 +19,13 @@ if(isset($_SESSION['cart'])) {
         $cost = $obj->price * $quantity;
 
         $user = $_SESSION["email"];
-        $query = $mysqli->query("INSERT INTO orders ( order_desc, item_code, qty, total,status, customer, shipping_add) VALUES('$obj->product_name', '$obj->product_code', '$obj->qty', '$cost','Preparing Your Order', '".$_SESSION['email']."','".$_SESSION['add']."')");
+        $query = $mysqli->query("INSERT INTO orders (order_ref, order_desc, item_code, qty, total,status, customer, shipping_add) VALUES('$ref','$obj->product_name', '$obj->product_code', '$obj->qty', '$cost','Preparing Your Order', '".$_SESSION['email']."','".$_SESSION['add']."')");
 
         if($query){
           $newqty = $obj->qty - $quantity;
           if($mysqli->query("UPDATE products SET qty = ".$newqty." WHERE id = ".$product_id)){
-
           }
         }
-
       }
     }
   }

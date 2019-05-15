@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2019 at 01:02 AM
+-- Generation Time: May 15, 2019 at 07:40 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -49,14 +49,16 @@ INSERT INTO `booking` (`bookingid`, `date`, `time`, `full_name`, `email`, `statu
 ('5cb5eacd3e410', '2019-05-12', '17:00', 'Staff Member', 'nigel@salon.com', 'Canceled', ''),
 ('5cb5eade733f5', '2019-05-05', '12:00', 'Staff Member', 'nigel@salon.com', 'Confirmed', ''),
 ('5cb5eb3492151', '2019-05-01', '13:30', 'Staff Member', 'Ignatius@salon.com', 'Confirmed', ''),
-('5cb5eb447723d', '2019-04-10', '18:30', 'Andrew', 'Ignatius@salon.com', 'pending', ''),
-('5cb5eb51dc323', '2019-05-19', '17:30', 'William', 'Ignatius@salon.com', 'Confirmed', ''),
-('5cb5eb773e65d', '2019-05-18', '18:30', 'James', 'Ignatius@salon.com', 'Confirmed', ''),
-('5cb5ebba197a4', '2019-05-12', '16:30', 'Victor', 'isal@salon.com', 'pending', ''),
-('5cb5ebcaf0520', '2019-05-17', '15:30', 'Sam', 'isal@salon.com', 'Completed', 'No Notes Added'),
-('5cb5ebd98ead7', '2019-05-02', '18:30', 'Ben', 'isal@salon.com', 'pending', ''),
-('5ccd30475a486', '0000-00-00', '01:00', 'Ben', 'isal@salon.com', 'pending', ''),
-('5ccd308f89282', '2019-05-27', '17:06', 'Andy', 'isal@salon.com', 'Canceled', '');
+('5cb5eb447723d', '2019-04-10', '18:30', 'Staff Member', 'Ignatius@salon.com', 'pending', ''),
+('5cb5eb51dc323', '2019-05-19', '17:30', 'Staff Member', 'Ignatius@salon.com', 'Confirmed', ''),
+('5cb5eb773e65d', '2019-05-18', '18:30', 'Staff Member', 'Ignatius@salon.com', 'Confirmed', ''),
+('5cb5ebba197a4', '2019-05-12', '16:30', 'Staff Member', 'isal@salon.com', 'pending', ''),
+('5cb5ebcaf0520', '2019-05-17', '15:30', 'Staff Member', 'isal@salon.com', 'Completed', 'No Notes Added'),
+('5cb5ebd98ead7', '2019-05-02', '18:30', 'Staff Member', 'isal@salon.com', 'pending', ''),
+('5ccd30475a486', '0000-00-00', '01:00', 'Staff Member', 'isal@salon.com', 'pending', ''),
+('5ccd308f89282', '2019-05-27', '17:06', 'Staff Member', 'isal@salon.com', 'Canceled', ''),
+('5cdba562eb56f', '2019-05-16', '14:06', 'Staff Member', 'isal@salon.com', 'pending', ''),
+('5cdba578a2b6a', '2019-05-29', '14:02', 'Staff Member', 'isal@salon.com', 'pending', '');
 
 -- --------------------------------------------------------
 
@@ -81,6 +83,7 @@ CREATE TABLE `notification` (
 
 CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL,
+  `order_ref` varchar(225) NOT NULL,
   `order_desc` varchar(225) NOT NULL,
   `item_code` varchar(225) NOT NULL,
   `total` int(10) NOT NULL,
@@ -95,23 +98,27 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`order_id`, `order_desc`, `item_code`, `total`, `qty`, `date`, `status`, `customer`, `shipping_add`) VALUES
-(5, 'Shampoo', 'Hair7890', 60, 50, '2019-05-08 14:47:34', 'Preparing Your Order', 'isal@salon.com', ''),
-(6, 'Hair Wax', 'Styling9872', 13, 50, '2019-05-08 14:47:35', 'Preparing Your Order', 'isal@salon.com', ''),
-(7, 'Hair Mousse', 'Styling9874', 19, 25, '2019-05-08 14:47:41', 'Preparing Your Order', 'isal@salon.com', ''),
-(8, 'Conditioner', 'Hair7898', 126, 25, '2019-05-08 14:47:51', 'Preparing Your Order', 'isal@salon.com', ''),
-(9, 'Hair Wax', 'Styling9872', 13, 49, '2019-05-11 07:04:08', 'Preparing Your Order', 'isal@salon.com', ''),
-(10, 'Hair Wax', 'Styling9872', 13, 48, '2019-05-11 07:06:05', 'Preparing Your Order', 'isal@salon.com', ''),
-(11, 'Hair Wax', 'Styling9872', 13, 47, '2019-05-11 07:08:46', 'Preparing Your Order', 'isal@salon.com', ''),
-(12, 'Hair Wax', 'Styling9872', 13, 46, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
-(13, 'Hair Wax', 'Styling9872', 13, 45, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
-(14, 'Hair Wax', 'Styling9872', 13, 44, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
-(15, 'Hair Wax', 'Styling9872', 13, 43, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
-(16, 'Hair Wax', 'Styling9872', 13, 42, '2019-05-12 22:11:20', 'Preparing Your Order', 'isal@salon.com', ''),
-(18, 'Hair Wax', 'Styling9872', 26, 41, '2019-05-12 22:47:55', 'Preparing Your Order', 'isal@salon.com', 'Test Add'),
-(19, 'Hair Gel', 'Styling9873', 14, 12, '2019-05-12 22:59:58', 'Preparing Your Order', 'isal@salon.com', 'Test Add'),
-(20, 'Hair Gel', 'Styling9873', 14, 10, '2019-05-12 23:00:18', 'Preparing Your Order', 'isal@salon.com', 'Test Add'),
-(21, 'Shampoo', 'Hair7890', 20, 47, '2019-05-12 23:00:32', 'Preparing Your Order', 'isal@salon.com', 'Test Add');
+INSERT INTO `orders` (`order_id`, `order_ref`, `order_desc`, `item_code`, `total`, `qty`, `date`, `status`, `customer`, `shipping_add`) VALUES
+(5, '', 'Shampoo', 'Hair7890', 60, 50, '2019-05-08 14:47:34', 'Delivered', 'isal@salon.com', ''),
+(6, '', 'Hair Wax', 'Styling9872', 13, 50, '2019-05-08 14:47:35', 'Preparing Your Order', 'isal@salon.com', ''),
+(7, '', 'Hair Mousse', 'Styling9874', 19, 25, '2019-05-08 14:47:41', 'Preparing Your Order', 'isal@salon.com', ''),
+(8, '', 'Conditioner', 'Hair7898', 126, 25, '2019-05-08 14:47:51', 'Preparing Your Order', 'isal@salon.com', ''),
+(9, '', 'Hair Wax', 'Styling9872', 13, 49, '2019-05-11 07:04:08', 'Preparing Your Order', 'isal@salon.com', ''),
+(10, '', 'Hair Wax', 'Styling9872', 13, 48, '2019-05-11 07:06:05', 'Preparing Your Order', 'isal@salon.com', ''),
+(11, '', 'Hair Wax', 'Styling9872', 13, 47, '2019-05-11 07:08:46', 'Preparing Your Order', 'isal@salon.com', ''),
+(12, '', 'Hair Wax', 'Styling9872', 13, 46, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
+(13, '', 'Hair Wax', 'Styling9872', 13, 45, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
+(14, '', 'Hair Wax', 'Styling9872', 13, 44, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
+(15, '', 'Hair Wax', 'Styling9872', 13, 43, '2019-05-11 07:09:55', 'Preparing Your Order', 'isal@salon.com', ''),
+(16, '', 'Hair Wax', 'Styling9872', 13, 42, '2019-05-12 22:11:20', 'Preparing Your Order', 'isal@salon.com', ''),
+(18, '', 'Hair Wax', 'Styling9872', 26, 41, '2019-05-12 22:47:55', 'Preparing Your Order', 'isal@salon.com', 'Test Add'),
+(19, '', 'Hair Gel', 'Styling9873', 14, 12, '2019-05-12 22:59:58', 'Preparing Your Order', 'isal@salon.com', 'Test Add'),
+(20, '', 'Hair Gel', 'Styling9873', 14, 10, '2019-05-12 23:00:18', 'Preparing Your Order', 'isal@salon.com', 'Test Add'),
+(21, '', 'Shampoo', 'Hair7890', 20, 47, '2019-05-12 23:00:32', 'Preparing Your Order', 'isal@salon.com', 'Test Add'),
+(22, '', 'Hair Gel', 'Styling9873', 21, 8, '2019-05-15 05:26:07', 'Preparing Your Order', 'isal@salon.com', 'Test Ad9'),
+(23, '', 'Shampoo', 'Hair7890', 20, 46, '2019-05-15 05:26:08', 'Preparing Your Order', 'isal@salon.com', 'Test Ad9'),
+(24, 'order5cdba6243904a', 'Hair Wax', 'Styling9872', 13, 39, '2019-05-15 05:39:48', 'Preparing Your Order', 'isal@salon.com', 'Test Ad9'),
+(25, 'order5cdba6243904a', 'Hair Gel', 'Styling9873', 14, 5, '2019-05-15 05:39:48', 'Preparing Your Order', 'isal@salon.com', 'Test Ad9');
 
 -- --------------------------------------------------------
 
@@ -135,9 +142,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_code`, `product_name`, `product_brand`, `product_desc`, `qty`, `price`, `image`) VALUES
-(26, 'Styling9872', 'Hair Wax', 'Bad Labs', 'Hair Wax For Men ', 39, '13.00', ''),
-(27, 'Styling9873', 'Hair Gel', 'Garnier', 'Hair Gel For men 300ml', 8, '7.00', ''),
-(28, 'Hair7890', 'Shampoo', 'Sunsilk', 'Shampoo (SunSilk) 500ML', 46, '20.00', ''),
+(26, 'Styling9872', 'Hair Wax', 'Bad Labs', 'Hair Wax For Men ', 38, '13.00', ''),
+(27, 'Styling9873', 'Hair Gel', 'Garnier', 'Hair Gel For men 300ml', 3, '7.00', ''),
+(28, 'Hair7890', 'Shampoo', 'Sunsilk', 'Shampoo (SunSilk) 500ML', 45, '20.00', ''),
 (29, 'Hair7898', 'Conditioner', 'Sunsilk', 'Sun Silk Conditioner 330 ML', 18, '18.00', ''),
 (30, 'Styling9874', 'Hair Mousse', 'HERBIVORE BOTANICALS', 'Hair Mousse 8 oz/240 ml', 24, '19.00', '');
 
@@ -162,19 +169,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`email`, `full_name`, `password`, `phone`, `role`, `cust_add`, `image`) VALUES
-('Ignatius@salon.com', 'Ignatius Ting Moi Ing', '1234', 11111111, 'client', '', ''),
+('Ignatius@salon.com', 'Ignatius Ting Moi Ing ', '1234', 11111111, 'client', '', ''),
 ('isal@salon.com', 'Isal Korale', '1234', 12345678, 'client', 'Test Ad9', 0x696d616765732f70726f66696c652e706e67),
 ('nigel@salon.com', 'Nigel Goh Tze Fei', '1234', 1111111, 'client', '', ''),
-('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin', '', ''),
-('Andrew@salon.com', 'Andrew', '1234', 1111111, 'admin', '', ''),
-('Andy@salon.com', 'Andy', '1234', 1111111, 'admin', '', ''),
-('Ben@salon.com', 'Ben', '1234', 1111111, 'admin', '', ''),
-('Sam@salon.com', 'Sam', '1234', 1111111, 'admin', '', ''),
-('Victor@salon.com', 'Victor', '1234', 1111111, 'admin', '', ''),
-('Steven@salon.com', 'Steven', '1234', 1111111, 'admin', '', ''),
-('George@salon.com', 'George', '1234', 1111111, 'admin', '', ''),
-('William@salon.com', 'William', '1234', 1111111, 'admin', '', ''),
-('James@salon.com', 'James', '1234', 1111111, 'admin', '', '');
+('staff@salon.com', 'Staff Member', '1234', 1111111, 'admin', '', '');
 
 --
 -- Indexes for dumped tables
@@ -226,13 +224,13 @@ ALTER TABLE `notification`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Constraints for dumped tables

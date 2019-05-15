@@ -46,7 +46,7 @@
         <div class="col-xs-12">
           <table id="myTable" class="table table-active">
             <tr class="header">
-              <th style="width:40%;">Order ID</th>
+              <th style="width:60%;">Order Ref</th>
               <th style="width:60%;">Ordered Item</th>
               <th style="width:60%;">Item Code</th>
               <th style="width:60%;">Qty</th>
@@ -61,7 +61,7 @@
               if($result) {
                 while($obj = $result->fetch_object()) {
                   echo '<tr>';
-                  echo '<td>'.$obj->order_id.'</td>';
+                  echo '<td>'.$obj->order_ref.'</td>';
                   echo '<td>'.$obj->order_desc.'</td>';
                   echo '<td>'.$obj->item_code.'</td>';
                   echo '<td>'.$obj->qty.'</td>';
