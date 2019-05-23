@@ -1,5 +1,5 @@
 # DevelopmentProject2
-To open this project, please donwload XAMPP into your PC or laptop.
+To open this project, please download XAMPP into your PC or laptop.
 Then, go to XAMPP Control Panel and then choose the USA flag to choose English the language.
 After that, start Apache and MySQL.
 Then, go to localhost/phpmyadmin to set up the database.
