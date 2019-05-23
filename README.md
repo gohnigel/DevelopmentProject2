@@ -6,4 +6,4 @@ Then, go to localhost/phpmyadmin to set up the database.
 After that select new to create a new database with the name salon.
 Then, import the sql file named salon.sql into the database.
 To access the website, please type localhost/developmentproject2.
-You will be able to use the website from doing this by signing in users in the database or registering now users in the database.
+You will be able to use the website from doing this by signing in users in the database or registering new users in the database.
